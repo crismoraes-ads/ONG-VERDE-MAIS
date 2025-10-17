@@ -7,7 +7,7 @@
   --texto:#333;
 }
 
-*{box-sizing:border-box}
+*{box-sizing:border-box;}
 body{
   font-family: Arial, sans-serif;
   margin:0; padding:0;
@@ -23,29 +23,150 @@ header{
   position:sticky; top:0; z-index:100;
 }
 
-.logo-header{ max-width:140px; display:block; margin:0 auto 8px auto; }
+.logo-header{ 
+  max-width:140px; 
+  display:block; 
+  margin:0 auto 8px auto; 
+}
 
-nav ul{ list-style:none; display:flex; justify-content:center; gap:16px; padding:0; margin:8px 0 0 0; flex-wrap:wrap; }
-nav a{ color:#fff; text-decoration:none; padding:6px 12px; background: rgba(255,255,255,0.12); border-radius:6px; font-weight:600; }
-nav a:hover{ background: rgba(255,255,255,0.28); }
+nav ul{ 
+  list-style:none; 
+  display:flex; 
+  justify-content:center; 
+  gap:16px; 
+  padding:0; 
+  margin:8px 0 0 0; 
+  flex-wrap:wrap; 
+}
 
-main{ max-width:980px; margin:28px auto; padding:20px; background:#fff; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
+nav a{ 
+  color:#fff; 
+  text-decoration:none; 
+  padding:6px 12px; 
+  background: rgba(255,255,255,0.12); 
+  border-radius:6px; 
+  font-weight:600; 
+}
 
-.hero{ text-align:center; margin-bottom:18px; }
-.botao{ display:inline-block; background: linear-gradient(90deg,var(--amarelo),var(--vermelho)); color:#fff; padding:10px 20px; border-radius:28px; text-decoration:none; font-weight:700; }
-.botao:hover{ transform:scale(1.03); }
+nav a:hover{ 
+  background: rgba(255,255,255,0.28); 
+}
 
-h1,h2,h3{ color:var(--azul); }
-h2{ border-left:6px solid var(--verde); padding-left:10px; }
+main{ 
+  max-width:980px; 
+  margin:28px auto; 
+  padding:20px; 
+  background:#fff; 
+  border-radius:12px; 
+  box-shadow:0 6px 18px rgba(0,0,0,0.06); 
+}
 
-.galeria{ display:flex; flex-wrap:wrap; gap:18px; justify-content:center; }
-.projeto{ width:280px; background:var(--fundo); padding:12px; border-radius:10px; text-align:center; }
-.projeto img{ max-width:100%; border-radius:8px; }
+.hero{ 
+  text-align:center; 
+  margin-bottom:18px; 
+}
 
-form{ display:flex; flex-direction:column; gap:10px; max-width:520px; margin:0 auto; }
-label{ font-weight:700; color:var(--azul); }
-input, button{ padding:10px; border-radius:8px; border:1px solid #ccc; font-size:1rem; }
-input:focus{ outline:none; border-color:var(--verde); box-shadow:0 0 6px var(--verde); }
+.botao{ 
+  display:inline-block; 
+  background: linear-gradient(90deg,var(--amarelo),var(--vermelho)); 
+  color:#fff; 
+  padding:10px 20px; 
+  border-radius:28px; 
+  text-decoration:none; 
+  font-weight:700; 
+  transition: transform 0.2s ease;
+}
 
-footer{ text-align:center; padding:18px; background: linear-gradient(90deg,var(--verde),var(--azul)); color:#fff; margin-top:20px; border-radius:0 0 12px 12px; }
-.blog article{ background:var(--fundo); padding:12px; border-radius:8px; margin-bottom:12px; }
+.botao:hover{ 
+  transform:scale(1.03); 
+}
+
+h1,h2,h3{ 
+  color:var(--azul); 
+}
+
+h2{ 
+  border-left:6px solid var(--verde); 
+  padding-left:10px; 
+  margin-top:24px;
+}
+
+.galeria{ 
+  display:flex; 
+  flex-wrap:wrap; 
+  gap:18px; 
+  justify-content:center; 
+  margin-top:18px;
+}
+
+.projeto{ 
+  width:280px; 
+  background:var(--fundo); 
+  padding:12px; 
+  border-radius:10px; 
+  text-align:center; 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.projeto:hover{
+  transform: translateY(-4px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+.projeto img{ 
+  max-width:100%; 
+  border-radius:8px; 
+  margin-bottom:8px;
+}
+
+form{ 
+  display:flex; 
+  flex-direction:column; 
+  gap:10px; 
+  max-width:520px; 
+  margin:0 auto; 
+}
+
+label{ 
+  font-weight:700; 
+  color:var(--azul); 
+}
+
+input, button{ 
+  padding:10px; 
+  border-radius:8px; 
+  border:1px solid #ccc; 
+  font-size:1rem; 
+}
+
+input:focus{ 
+  outline:none; 
+  border-color:var(--verde); 
+  box-shadow:0 0 6px var(--verde); 
+}
+
+footer{ 
+  text-align:center; 
+  padding:18px; 
+  background: linear-gradient(90deg,var(--verde),var(--azul)); 
+  color:#fff; 
+  margin-top:20px; 
+  border-radius:0 0 12px 12px; 
+}
+
+.blog article{ 
+  background:var(--fundo); 
+  padding:12px; 
+  border-radius:8px; 
+  margin-bottom:12px; 
+}
+
+@media (max-width:600px){
+  .galeria{
+    flex-direction:column;
+    align-items:center;
+  }
+  .projeto{
+    width:90%;
+  }
+}
