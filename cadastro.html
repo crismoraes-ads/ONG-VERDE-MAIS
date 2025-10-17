@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ONG HTML - Cadastro</title>
+  <link rel="stylesheet" href="estilos/estilo.css" />
+</head>
+<body>
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Google-flutter-logo.svg" alt="Logo ONG HTML" class="logo-header" />
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Cadastro de Voluntário / Doador</h1>
+
+    <form id="form-cadastro" novalidate>
+      <fieldset>
+        <legend>Informações Pessoais</legend>
+
+        <label for="nome">Nome Completo</label>
+        <input id="nome" name="nome" type="text" required />
+
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" required />
+
+        <label for="cpf">CPF</label>
+        <input id="cpf" name="cpf" type="text" inputmode="numeric" placeholder="000.000.000-00" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required />
+
+        <label for="telefone">Telefone</label>
+        <input id="telefone" name="telefone" type="tel" placeholder="(00) 00000-0000" pattern="\(\d{2}\)\s?\d{4,5}-\d{4}" required />
+
+        <label for="dataNasc">Data de Nascimento</label>
+        <input id="dataNasc" name="dataNasc" type="date" required />
+      </fieldset>
+
+      <fieldset>
+        <legend>Endereço</legend>
+
+        <label for="endereco">Endereço</label>
+        <input id="endereco" name="endereco" type="text" required />
+
+        <label for="cep">CEP</label>
+        <input id="cep" name="cep" type="text" placeholder="00000-000" pattern="\d{5}-\d{3}" required />
+
+        <label for="cidade">Cidade</label>
+        <input id="cidade" name="cidade" type="text" required />
+
+        <label for="estado">Estado (UF)</label>
+        <input id="estado" name="estado" type="text" maxlength="2" placeholder="SP" required />
+      </fieldset>
+
+      <button type="submit" class="botao">Enviar</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>Contato: contato@onghtml.org | Telefone: (11) 99999-9999</p>
+    <p>&copy; 2025 ONG HTML</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
