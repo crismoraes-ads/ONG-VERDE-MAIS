@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ONG Mais Verde — projetos sociais e ambientais para um futuro sustentável.">
-  <title>ONG Mais Verde</title>
-  <link rel="stylesheet" href="css/estilos.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ONG MAIS VERDE - Início</title>
+  <link rel="stylesheet" href="css/estilos.css" />
 </head>
-
 <body>
   <header>
-    <h1>ONG Mais Verde</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Google-flutter-logo.svg" alt="Logo ONG MAIS VERDE" class="logo-header" />
     <nav>
       <ul>
         <li><a href="index.html">Início</a></li>
@@ -22,49 +20,58 @@
   </header>
 
   <main>
-    <section class="destaque">
-      <h2>Bem-vindo à ONG Mais Verde</h2>
-      <p>Promovendo ações sociais e ambientais para um futuro mais sustentável.</p>
-      <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80" alt="Voluntários plantando árvores">
+    <section class="hero" aria-labelledby="titulo-hero">
+      <h1 id="titulo-hero">Bem-vindo à ONG MAIS VERDE</h1>
+      <p>Trabalhamos para gerar impacto social por meio de projetos comunitários e voluntariado.</p>
+      
+      <!-- Vídeo funcional -->
+      <video width="100%" height="auto" controls>
+        <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+
+      <a href="cadastro.html" class="botao">Doe Agora</a>
     </section>
 
-    <section class="projetos">
-      <h2>Nossos Projetos</h2>
-      <div class="galeria">
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=600&q=80" alt="Crianças estudando ao ar livre">
-          <h3>Projeto Esperança</h3>
-          <p>Apoio a famílias em vulnerabilidade social com doações e capacitação.</p>
-        </div>
-
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="Professora ajudando aluno">
-          <h3>Educar para o Futuro</h3>
-          <p>Programa de reforço escolar e oficinas de cidadania para jovens.</p>
-        </div>
-
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1524499982521-1ffd58dd89ea?auto=format&fit=crop&w=600&q=80" alt="Equipe de voluntários segurando caixas de doações">
-          <h3>Rede Solidária</h3>
-          <p>Mobilização comunitária para arrecadação e distribuição de alimentos.</p>
-        </div>
-      </div>
+    <section aria-labelledby="missao">
+      <h2 id="missao">Missão</h2>
+      <p>Promover inclusão social e desenvolver projetos sustentáveis que transformam vidas.</p>
     </section>
 
-    <section class="video">
-      <h2>Conheça Nosso Trabalho</h2>
-      <div class="video-container">
-        <iframe width="560" height="315"
-          src="https://www.youtube.com/embed/5qap5aO4i9A"
-          title="Vídeo Institucional ONG Mais Verde"
-          frameborder="0" allowfullscreen></iframe>
-      </div>
+    <section aria-labelledby="visao">
+      <h2 id="visao">Visão</h2>
+      <p>Ser referência em transformação social por meio da educação, solidariedade e inovação.</p>
+    </section>
+
+    <section aria-labelledby="valores">
+      <h2 id="valores">Valores</h2>
+      <ul>
+        <li>Transparência e ética</li>
+        <li>Respeito à diversidade</li>
+        <li>Comprometimento social</li>
+        <li>Cooperação e solidariedade</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="noticias">
+      <h2 id="noticias">Últimas Notícias</h2>
+      <article>
+        <h3>Campanha de Inverno</h3>
+        <p>Arrecadamos cobertores e roupas para famílias em vulnerabilidade social.</p>
+      </article>
+      <article>
+        <h3>Voluntariado na Comunidade</h3>
+        <p>Mais de 50 voluntários participaram do projeto “Educar para o Futuro”.</p>
+      </article>
     </section>
   </main>
 
   <footer>
     <p>Contato: contato@ongmaisverde.org | Telefone: (11) 99999-9999</p>
-    <p>&copy; 2025 ONG Mais Verde</p>
+    <p>Siga-nos: <a href="#" aria-label="Facebook">Facebook</a> | <a href="#" aria-label="Instagram">Instagram</a></p>
+    <p>&copy; 2025 ONG MAIS VERDE</p>
   </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
