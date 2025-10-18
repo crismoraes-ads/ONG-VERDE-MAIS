@@ -49,3 +49,10 @@ input:focus{ outline:none; border-color:var(--verde); box-shadow:0 0 6px var(--v
 
 footer{ text-align:center; padding:18px; background: linear-gradient(90deg,var(--verde),var(--azul)); color:#fff; margin-top:20px; border-radius:0 0 12px 12px; }
 .blog article{ background:var(--fundo); padding:12px; border-radius:8px; margin-bottom:12px; }
+.hero-img{
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 20px 0;
+}
