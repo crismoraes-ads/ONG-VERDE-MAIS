@@ -1,58 +1,137 @@
-:root{
-  --azul:#0077ff;
-  --verde:#00c896;
-  --amarelo:#ffcc00;
-  --vermelho:#ff4c4c;
-  --fundo:#f4f7fb;
-  --texto:#333;
-}
-
-*{box-sizing:border-box}
-body{
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Arial, sans-serif;
-  margin:0; padding:0;
-  background:var(--fundo);
-  color:var(--texto);
 }
 
-header{
-  background: linear-gradient(90deg,var(--azul),var(--verde));
-  color:#fff;
-  text-align:center;
-  padding:18px 10px;
-  position:sticky; top:0; z-index:100;
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #0077ff;
+  color: white;
 }
 
-.logo-header{ max-width:140px; display:block; margin:0 auto 8px auto; }
+header .logo-header {
+  height: 50px;
+}
 
-nav ul{ list-style:none; display:flex; justify-content:center; gap:16px; padding:0; margin:8px 0 0 0; flex-wrap:wrap; }
-nav a{ color:#fff; text-decoration:none; padding:6px 12px; background: rgba(255,255,255,0.12); border-radius:6px; font-weight:600; }
-nav a:hover{ background: rgba(255,255,255,0.28); }
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
 
-main{ max-width:980px; margin:28px auto; padding:20px; background:#fff; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-.hero{ text-align:center; margin-bottom:18px; }
-.botao{ display:inline-block; background: linear-gradient(90deg,var(--amarelo),var(--vermelho)); color:#fff; padding:10px 20px; border-radius:28px; text-decoration:none; font-weight:700; cursor:pointer; border:none; }
-.botao:hover{ transform:scale(1.03); }
+header nav ul li a:hover {
+  text-decoration: underline;
+}
 
-h1,h2,h3{ color:var(--azul); }
-h2{ border-left:6px solid var(--verde); padding-left:10px; }
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(90deg,#00c896,#0077ff);
+  color: white;
+}
 
-.galeria{ display:flex; flex-wrap:wrap; gap:18px; justify-content:center; }
-.projeto{ width:280px; background:var(--fundo); padding:12px; border-radius:10px; text-align:center; }
-.projeto img{ max-width:100%; border-radius:8px; }
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
 
-form{ display:flex; flex-direction:column; gap:10px; max-width:520px; margin:0 auto; }
-label{ font-weight:700; color:var(--azul); }
-input, button{ padding:10px; border-radius:8px; border:1px solid #ccc; font-size:1rem; }
-input:focus{ outline:none; border-color:var(--verde); box-shadow:0 0 6px var(--verde); }
+.hero p {
+  font-size: 1.2rem;
+}
 
-footer{ text-align:center; padding:18px; background: linear-gradient(90deg,var(--verde),var(--azul)); color:#fff; margin-top:20px; border-radius:0 0 12px 12px; }
-.blog article{ background:var(--fundo); padding:12px; border-radius:8px; margin-bottom:12px; }
-.hero-img{
+/* Galeria de projetos */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+.projeto {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.projeto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+.projeto img {
   width: 100%;
-  max-height: 400px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 12px;
-  margin: 20px 0;
+}
+
+.projeto h2 {
+  margin: 15px 0 10px 0;
+  color: #0077ff;
+}
+
+.projeto p {
+  padding: 0 15px 15px 15px;
+  color: #333;
+}
+
+/* Ações */
+.acoes {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #f0f0f0;
+}
+
+.botao {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  color: white;
+  background-color: #00c896;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.botao:hover {
+  background-color: #007755;
+}
+
+/* Botão gradiente */
+.gradiente {
+  background: linear-gradient(90deg,#00c896,#0077ff);
+}
+
+.gradiente:hover {
+  opacity: 0.8;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #0077ff;
+  color: white;
+}
+
+footer a {
+  color: white;
+  text-decoration: underline;
 }
