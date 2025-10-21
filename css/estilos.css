@@ -1,244 +1,51 @@
-/* ===== Reset básico ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root{
+  --azul:#0077ff;
+  --verde:#00c896;
+  --amarelo:#ffcc00;
+  --vermelho:#ff4c4c;
+  --fundo:#f4f7fb;
+  --texto:#333;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f9f9f9;
+*{box-sizing:border-box}
+body{
+  font-family: Arial, sans-serif;
+  margin:0; padding:0;
+  background:var(--fundo);
+  color:var(--texto);
 }
 
-/* ===== Header ===== */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 10%;
-  background-color: #0077ff;
-  color: #fff;
+header{
+  background: linear-gradient(90deg,var(--azul),var(--verde));
+  color:#fff;
+  text-align:center;
+  padding:18px 10px;
+  position:sticky; top:0; z-index:100;
 }
 
-header .logo-header {
-  height: 50px;
-}
+.logo-header{ max-width:140px; display:block; margin:0 auto 8px auto; }
 
-header nav ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-}
+nav ul{ list-style:none; display:flex; justify-content:center; gap:16px; padding:0; margin:8px 0 0 0; flex-wrap:wrap; }
+nav a{ color:#fff; text-decoration:none; padding:6px 12px; background: rgba(255,255,255,0.12); border-radius:6px; font-weight:600; }
+nav a:hover{ background: rgba(255,255,255,0.28); }
 
-header nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
+main{ max-width:980px; margin:28px auto; padding:20px; background:#fff; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
 
-header nav ul li a:hover {
-  color: #00c896;
-}
+.hero{ text-align:center; margin-bottom:18px; }
+.botao{ display:inline-block; background: linear-gradient(90deg,var(--amarelo),var(--vermelho)); color:#fff; padding:10px 20px; border-radius:28px; text-decoration:none; font-weight:700; }
+.botao:hover{ transform:scale(1.03); }
 
-/* ===== Hero ===== */
-.hero {
-  text-align: center;
-  padding: 50px 10%;
-  background: linear-gradient(90deg, #00c896, #0077ff);
-  color: #fff;
-  border-radius: 12px;
-  margin: 20px;
-}
+h1,h2,h3{ color:var(--azul); }
+h2{ border-left:6px solid var(--verde); padding-left:10px; }
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
+.galeria{ display:flex; flex-wrap:wrap; gap:18px; justify-content:center; }
+.projeto{ width:280px; background:var(--fundo); padding:12px; border-radius:10px; text-align:center; }
+.projeto img{ max-width:100%; border-radius:8px; }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-}
+form{ display:flex; flex-direction:column; gap:10px; max-width:520px; margin:0 auto; }
+label{ font-weight:700; color:var(--azul); }
+input, button{ padding:10px; border-radius:8px; border:1px solid #ccc; font-size:1rem; }
+input:focus{ outline:none; border-color:var(--verde); box-shadow:0 0 6px var(--verde); }
 
-.hero .botao {
-  display: inline-block;
-  padding: 12px 25px;
-  background-color: #fff;
-  color: #0077ff;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.hero .botao:hover {
-  background-color: #00c896;
-  color: #fff;
-}
-
-/* Hero image */
-.hero-img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin: 20px 0;
-}
-
-/* ===== Seções ===== */
-section {
-  padding: 40px 10%;
-}
-
-section h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: #0077ff;
-}
-
-section p, section ul {
-  font-size: 1rem;
-  margin-bottom: 15px;
-}
-
-section ul li {
-  list-style: disc inside;
-  margin-bottom: 8px;
-}
-
-/* ===== Galeria de Projetos ===== */
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.galeria .projeto {
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 12px;
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.galeria .projeto:hover {
-  transform: translateY(-5px);
-}
-
-.galeria .projeto img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 15px;
-}
-
-.galeria .projeto h2 {
-  margin-bottom: 10px;
-  color: #0077ff;
-}
-
-.galeria .projeto p {
-  font-size: 0.95rem;
-}
-
-/* ===== Botões gerais ===== */
-.botao {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #0077ff;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-  margin: 5px;
-  transition: all 0.3s ease;
-}
-
-.botao:hover {
-  background-color: #00c896;
-  color: #fff;
-}
-
-/* ===== Formulário ===== */
-form.form-cadastro {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  max-width: 500px;
-  margin: 0 auto 50px auto;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-form.form-cadastro label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-form.form-cadastro input,
-form.form-cadastro select,
-form.form-cadastro textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-}
-
-form.form-cadastro button {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  background-color: #0077ff;
-  color: #fff;
-  font-weight: bold;
-}
-
-form.form-cadastro button:hover {
-  background-color: #00c896;
-}
-
-/* ===== Footer ===== */
-footer {
-  background-color: #0077ff;
-  color: #fff;
-  text-align: center;
-  padding: 30px 10%;
-  margin-top: 40px;
-}
-
-footer a {
-  color: #fff;
-  text-decoration: underline;
-  margin: 0 5px;
-}
-
-/* ===== Responsividade ===== */
-@media screen and (max-width: 768px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
-  }
-
-  header nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-}
+footer{ text-align:center; padding:18px; background: linear-gradient(90deg,var(--verde),var(--azul)); color:#fff; margin-top:20px; border-radius:0 0 12px 12px; }
+.blog article{ background:var(--fundo); padding:12px; border-radius:8px; margin-bottom:12px; }
