@@ -1,0 +1,26 @@
+:root {
+  /* 🎨 Paleta de cores (8 cores obrigatórias) */
+  --azul-claro: #0077ff;
+  --verde: #00c896;
+  --amarelo: #ffcc00;
+  --vermelho: #ff4c4c;
+  --laranja: #ff7f50;
+  --roxo: #8a2be2;
+  --cinza-claro: #f4f7fb;
+  --cinza-escuro: #333;
+
+  /* ✍️ Tipografia (5 tamanhos obrigatórios) */
+  --font-xs: 12px;
+  --font-sm: 14px;
+  --font-md: 16px;
+  --font-lg: 20px;
+  --font-xl: 32px;
+
+  /* 📏 Espaçamento modular (6 tamanhos obrigatórios) */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+}
