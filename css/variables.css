@@ -1,26 +1,35 @@
+/* css/variables.css
+   Sistema de Design: cores, tipografia e espaçamento
+*/
 :root {
-  /* 🎨 Paleta de cores (8 cores obrigatórias) */
-  --azul-claro: #0077ff;
+  /* Cores (mínimo 8) */
+  --azul: #0077ff;
+  --azul-escuro: #005fcc;
   --verde: #00c896;
   --amarelo: #ffcc00;
   --vermelho: #ff4c4c;
   --laranja: #ff7f50;
   --roxo: #8a2be2;
-  --cinza-claro: #f4f7fb;
-  --cinza-escuro: #333;
+  --fundo: #f4f7fb;
+  --texto: #333333;
+  --branco: #ffffff;
 
-  /* ✍️ Tipografia (5 tamanhos obrigatórios) */
+  /* Tipografia (mínimo 5 tamanhos) */
   --font-xs: 12px;
   --font-sm: 14px;
   --font-md: 16px;
   --font-lg: 20px;
   --font-xl: 32px;
 
-  /* 📏 Espaçamento modular (6 tamanhos obrigatórios) */
+  /* Espaçamento modular (8,16,24,32,48,64) */
   --space-1: 8px;
   --space-2: 16px;
   --space-3: 24px;
   --space-4: 32px;
   --space-5: 48px;
   --space-6: 64px;
+
+  /* Sombra padrão */
+  --shadow-sm: 0 6px 18px rgba(0,0,0,0.06);
+  --radius: 12px;
 }
