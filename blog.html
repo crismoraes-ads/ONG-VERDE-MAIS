@@ -1,36 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ONG MAIS VERDE - Blog</title>
+  <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
   <header>
-    <img src="images/logo.png" alt="Logo ONG MAIS VERDE" class="logo-header">
-    <button class="menu-btn">&#9776;</button>
-    <nav>
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
-    </nav>
+    <div class="header-inner">
+      <a href="index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Google-flutter-logo.svg" alt="Logo ONG MAIS VERDE" class="logo-header"></a>
+
+      <button id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">&#9776;</button>
+
+      <nav aria-label="Principais">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li class="nav-item">
+            <a href="projetos.html">Projetos</a>
+            <div class="nav-dropdown" role="menu">
+              <a href="projetos.html#educacao" role="menuitem">Educação</a>
+              <a href="projetos.html#meio-ambiente" role="menuitem">Meio ambiente</a>
+            </div>
+          </li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main class="container">
     <h1>Blog</h1>
-    <section class="cards-grid">
-      <div class="card">
-        <h3>Campanha de Inverno</h3>
+
+    <section class="blog" style="margin-top: var(--space-3);">
+      <article class="card">
+        <h2>Campanha de Inverno</h2>
         <p>Distribuição de cobertores e roupas para comunidades carentes.</p>
-      </div>
-      <div class="card">
-        <h3>Voluntariado Jovem</h3>
+      </article>
+
+      <article class="card">
+        <h2>Voluntariado Jovem</h2>
         <p>Atividades educacionais e culturais com jovens da comunidade.</p>
-      </div>
+      </article>
     </section>
   </main>
 
