@@ -1,5 +1,7 @@
+// js/script.js
 document.addEventListener("DOMContentLoaded", () => {
-  // Máscaras
+
+  /* ---------- Máscaras (CPF, Telefone, CEP) ---------- */
   function setMask(input, maskFn) {
     input.addEventListener("input", () => {
       input.value = maskFn(input.value);
@@ -40,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (tel) setMask(tel, maskTel);
   if (cep) setMask(cep, maskCEP);
 
+  /* ---------- Form validation básica ---------- */
   const form = document.querySelector("#form-cadastro");
   if (form) {
     form.addEventListener("submit", (e) => {
@@ -48,17 +51,47 @@ document.addEventListener("DOMContentLoaded", () => {
         form.reportValidity();
       } else {
         e.preventDefault();
+        // Simulação: aqui poderia enviar via fetch
         alert("Cadastro simulado: formulário válido!");
+        form.reset();
       }
     });
   }
 
-  // Hamburger menu
-  const hamburger = document.querySelector(".hamburger");
-  const navUl = document.querySelector("nav ul");
-  if (hamburger && navUl) {
-    hamburger.addEventListener("click", () => {
-      navUl.classList.toggle("show");
+  /* ---------- Menu hambúrguer (mobile) ---------- */
+  const toggle = document.querySelector("#menu-toggle");
+  const nav = document.querySelector("header nav");
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+      toggle.setAttribute("aria-expanded", nav.classList.contains("active"));
+    });
+    // Fecha o menu clicando fora no mobile
+    document.addEventListener("click", (e) => {
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove("active");
+        toggle.setAttribute("aria-expanded", "false");
+      }
     });
   }
+
+  /* ---------- Dropdown menu (acessível) ---------- */
+  const navItems = document.querySelectorAll(".nav-item > a");
+  navItems.forEach(link => {
+    link.addEventListener("click", (e) => {
+      const parent = link.parentElement;
+      const dropdown = parent.querySelector(".nav-dropdown");
+      if (dropdown) {
+        e.preventDefault();
+        parent.classList.toggle("show");
+      }
+    });
+  });
+
+  // Fecha dropdowns ao clicar fora
+  document.addEventListener("click", (e) => {
+    document.querySelectorAll(".nav-item.show").forEach(item => {
+      if (!item.contains(e.target)) item.classList.remove("show");
+    });
+  });
 });
