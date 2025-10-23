@@ -54,23 +54,30 @@ header {
   background: linear-gradient(90deg, var(--azul), var(--verde));
   color: #fff;
   padding: var(--space-16);
-  text-align: center;
   position: sticky;
   top: 0;
   z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo-header {
   max-width: 140px;
-  margin-bottom: var(--space-8);
+}
+
+nav {
+  position: relative;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: center;
   gap: var(--space-16);
-  flex-wrap: wrap;
+}
+
+nav li {
+  position: relative;
 }
 
 nav a {
@@ -85,6 +92,43 @@ nav a {
 
 nav a:hover {
   background: rgba(255, 255, 255, 0.3);
+}
+
+/* Dropdown */
+nav li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--verde);
+  padding: var(--space-8) 0;
+  border-radius: 8px;
+  min-width: 150px;
+  flex-direction: column;
+}
+
+nav li:hover ul {
+  display: flex;
+}
+
+nav li ul li a {
+  padding: var(--space-8) var(--space-16);
+  background: transparent;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  transition: 0.3s;
 }
 
 /* =========================
@@ -145,9 +189,10 @@ ul {
   transition: 0.3s;
 }
 
-.botao:hover {
-  transform: scale(1.05);
-}
+.botao:hover { transform: scale(1.05); }
+.botao:focus { outline: 2px solid var(--verde); }
+.botao:active { transform: scale(0.98); }
+.botao:disabled { background: #ccc; cursor: not-allowed; }
 
 /* =========================
    7. Formulários
@@ -231,17 +276,26 @@ footer {
 /* =========================
    11. Responsividade
 ========================= */
-@media (max-width: 1200px) {
-  main { grid-template-columns: repeat(12, 1fr); }
-}
-
 @media (max-width: 992px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: var(--space-8);
+    position: absolute;
+    right: 0;
+    top: 60px;
+    background: var(--azul);
+    border-radius: 8px;
+    padding: var(--space-16);
+  }
+
+  nav ul.show { display: flex; }
+  .hamburger { display: flex; }
   main { grid-template-columns: repeat(6, 1fr); }
 }
 
 @media (max-width: 768px) {
   main { grid-template-columns: repeat(4, 1fr); }
-  nav ul { flex-direction: column; gap: var(--space-8); }
 }
 
 @media (max-width: 576px) {
