@@ -1,24 +1,23 @@
-/* ----------------------
-   VARIÁVEIS E DESIGN SYSTEM
------------------------*/
+/* ===============================
+   1. Variáveis do Sistema de Design
+   =============================== */
 :root {
   /* Cores */
   --azul: #0077ff;
   --verde: #00c896;
   --amarelo: #ffcc00;
   --vermelho: #ff4c4c;
-  --cinza-claro: #f4f7fb;
-  --cinza-escuro: #333333;
-  --branco: #ffffff;
-  --preto: #000000;
+  --laranja: #ff7f50;
+  --roxo: #8a2be2;
+  --fundo: #f4f7fb;
+  --texto: #333;
 
   /* Tipografia */
-  --fonte-principal: 'Arial', sans-serif;
-  --fonte-titulo: 2rem;
-  --fonte-subtitulo: 1.5rem;
-  --fonte-texto: 1rem;
-  --fonte-pequena: 0.875rem;
-  --fonte-menor: 0.75rem;
+  --font-xs: 12px;
+  --font-sm: 14px;
+  --font-md: 16px;
+  --font-lg: 20px;
+  --font-xl: 32px;
 
   /* Espaçamento modular */
   --space-1: 8px;
@@ -27,14 +26,11 @@
   --space-4: 32px;
   --space-5: 48px;
   --space-6: 64px;
-
-  /* Grid */
-  --cols: 12;
 }
 
-/* ----------------------
-   RESET E BASE
------------------------*/
+/* ===============================
+   2. Reset e Base
+   =============================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -42,28 +38,18 @@
 }
 
 body {
-  font-family: var(--fonte-principal);
-  font-size: var(--fonte-texto);
-  color: var(--cinza-escuro);
-  background-color: var(--cinza-claro);
+  font-family: Arial, sans-serif;
+  background-color: var(--fundo);
+  color: var(--texto);
   line-height: 1.6;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
-a {
-  text-decoration: none;
-}
-
-/* ----------------------
-   HEADER E NAVEGAÇÃO
------------------------*/
+/* ===============================
+   3. Header e Navegação
+   =============================== */
 header {
   background: linear-gradient(90deg, var(--azul), var(--verde));
-  color: var(--branco);
+  color: #fff;
   text-align: center;
   padding: var(--space-2);
   position: sticky;
@@ -77,133 +63,101 @@ header {
   display: block;
 }
 
-nav ul {
+header nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
   gap: var(--space-2);
   flex-wrap: wrap;
+  margin-top: var(--space-1);
 }
 
-nav a {
-  color: var(--branco);
+header nav a {
+  color: #fff;
+  text-decoration: none;
   padding: 6px 12px;
-  font-weight: 600;
-  border-radius: 6px;
   background: rgba(255,255,255,0.12);
-  transition: 0.3s;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.2s;
 }
 
-nav a:hover {
+header nav a:hover {
   background: rgba(255,255,255,0.28);
 }
 
-/* Menu mobile */
-.menu-btn {
+/* Menu hambúrguer */
+#menu-toggle {
   display: none;
-  font-size: 1.8rem;
+  font-size: var(--font-xl);
   background: none;
   border: none;
-  color: var(--branco);
+  color: #fff;
   cursor: pointer;
   position: absolute;
-  top: 18px;
-  right: 18px;
+  top: var(--space-2);
+  right: var(--space-2);
 }
 
-nav ul.show {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-}
-
-/* ----------------------
-   GRID E CONTAINERS
------------------------*/
-.container {
-  max-width: 980px;
+/* ===============================
+   4. Main / Conteúdo
+   =============================== */
+main {
+  max-width: 1200px;
   margin: var(--space-4) auto;
-  padding: var(--space-2);
-  background-color: var(--branco);
+  padding: var(--space-3);
+  background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--space-3);
-  margin-top: var(--space-3);
-}
-
-/* ----------------------
-   HERO
------------------------*/
+/* Hero */
 .hero {
   text-align: center;
   margin-bottom: var(--space-3);
 }
 
-.hero-img {
+.hero img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
   border-radius: 12px;
-  margin: var(--space-2) 0;
+  margin: var(--space-3) 0;
 }
 
-/* ----------------------
-   CARDS
------------------------*/
-.card {
-  background-color: var(--cinza-claro);
-  padding: var(--space-2);
+/* Títulos */
+h1 { font-size: var(--font-xl); color: var(--azul); margin-bottom: var(--space-2); }
+h2 { font-size: var(--font-lg); color: var(--verde); border-left: 6px solid var(--verde); padding-left: var(--space-2); margin-top: var(--space-3); margin-bottom: var(--space-2); }
+h3 { font-size: var(--font-md); color: var(--azul); margin-bottom: var(--space-2); }
+
+/* ===============================
+   5. Cards de Projetos / Notícias
+   =============================== */
+.cards, .galeria, .blog {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: center;
+}
+
+.card, .projeto, .blog article {
+  background: #fff;
   border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  padding: var(--space-3);
   text-align: center;
-  position: relative;
+  width: 280px;
 }
 
-.card img {
+.card img, .projeto img, .blog img {
+  max-width: 100%;
   border-radius: 8px;
   margin-bottom: var(--space-2);
 }
 
-.badge {
-  display: inline-block;
-  padding: 4px 8px;
-  background-color: var(--verde);
-  color: var(--branco);
-  border-radius: 4px;
-  font-size: var(--fonte-menor);
-  margin-top: var(--space-1);
-}
-
-/* ----------------------
-   BOTÕES
------------------------*/
-.botao {
-  display: inline-block;
-  background: linear-gradient(90deg, var(--amarelo), var(--vermelho));
-  color: var(--branco);
-  padding: 10px 20px;
-  border-radius: 28px;
-  font-weight: 700;
-  transition: transform 0.2s;
-}
-
-.botao:hover {
-  transform: scale(1.03);
-}
-
-.botao:active {
-  transform: scale(0.97);
-}
-
-.botao:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-/* ----------------------
-   FORMULÁRIOS
------------------------*/
+/* ===============================
+   6. Formulários
+   =============================== */
 form {
   display: flex;
   flex-direction: column;
@@ -212,26 +166,16 @@ form {
   margin: 0 auto;
 }
 
-fieldset {
-  border: 1px solid #ccc;
-  padding: var(--space-2);
-  border-radius: 8px;
-}
-
-legend {
-  font-weight: bold;
-}
-
 label {
   font-weight: 700;
   color: var(--azul);
 }
 
-input, select, textarea {
-  padding: 10px;
+input, select, textarea, button {
+  padding: var(--space-2);
   border-radius: 8px;
   border: 1px solid #ccc;
-  font-size: var(--fonte-texto);
+  font-size: var(--font-md);
 }
 
 input:focus, select:focus, textarea:focus {
@@ -240,37 +184,48 @@ input:focus, select:focus, textarea:focus {
   box-shadow: 0 0 6px var(--verde);
 }
 
-/* ----------------------
-   FOOTER
------------------------*/
+/* ===============================
+   7. Botões
+   =============================== */
+.botao {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--amarelo), var(--vermelho));
+  color: #fff;
+  padding: var(--space-2) var(--space-3);
+  border-radius: 28px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.2s;
+}
+
+.botao:hover { transform: scale(1.03); }
+.botao:active { transform: scale(0.97); }
+.botao:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ===============================
+   8. Footer
+   =============================== */
 footer {
   text-align: center;
-  padding: var(--space-2);
+  padding: var(--space-3);
   background: linear-gradient(90deg, var(--verde), var(--azul));
-  color: var(--branco);
-  margin-top: var(--space-3);
+  color: #fff;
+  margin-top: var(--space-4);
   border-radius: 0 0 12px 12px;
 }
 
-/* ----------------------
-   RESPONSIVO
------------------------*/
-@media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    gap: var(--space-2);
-  }
-  .menu-btn {
-    display: block;
-  }
+/* ===============================
+   9. Responsividade
+   =============================== */
+@media (max-width: 1200px) { /* desktop grande */ }
+
+@media (max-width: 992px) { /* desktop médio / tablet horizontal */ }
+
+@media (max-width: 768px) { 
+  header nav ul { flex-direction: column; }
+  .cards, .galeria, .blog { flex-direction: column; align-items: center; }
 }
 
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.5rem;
-  }
-  .hero p {
-    font-size: 0.9rem;
-  }
-}
+@media (max-width: 576px) { /* mobile grande */ }
+
+@media (max-width: 360px) { /* mobile pequeno */ }
