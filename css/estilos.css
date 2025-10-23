@@ -1,162 +1,209 @@
-/* css/estilos.css
-   Estilos completos (usa variáveis de variables.css)
-*/
-@import url("variables.css");
+/* ----------------------
+   VARIÁVEIS E DESIGN SYSTEM
+-----------------------*/
+:root {
+  /* Cores */
+  --azul: #0077ff;
+  --verde: #00c896;
+  --amarelo: #ffcc00;
+  --vermelho: #ff4c4c;
+  --cinza-claro: #f4f7fb;
+  --cinza-escuro: #333333;
+  --branco: #ffffff;
+  --preto: #000000;
 
-/* ---------- Reset e base ---------- */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; }
+  /* Tipografia */
+  --fonte-principal: 'Arial', sans-serif;
+  --fonte-titulo: 2rem;
+  --fonte-subtitulo: 1.5rem;
+  --fonte-texto: 1rem;
+  --fonte-pequena: 0.875rem;
+  --fonte-menor: 0.75rem;
+
+  /* Espaçamento modular */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+
+  /* Grid */
+  --cols: 12;
+}
+
+/* ----------------------
+   RESET E BASE
+-----------------------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--fundo);
-  color: var(--texto);
+  font-family: var(--fonte-principal);
+  font-size: var(--fonte-texto);
+  color: var(--cinza-escuro);
+  background-color: var(--cinza-claro);
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
 }
 
-/* ---------- Container (grid base) ---------- */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--space-3);
+img {
+  max-width: 100%;
+  display: block;
 }
 
-/* ---------- Header e Navegação ---------- */
+a {
+  text-decoration: none;
+}
+
+/* ----------------------
+   HEADER E NAVEGAÇÃO
+-----------------------*/
 header {
   background: linear-gradient(90deg, var(--azul), var(--verde));
   color: var(--branco);
+  text-align: center;
+  padding: var(--space-2);
   position: sticky;
   top: 0;
   z-index: 100;
-  padding: calc(var(--space-2) / 1.2) var(--space-2);
 }
 
-.header-inner {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
+.logo-header {
+  max-width: 140px;
+  margin: 0 auto var(--space-1) auto;
+  display: block;
 }
 
-/* Logo */
-.logo-header { max-width: 140px; display: block; }
-
-/* Nav */
-header nav {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-
-header nav ul {
+nav ul {
   list-style: none;
   display: flex;
+  justify-content: center;
   gap: var(--space-2);
-  align-items: center;
+  flex-wrap: wrap;
 }
 
-header nav a {
+nav a {
   color: var(--branco);
-  text-decoration: none;
   padding: 6px 12px;
-  background: rgba(255,255,255,0.08);
-  border-radius: 6px;
   font-weight: 600;
-  transition: background 0.18s, transform 0.12s;
-}
-header nav a:hover, header nav a:focus {
-  background: rgba(255,255,255,0.20);
-  transform: translateY(-1px);
-}
-
-/* Dropdown (submenu) */
-.nav-item { position: relative; }
-.nav-dropdown {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  min-width: 180px;
-  background: var(--branco);
-  color: var(--texto);
-  border-radius: 8px;
-  box-shadow: var(--shadow-sm);
-  display: none;
-  padding: var(--space-2);
-}
-.nav-dropdown a {
-  display: block;
-  color: var(--texto);
-  padding: 8px 10px;
   border-radius: 6px;
+  background: rgba(255,255,255,0.12);
+  transition: 0.3s;
 }
-.nav-dropdown a:hover { background: rgba(0,0,0,0.04); }
 
-/* Active class shows dropdown */
-.nav-item.show .nav-dropdown { display: block; }
+nav a:hover {
+  background: rgba(255,255,255,0.28);
+}
 
-/* Botão menu hamburger (mobile) */
-#menu-toggle {
+/* Menu mobile */
+.menu-btn {
   display: none;
+  font-size: 1.8rem;
   background: none;
   border: none;
   color: var(--branco);
-  font-size: var(--font-xl);
   cursor: pointer;
+  position: absolute;
+  top: 18px;
+  right: 18px;
 }
 
-/* ---------- Main area ---------- */
-main {
+nav ul.show {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* ----------------------
+   GRID E CONTAINERS
+-----------------------*/
+.container {
+  max-width: 980px;
   margin: var(--space-4) auto;
+  padding: var(--space-2);
+  background-color: var(--branco);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
-/* Hero */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+/* ----------------------
+   HERO
+-----------------------*/
 .hero {
   text-align: center;
   margin-bottom: var(--space-3);
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-  padding: var(--space-3);
-  border-radius: var(--radius);
-}
-.hero img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin: var(--space-3) 0;
 }
 
-/* Headings */
-h1 { font-size: var(--font-xl); color: var(--azul); margin-bottom: var(--space-2); }
-h2 { font-size: var(--font-lg); color: var(--verde); margin-bottom: var(--space-2); padding-left: var(--space-2); border-left: 6px solid var(--verde); }
-h3 { font-size: var(--font-md); color: var(--azul); margin-bottom: var(--space-2); }
-
-/* ---------- Cards / Galeria / Blog ---------- */
-.cards, .galeria, .blog {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
-  justify-content: center;
-}
-
-.card, .projeto, .blog article {
-  background: var(--branco);
+.hero-img {
   border-radius: 12px;
-  box-shadow: var(--shadow-sm);
-  padding: var(--space-3);
-  text-align: left;
-  width: 280px;
+  margin: var(--space-2) 0;
 }
-.card img, .projeto img, .blog img {
-  width: 100%;
+
+/* ----------------------
+   CARDS
+-----------------------*/
+.card {
+  background-color: var(--cinza-claro);
+  padding: var(--space-2);
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+}
+
+.card img {
   border-radius: 8px;
-  display: block;
   margin-bottom: var(--space-2);
 }
 
-/* ---------- Forms ---------- */
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: var(--verde);
+  color: var(--branco);
+  border-radius: 4px;
+  font-size: var(--fonte-menor);
+  margin-top: var(--space-1);
+}
+
+/* ----------------------
+   BOTÕES
+-----------------------*/
+.botao {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--amarelo), var(--vermelho));
+  color: var(--branco);
+  padding: 10px 20px;
+  border-radius: 28px;
+  font-weight: 700;
+  transition: transform 0.2s;
+}
+
+.botao:hover {
+  transform: scale(1.03);
+}
+
+.botao:active {
+  transform: scale(0.97);
+}
+
+.botao:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ----------------------
+   FORMULÁRIOS
+-----------------------*/
 form {
   display: flex;
   flex-direction: column;
@@ -164,107 +211,66 @@ form {
   max-width: 520px;
   margin: 0 auto;
 }
-fieldset { border: none; padding: 0; }
-label { font-weight: 700; color: var(--azul); display: block; margin-bottom: 6px; }
-input, select, textarea {
+
+fieldset {
+  border: 1px solid #ccc;
   padding: var(--space-2);
   border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: var(--font-md);
-  width: 100%;
 }
+
+legend {
+  font-weight: bold;
+}
+
+label {
+  font-weight: 700;
+  color: var(--azul);
+}
+
+input, select, textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: var(--fonte-texto);
+}
+
 input:focus, select:focus, textarea:focus {
   outline: none;
   border-color: var(--verde);
-  box-shadow: 0 0 8px rgba(0,200,150,0.12);
+  box-shadow: 0 0 6px var(--verde);
 }
 
-/* Validation visual (classe a ser aplicada via JS se quiser) */
-.input-error { border-color: var(--vermelho) !important; box-shadow: 0 0 6px rgba(255,76,76,0.12); }
-
-/* ---------- Botões ---------- */
-.botao {
-  display: inline-block;
-  background: linear-gradient(90deg, var(--amarelo), var(--vermelho));
-  color: var(--branco);
-  padding: var(--space-2) var(--space-3);
-  border-radius: 28px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: transform 0.16s, box-shadow 0.16s;
-  border: none;
-  cursor: pointer;
-}
-.botao:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
-.botao:active { transform: translateY(-1px); }
-
-/* Disabled */
-.botao[disabled], button[disabled] { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
-
-/* ---------- Footer ---------- */
+/* ----------------------
+   FOOTER
+-----------------------*/
 footer {
   text-align: center;
-  padding: var(--space-3);
+  padding: var(--space-2);
   background: linear-gradient(90deg, var(--verde), var(--azul));
   color: var(--branco);
-  margin-top: var(--space-4);
+  margin-top: var(--space-3);
   border-radius: 0 0 12px 12px;
 }
 
-/* ---------- Grid utilities (12 col grid) ---------- */
-/* Essas utilidades permitem usar .row e .col-X no HTML quando quiser */
-.row {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: var(--space-3);
-  align-items: start;
-}
-
-.col { box-sizing: border-box; }
-.col-12 { grid-column: span 12; }
-.col-11 { grid-column: span 11; }
-.col-10 { grid-column: span 10; }
-.col-9  { grid-column: span 9; }
-.col-8  { grid-column: span 8; }
-.col-7  { grid-column: span 7; }
-.col-6  { grid-column: span 6; }
-.col-5  { grid-column: span 5; }
-.col-4  { grid-column: span 4; }
-.col-3  { grid-column: span 3; }
-.col-2  { grid-column: span 2; }
-.col-1  { grid-column: span 1; }
-
-/* ---------- Responsividade (5 breakpoints) ---------- */
-@media (max-width: 1200px) {
-  .container { padding: var(--space-3); }
-}
-@media (max-width: 992px) {
-  .row { gap: var(--space-3); }
-}
+/* ----------------------
+   RESPONSIVO
+-----------------------*/
 @media (max-width: 768px) {
-  /* mobile / tablet: simplifica nav e grid */
-  #menu-toggle { display: block; }
-  header nav { display: none; position: absolute; top: 100%; right: var(--space-2); background: var(--branco); border-radius: 8px; box-shadow: var(--shadow-sm); padding: var(--space-2); }
-  header nav.active { display: flex; flex-direction: column; gap: var(--space-2); min-width: 200px; }
-  header nav a { color: var(--texto); background: transparent; padding: 8px 10px; }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .menu-btn {
+    display: block;
+  }
+}
 
-  /* grid reduzido para 6 colunas */
-  .row { grid-template-columns: repeat(6, 1fr); }
-  /* adaptações: colunas ocupam meia-largura */
-  .col-12, .col-11, .col-10, .col-9, .col-8, .col-7,
-  .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 {
-    grid-column: span 6;
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5rem;
   }
-}
-@media (max-width: 576px) {
-  /* mobile pequeno: empilha tudo */
-  .row { grid-template-columns: 1fr; gap: var(--space-2); }
-  .col-12, .col-11, .col-10, .col-9, .col-8, .col-7,
-  .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 {
-    grid-column: span 1;
+  .hero p {
+    font-size: 0.9rem;
   }
-}
-@media (max-width: 360px) {
-  h1 { font-size: calc(var(--font-xl) - 6px); }
-  .container { padding: var(--space-2); }
 }
