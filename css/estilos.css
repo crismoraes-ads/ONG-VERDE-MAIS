@@ -1,138 +1,139 @@
-/* ===============================
-   1. Variáveis do Sistema de Design
-   =============================== */
-:root {
-  /* Cores */
-  --azul: #0077ff;
-  --verde: #00c896;
-  --amarelo: #ffcc00;
-  --vermelho: #ff4c4c;
-  --laranja: #ff7f50;
-  --roxo: #8a2be2;
-  --fundo: #f4f7fb;
-  --texto: #333;
+/* css/estilos.css
+   Estilos completos (usa variáveis de variables.css)
+*/
+@import url("variables.css");
 
-  /* Tipografia */
-  --font-xs: 12px;
-  --font-sm: 14px;
-  --font-md: 16px;
-  --font-lg: 20px;
-  --font-xl: 32px;
-
-  /* Espaçamento modular */
-  --space-1: 8px;
-  --space-2: 16px;
-  --space-3: 24px;
-  --space-4: 32px;
-  --space-5: 48px;
-  --space-6: 64px;
-}
-
-/* ===============================
-   2. Reset e Base
-   =============================== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* ---------- Reset e base ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
 body {
-  font-family: Arial, sans-serif;
-  background-color: var(--fundo);
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--fundo);
   color: var(--texto);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ===============================
-   3. Header e Navegação
-   =============================== */
+/* ---------- Container (grid base) ---------- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-3);
+}
+
+/* ---------- Header e Navegação ---------- */
 header {
   background: linear-gradient(90deg, var(--azul), var(--verde));
-  color: #fff;
-  text-align: center;
-  padding: var(--space-2);
+  color: var(--branco);
   position: sticky;
   top: 0;
   z-index: 100;
+  padding: calc(var(--space-2) / 1.2) var(--space-2);
 }
 
-.logo-header {
-  max-width: 140px;
-  margin: 0 auto var(--space-1) auto;
-  display: block;
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.logo-header { max-width: 140px; display: block; }
+
+/* Nav */
+header nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
 }
 
 header nav ul {
   list-style: none;
   display: flex;
-  justify-content: center;
   gap: var(--space-2);
-  flex-wrap: wrap;
-  margin-top: var(--space-1);
+  align-items: center;
 }
 
 header nav a {
-  color: #fff;
+  color: var(--branco);
   text-decoration: none;
   padding: 6px 12px;
-  background: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.08);
   border-radius: 6px;
   font-weight: 600;
-  transition: background 0.2s;
+  transition: background 0.18s, transform 0.12s;
+}
+header nav a:hover, header nav a:focus {
+  background: rgba(255,255,255,0.20);
+  transform: translateY(-1px);
 }
 
-header nav a:hover {
-  background: rgba(255,255,255,0.28);
+/* Dropdown (submenu) */
+.nav-item { position: relative; }
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 180px;
+  background: var(--branco);
+  color: var(--texto);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  display: none;
+  padding: var(--space-2);
 }
+.nav-dropdown a {
+  display: block;
+  color: var(--texto);
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+.nav-dropdown a:hover { background: rgba(0,0,0,0.04); }
 
-/* Menu hambúrguer */
+/* Active class shows dropdown */
+.nav-item.show .nav-dropdown { display: block; }
+
+/* Botão menu hamburger (mobile) */
 #menu-toggle {
   display: none;
-  font-size: var(--font-xl);
   background: none;
   border: none;
-  color: #fff;
+  color: var(--branco);
+  font-size: var(--font-xl);
   cursor: pointer;
-  position: absolute;
-  top: var(--space-2);
-  right: var(--space-2);
 }
 
-/* ===============================
-   4. Main / Conteúdo
-   =============================== */
+/* ---------- Main area ---------- */
 main {
-  max-width: 1200px;
   margin: var(--space-4) auto;
-  padding: var(--space-3);
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
 /* Hero */
 .hero {
   text-align: center;
   margin-bottom: var(--space-3);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  padding: var(--space-3);
+  border-radius: var(--radius);
 }
-
 .hero img {
   width: 100%;
   max-height: 400px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 10px;
   margin: var(--space-3) 0;
 }
 
-/* Títulos */
+/* Headings */
 h1 { font-size: var(--font-xl); color: var(--azul); margin-bottom: var(--space-2); }
-h2 { font-size: var(--font-lg); color: var(--verde); border-left: 6px solid var(--verde); padding-left: var(--space-2); margin-top: var(--space-3); margin-bottom: var(--space-2); }
+h2 { font-size: var(--font-lg); color: var(--verde); margin-bottom: var(--space-2); padding-left: var(--space-2); border-left: 6px solid var(--verde); }
 h3 { font-size: var(--font-md); color: var(--azul); margin-bottom: var(--space-2); }
 
-/* ===============================
-   5. Cards de Projetos / Notícias
-   =============================== */
+/* ---------- Cards / Galeria / Blog ---------- */
 .cards, .galeria, .blog {
   display: flex;
   flex-wrap: wrap;
@@ -141,23 +142,21 @@ h3 { font-size: var(--font-md); color: var(--azul); margin-bottom: var(--space-2
 }
 
 .card, .projeto, .blog article {
-  background: #fff;
+  background: var(--branco);
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  box-shadow: var(--shadow-sm);
   padding: var(--space-3);
-  text-align: center;
+  text-align: left;
   width: 280px;
 }
-
 .card img, .projeto img, .blog img {
-  max-width: 100%;
+  width: 100%;
   border-radius: 8px;
+  display: block;
   margin-bottom: var(--space-2);
 }
 
-/* ===============================
-   6. Formulários
-   =============================== */
+/* ---------- Forms ---------- */
 form {
   display: flex;
   flex-direction: column;
@@ -165,67 +164,107 @@ form {
   max-width: 520px;
   margin: 0 auto;
 }
-
-label {
-  font-weight: 700;
-  color: var(--azul);
-}
-
-input, select, textarea, button {
+fieldset { border: none; padding: 0; }
+label { font-weight: 700; color: var(--azul); display: block; margin-bottom: 6px; }
+input, select, textarea {
   padding: var(--space-2);
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: var(--font-md);
+  width: 100%;
 }
-
 input:focus, select:focus, textarea:focus {
   outline: none;
   border-color: var(--verde);
-  box-shadow: 0 0 6px var(--verde);
+  box-shadow: 0 0 8px rgba(0,200,150,0.12);
 }
 
-/* ===============================
-   7. Botões
-   =============================== */
+/* Validation visual (classe a ser aplicada via JS se quiser) */
+.input-error { border-color: var(--vermelho) !important; box-shadow: 0 0 6px rgba(255,76,76,0.12); }
+
+/* ---------- Botões ---------- */
 .botao {
   display: inline-block;
   background: linear-gradient(90deg, var(--amarelo), var(--vermelho));
-  color: #fff;
+  color: var(--branco);
   padding: var(--space-2) var(--space-3);
   border-radius: 28px;
   text-decoration: none;
   font-weight: 700;
-  transition: transform 0.2s;
+  transition: transform 0.16s, box-shadow 0.16s;
+  border: none;
+  cursor: pointer;
 }
+.botao:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+.botao:active { transform: translateY(-1px); }
 
-.botao:hover { transform: scale(1.03); }
-.botao:active { transform: scale(0.97); }
-.botao:disabled { opacity: 0.6; cursor: not-allowed; }
+/* Disabled */
+.botao[disabled], button[disabled] { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
 
-/* ===============================
-   8. Footer
-   =============================== */
+/* ---------- Footer ---------- */
 footer {
   text-align: center;
   padding: var(--space-3);
   background: linear-gradient(90deg, var(--verde), var(--azul));
-  color: #fff;
+  color: var(--branco);
   margin-top: var(--space-4);
   border-radius: 0 0 12px 12px;
 }
 
-/* ===============================
-   9. Responsividade
-   =============================== */
-@media (max-width: 1200px) { /* desktop grande */ }
-
-@media (max-width: 992px) { /* desktop médio / tablet horizontal */ }
-
-@media (max-width: 768px) { 
-  header nav ul { flex-direction: column; }
-  .cards, .galeria, .blog { flex-direction: column; align-items: center; }
+/* ---------- Grid utilities (12 col grid) ---------- */
+/* Essas utilidades permitem usar .row e .col-X no HTML quando quiser */
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-3);
+  align-items: start;
 }
 
-@media (max-width: 576px) { /* mobile grande */ }
+.col { box-sizing: border-box; }
+.col-12 { grid-column: span 12; }
+.col-11 { grid-column: span 11; }
+.col-10 { grid-column: span 10; }
+.col-9  { grid-column: span 9; }
+.col-8  { grid-column: span 8; }
+.col-7  { grid-column: span 7; }
+.col-6  { grid-column: span 6; }
+.col-5  { grid-column: span 5; }
+.col-4  { grid-column: span 4; }
+.col-3  { grid-column: span 3; }
+.col-2  { grid-column: span 2; }
+.col-1  { grid-column: span 1; }
 
-@media (max-width: 360px) { /* mobile pequeno */ }
+/* ---------- Responsividade (5 breakpoints) ---------- */
+@media (max-width: 1200px) {
+  .container { padding: var(--space-3); }
+}
+@media (max-width: 992px) {
+  .row { gap: var(--space-3); }
+}
+@media (max-width: 768px) {
+  /* mobile / tablet: simplifica nav e grid */
+  #menu-toggle { display: block; }
+  header nav { display: none; position: absolute; top: 100%; right: var(--space-2); background: var(--branco); border-radius: 8px; box-shadow: var(--shadow-sm); padding: var(--space-2); }
+  header nav.active { display: flex; flex-direction: column; gap: var(--space-2); min-width: 200px; }
+  header nav a { color: var(--texto); background: transparent; padding: 8px 10px; }
+
+  /* grid reduzido para 6 colunas */
+  .row { grid-template-columns: repeat(6, 1fr); }
+  /* adaptações: colunas ocupam meia-largura */
+  .col-12, .col-11, .col-10, .col-9, .col-8, .col-7,
+  .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 {
+    grid-column: span 6;
+  }
+}
+@media (max-width: 576px) {
+  /* mobile pequeno: empilha tudo */
+  .row { grid-template-columns: 1fr; gap: var(--space-2); }
+  .col-12, .col-11, .col-10, .col-9, .col-8, .col-7,
+  .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 {
+    grid-column: span 1;
+  }
+}
+@media (max-width: 360px) {
+  h1 { font-size: calc(var(--font-xl) - 6px); }
+  .container { padding: var(--space-2); }
+}
