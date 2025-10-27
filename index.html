@@ -1,61 +1,58 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ONG MAIS VERDE - Início</title>
-  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="stylesheet" href="css/estilos.css">
+  <script defer src="js/script.js"></script>
 </head>
 <body>
+
   <header>
-    <img src="img/logo.png" alt="Logo ONG MAIS VERDE" class="logo-header" />
-    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
-    <nav class="menu">
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
-    </nav>
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.png" alt="Logo ONG MAIS VERDE" class="logo-header">
+        <span class="brand-text">ONG MAIS VERDE</span>
+      </a>
+
+      <button id="menu-toggle" class="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav id="main-nav">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li class="nav-item has-dropdown">
+            <a href="projetos.html">Projetos ▾</a>
+            <ul class="nav-dropdown">
+              <li><a href="projetos.html#educacao">Educação</a></li>
+              <li><a href="projetos.html#meio-ambiente">Meio Ambiente</a></li>
+              <li><a href="projetos.html#saude">Saúde</a></li>
+            </ul>
+          </li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
     <section class="hero">
       <h1>Bem-vindo à ONG MAIS VERDE</h1>
-      <p>Transformamos vidas com sustentabilidade e solidariedade.</p>
-      <img src="img/hero.jpg" alt="Voluntários plantando árvores" class="hero-img" />
-      <a href="cadastro.html" class="botao">Doe Agora</a>
-    </section>
-
-    <section>
-      <h2>Missão</h2>
-      <p>Promover inclusão social e sustentabilidade.</p>
-    </section>
-
-    <section>
-      <h2>Visão</h2>
-      <p>Ser referência em transformação social e ambiental.</p>
-    </section>
-
-    <section>
-      <h2>Valores</h2>
-      <ul>
-        <li>Transparência</li>
-        <li>Solidariedade</li>
-        <li>Respeito</li>
-        <li>Comprometimento</li>
-      </ul>
+      <p>Transformando comunidades com sustentabilidade e amor ao meio ambiente 🌿</p>
+      <img src="img/hero.jpg" alt="Voluntários plantando árvores" class="hero-img">
+      <br><br>
+      <a href="projetos.html" class="botao">Conheça nossos projetos</a>
     </section>
   </main>
 
   <footer>
-    <p>Contato: contato@ongmaisverde.org | (11) 99999-9999</p>
-    <p>Siga-nos:
-      <a href="#">Facebook</a> | <a href="#">Instagram</a>
-    </p>
+    <p>© 2025 ONG MAIS VERDE - Todos os direitos reservados.</p>
   </footer>
 
-  <script src="js/script.js"></script>
 </body>
 </html>
