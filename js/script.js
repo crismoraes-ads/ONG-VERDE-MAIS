@@ -1,7 +1,20 @@
+/* js/script.js */
 document.addEventListener("DOMContentLoaded", () => {
-  function setMask(input, maskFn) {
-    input.addEventListener("input", () => {
-      input.value = maskFn(input.value);
+  // Hamburger toggle
+  const btnHamb = document.querySelector('.hamburger');
+  const navUl = document.querySelector('.main-nav ul');
+  if (btnHamb && navUl) {
+    btnHamb.addEventListener('click', () => {
+      navUl.classList.toggle('is-open');
+      btnHamb.setAttribute('aria-expanded', navUl.classList.contains('is-open'));
+    });
+  }
+
+  // Masks helpers
+  function setMask(input, fn) {
+    if (!input) return;
+    input.addEventListener('input', () => {
+      input.value = fn(input.value);
     });
   }
 
@@ -31,24 +44,27 @@ document.addEventListener("DOMContentLoaded", () => {
     return v;
   }
 
-  const cpf = document.querySelector("#cpf");
-  const tel = document.querySelector("#telefone");
-  const cep = document.querySelector("#cep");
+  const cpf = document.querySelector('#cpf');
+  const tel = document.querySelector('#telefone');
+  const cep = document.querySelector('#cep');
 
-  if (cpf) setMask(cpf, maskCPF);
-  if (tel) setMask(tel, maskTel);
-  if (cep) setMask(cep, maskCEP);
+  setMask(cpf, maskCPF);
+  setMask(tel, maskTel);
+  setMask(cep, maskCEP);
 
-  const form = document.querySelector("#form-cadastro");
+  // Form validation demo
+  const form = document.querySelector('#form-cadastro');
   if (form) {
-    form.addEventListener("submit", (e) => {
+    form.addEventListener('submit', (e) => {
       if (!form.checkValidity()) {
         e.preventDefault();
         form.reportValidity();
-      } else {
-        e.preventDefault();
-        alert("Cadastro simulado: formulário válido!");
+        return;
       }
+      e.preventDefault();
+      // Simular envio
+      alert('Cadastro simulado: formulário válido. Obrigada!');
+      form.reset();
     });
   }
 });
