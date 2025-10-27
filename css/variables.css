@@ -1,33 +1,26 @@
-:root{
-  /* Paleta de cores */
-  --verde: #00b37e;
+/* Paleta de cores */
+:root {
+  --verde: #00c896;
   --azul: #0077ff;
-  --laranja: #ff8c42;
+  --laranja: #ff9900;
   --vermelho: #ff4c4c;
-  --roxo: #8c4dff;
-  --preto: #0f1724;
+  --roxo: #8000ff;
+  --preto: #000000;
   --branco: #ffffff;
-  --marrom: #8b4513;
+  --marrom: #8B4513;
 
   /* Tipografia */
-  --fs-xxl: 2.25rem;
-  --fs-xl: 1.75rem;
-  --fs-lg: 1.25rem;
-  --fs-md: 1rem;
-  --fs-sm: 0.875rem;
+  --font-xs: 12px;
+  --font-sm: 14px;
+  --font-md: 16px;
+  --font-lg: 24px;
+  --font-xl: 32px;
 
   /* Espaçamento modular */
-  --s-8: 8px;
-  --s-16: 16px;
-  --s-24: 24px;
-  --s-32: 32px;
-  --s-48: 48px;
-  --s-64: 64px;
-
-  /* Layout e sombras */
-  --container-w: 1100px;
-  --radius: 12px;
-  --shadow-sm: 0 6px 18px rgba(0,0,0,0.08);
-  --shadow-md: 0 12px 30px rgba(0,0,0,0.12);
-  --ease: cubic-bezier(.2,.9,.2,1);
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
 }
