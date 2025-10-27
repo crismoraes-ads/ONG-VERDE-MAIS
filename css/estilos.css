@@ -1,102 +1,151 @@
-/* css/estilos.css */
-/* Estilos principais — layout, grid, componentes, badges, responsividade */
+@import url('variaveis.css');
 
-/* reset */
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
+/* Reset básico */
+*{margin:0; padding:0; box-sizing:border-box;}
 body{
-  font-family: Arial, Helvetica, sans-serif;
-  background:var(--neutra-fundo);
-  color:var(--neutra-texto);
-  -webkit-font-smoothing:antialiased;
-  line-height:1.45;
+  font-family: Arial, sans-serif;
+  background: var(--branco);
+  color: var(--preto);
+  line-height: 1.5;
 }
 
-/* container */
-.container{max-width:var(--container-max);margin:0 auto;padding:0 var(--s-16)}
-
-/* header */
-.header{
-  background: linear-gradient(90deg,var(--azul-primario),var(--verde-primario));
-  color:#fff; position:sticky; top:0; z-index:120;
-  box-shadow:var(--shadow-sm);
+/* Cabeçalho */
+header{
+  background: linear-gradient(90deg, var(--verde), var(--azul));
+  color: var(--branco);
+  text-align: center;
+  padding: var(--s-16);
+  position: sticky;
+  top:0;
+  z-index: 100;
 }
-.header .container{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px}
-.logo .brand{font-weight:800;color:#fff;font-size:1.05rem}
-.hamburger{display:none;background:none;border:0;color:#fff;font-size:1.4rem}
-
-/* nav */
-.main-nav ul{list-style:none;display:flex;gap:12px;align-items:center;margin:0;padding:0}
-.main-nav a{color:#fff;text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
-.main-nav a:hover{background:rgba(255,255,255,0.12)}
-.main-nav ul.is-open{display:flex;flex-direction:column;gap:8px}
-
-/* hero */
-.hero{margin:var(--s-24) 0}
-.hero-card{display:flex;gap:var(--s-24);align-items:center;padding:var(--s-24);border-radius:var(--radius);box-shadow:var(--shadow-md);background:linear-gradient(180deg,rgba(0,0,0,0.04),rgba(255,255,255,0))}
-.placeholder{flex:1;min-height:220px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;background:linear-gradient(120deg,var(--azul-primario),var(--verde-primario));text-transform:uppercase;padding:12px}
-.hero-content{flex:1;padding-right:var(--s-12)}
-.hero h1{font-size:var(--fs-xxl);color:var(--neutra-texto);margin-bottom:8px}
-.hero p{color:rgba(31,41,55,0.9);margin-bottom:var(--s-12)}
-
-/* buttons */
-.btn{display:inline-block;padding:10px 18px;border-radius:999px;color:#fff;text-decoration:none;font-weight:800;transition:transform .18s var(--ease),box-shadow .18s var(--ease)}
-.btn.primary{background:linear-gradient(90deg,var(--amarelo-primario),var(--vermelho-primario))}
-.btn.secondary{background:linear-gradient(90deg,var(--azul-primario),var(--verde-primario))}
-
-/* info-sections */
-.info-sections{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-16);margin-top:var(--s-20)}
-.info-card{background:var(--neutra-texto);color:#fff;padding:var(--s-16);border-radius:10px;box-shadow:var(--shadow-sm)}
-.info-card h3{color:var(--neutra-fundo);margin-bottom:8px}
-
-/* projects grid (12 col) */
-.projects-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s-16);margin-top:var(--s-24)}
-.project{background:var(--neutra-fundo);border-radius:10px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;overflow:hidden}
-.project .thumb{height:160px;background:linear-gradient(120deg,#d4fc79,#96e6a1);display:flex;align-items:center;justify-content:center;font-weight:800;text-transform:uppercase}
-.project .body{padding:var(--s-16)}
-.project h4{color:var(--azul-primario);margin-bottom:8px}
-
-/* blog-list */
-.blog-list{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s-16);margin-top:var(--s-24)}
-.blog-item{background:var(--neutra-fundo);padding:var(--s-16);border-radius:10px;box-shadow:var(--shadow-sm)}
-.blog-item .thumb{height:120px;border-radius:8px;background:linear-gradient(120deg,#a1c4fd,#c2e9fb);display:flex;align-items:center;justify-content:center;font-weight:700}
-
-/* form */
-form{max-width:720px;margin:var(--s-24) auto;display:flex;flex-direction:column;gap:var(--s-12)}
-fieldset{border:1px solid rgba(0,0,0,0.06);padding:var(--s-12);border-radius:8px}
-label{display:block;margin-bottom:6px;font-weight:700;color:var(--azul-primario)}
-input[type="text"], input[type="email"], input[type="tel"], input[type="date"]{width:100%;padding:10px;border-radius:8px;border:1px solid #d1d5db;font-size:var(--fs-md)}
-input:focus{outline:none;box-shadow:0 6px 18px rgba(0,200,150,0.08);border-color:var(--verde-primario)}
-
-/* badges - mostrar 8 cores */
-.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.badge{padding:8px 12px;border-radius:10px;color:#fff;font-weight:700}
-.badge.azul{background:var(--azul-primario)}.badge.verde{background:var(--verde-primario)}
-.badge.amarelo{background:var(--amarelo-primario);color:#222}.badge.vermelho{background:var(--vermelho-primario)}
-.badge.roxo{background:var(--roxo-secundario)}.badge.laranja{background:var(--laranja-secundario)}
-.badge.neutra{background:var(--neutra-fundo);color:var(--neutra-texto);border:1px solid rgba(0,0,0,0.06)}
-.badge.destaque{background:var(--neutra-texto)}
-
-/* footer */
-.footer{margin-top:var(--s-32);padding:var(--s-16);text-align:center;background:linear-gradient(90deg,var(--verde-primario),var(--azul-primario));color:#fff;border-radius:0 0 var(--radius) var(--radius)}
-
-/* utilities */
-.center{display:flex;align-items:center;justify-content:center}
-.mt-8{margin-top:8px}
-
-/* responsive */
-@media (max-width: 992px){
-  .info-sections{grid-template-columns:repeat(2,1fr)}
-  .blog-list{grid-template-columns:1fr}
-  .projects-grid{grid-template-columns:repeat(6,1fr)}
+.logo-header{
+  max-width: 150px;
+  margin-bottom: var(--s-8);
 }
-@media (max-width: 680px){
-  .header .container{flex-direction:column}
-  .main-nav ul{display:none}
-  .hamburger{display:inline-block}
-  .hero-card{flex-direction:column}
-  .hero .placeholder{min-height:180px}
-  .info-sections{grid-template-columns:1fr}
-  .projects-grid{grid-template-columns:repeat(12,1fr)}
-  .project{grid-column:span 12}
+nav ul{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: var(--s-16);
+  flex-wrap: wrap;
+}
+nav a{
+  color: var(--branco);
+  text-decoration: none;
+  padding: var(--s-8) var(--s-16);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.15);
+  font-weight: 600;
+  transition: all 0.3s var(--ease);
+}
+nav a:hover{
+  background: rgba(255,255,255,0.3);
+}
+
+/* Hero */
+.hero{
+  text-align:center;
+  padding: var(--s-32) var(--s-16);
+  background: var(--laranja);
+  color: var(--branco);
+  border-radius: var(--radius);
+  margin: var(--s-16);
+}
+.hero-img{
+  max-width: 100%;
+  border-radius: var(--radius);
+  margin-top: var(--s-16);
+}
+
+/* Botões */
+.botao{
+  display:inline-block;
+  background: linear-gradient(90deg,var(--azul),var(--verde));
+  color:#fff;
+  padding: var(--s-8) var(--s-16);
+  border-radius: var(--radius);
+  font-weight:700;
+  text-decoration:none;
+  transition: 0.3s var(--ease);
+}
+.botao:hover{
+  transform: scale(1.05);
+}
+
+/* Cards de projetos */
+.projetos{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: var(--s-24);
+  padding: var(--s-32) var(--s-16);
+}
+.card{
+  background: var(--branco);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all 0.3s var(--ease);
+}
+.card img{
+  width: 100%;
+  display:block;
+}
+.card-content{
+  padding: var(--s-16);
+}
+.card:hover{
+  box-shadow: var(--shadow-md);
+}
+
+/* Blog */
+.blog{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: var(--s-24);
+  padding: var(--s-32) var(--s-16);
+}
+.blog article{
+  background: var(--branco);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.blog img{
+  width: 100%;
+  display:block;
+}
+
+/* Formulário */
+form{
+  max-width: 500px;
+  margin: var(--s-32) auto;
+  display:flex;
+  flex-direction: column;
+  gap: var(--s-16);
+}
+input, button{
+  padding: var(--s-8);
+  border-radius: var(--radius);
+  border:1px solid #ccc;
+  font-size: var(--fs-md);
+}
+input:focus{
+  outline:none;
+  border-color: var(--verde);
+  box-shadow: 0 0 6px var(--verde);
+}
+
+/* Footer */
+footer{
+  background: linear-gradient(90deg,var(--verde),var(--azul));
+  color: var(--branco);
+  text-align:center;
+  padding: var(--s-16);
+  margin-top: var(--s-32);
+}
+
+/* Responsividade */
+@media(max-width:768px){
+  nav ul{flex-direction: column; gap: var(--s-8);}
 }
