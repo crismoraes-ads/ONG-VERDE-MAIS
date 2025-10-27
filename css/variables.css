@@ -1,29 +1,44 @@
-:root {
-  /* Paleta de cores */
-  --primaria-azul: #0077ff;
-  --primaria-verde: #00c896;
-  --secundaria-amarelo: #ffcc00;
-  --secundaria-vermelho: #ff4c4c;
-  --neutra-fundo: #f4f7fb;
-  --neutra-texto: #333333;
-  --neutra-claro: #ffffff;
-  --destaque: #ff6f61;
+/* css/variaveis.css */
+/* Sistema de design: paleta, tipografia e espaçamento */
 
-  /* Tipografia */
-  --fonte-titulo: 2rem;
-  --fonte-subtitulo: 1.5rem;
-  --fonte-normal: 1rem;
-  --fonte-pequena: 0.875rem;
-  --fonte-minima: 0.75rem;
+:root{
+  /* 8 cores do design system */
+  --azul-primario: #0077ff;
+  --verde-primario: #00c896;
+  --amarelo-primario: #ffcc00;
+  --vermelho-primario: #ff4c4c;
+  --roxo-secundario: #8e44ff;
+  --laranja-secundario: #ff7a00;
+  --neutra-fundo: #f4f7fb;
+  --neutra-texto: #1f2937;
+
+  /* Tipografia (hierarquia) */
+  --fs-xxl: 2.25rem; /* títulos maiores */
+  --fs-xl: 1.75rem;
+  --fs-lg: 1.25rem;
+  --fs-md: 1rem;
+  --fs-sm: 0.875rem;
+
+  /* Peso */
+  --fw-400: 400;
+  --fw-600: 600;
+  --fw-800: 800;
 
   /* Espaçamento modular */
-  --space-8: 8px;
-  --space-16: 16px;
-  --space-24: 24px;
-  --space-32: 32px;
-  --space-48: 48px;
-  --space-64: 64px;
+  --s-8: 8px;
+  --s-16: 16px;
+  --s-24: 24px;
+  --s-32: 32px;
+  --s-48: 48px;
+  --s-64: 64px;
 
   /* Grid */
-  --colunas: 12;
+  --container-max: 1200px;
+  --gutter: 16px;
+
+  /* Outros */
+  --radius: 12px;
+  --shadow-sm: 0 4px 12px rgba(2,6,23,0.06);
+  --shadow-md: 0 10px 30px rgba(2,6,23,0.08);
+  --ease: cubic-bezier(.2,.9,.2,1);
 }
