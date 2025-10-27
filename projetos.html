@@ -1,29 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ONG MAIS VERDE - Projetos</title>
-  <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/estilos.css">
+  <script defer src="js/script.js"></script>
 </head>
 <body>
+
   <header>
     <div class="header-inner">
-      <a href="index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Google-flutter-logo.svg" alt="Logo ONG MAIS VERDE" class="logo-header"></a>
+      <a class="brand" href="index.html">
+        <img src="img/logo.png" alt="Logo ONG MAIS VERDE" class="logo-header">
+        <span class="brand-text">ONG MAIS VERDE</span>
+      </a>
 
-      <button id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">&#9776;</button>
+      <button id="menu-toggle" class="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
 
-      <nav aria-label="Principais">
+      <nav id="main-nav">
         <ul>
           <li><a href="index.html">Início</a></li>
-          <li class="nav-item">
-            <a href="projetos.html">Projetos</a>
-            <div class="nav-dropdown" role="menu" aria-hidden="true">
-              <a href="#educacao" role="menuitem">Educação</a>
-              <a href="#saude" role="menuitem">Saúde</a>
-              <a href="#meio-ambiente" role="menuitem">Meio ambiente</a>
-            </div>
+          <li class="nav-item has-dropdown">
+            <a href="projetos.html">Projetos ▾</a>
+            <ul class="nav-dropdown">
+              <li><a href="#educacao">Educação</a></li>
+              <li><a href="#meio-ambiente">Meio Ambiente</a></li>
+              <li><a href="#saude">Saúde</a></li>
+            </ul>
           </li>
           <li><a href="cadastro.html">Cadastro</a></li>
           <li><a href="blog.html">Blog</a></li>
@@ -32,65 +40,31 @@
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero" aria-labelledby="hero-projetos">
-      <h1 id="hero-projetos">Nossos Projetos</h1>
-      <p>Veja alguns projetos que têm feito a diferença na comunidade.</p>
-      <img src="https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400&w=800" alt="Imagem de projeto" />
-      <p style="margin-top: var(--space-2);">
-        <a href="cadastro.html" class="botao">Seja Voluntário</a>
-        <a href="cadastro.html" class="botao" style="margin-left: var(--space-2);">Doe Agora</a>
-      </p>
+  <main>
+    <h1>Projetos</h1>
+
+    <section id="educacao" class="projeto">
+      <h2>Educação Ambiental</h2>
+      <img src="img/projeto1.jpg" alt="Pessoas plantando árvores">
+      <p>Projeto que leva conhecimento sobre sustentabilidade às escolas públicas e comunidades locais.</p>
     </section>
 
-    <!-- Exemplo de grid com 2 cards por linha em desktop (col-4 + col-4 + espaçamento) -->
-    <section id="educacao" style="margin-top: var(--space-3);">
-      <h2>Projetos em Educação</h2>
-
-      <div class="row" style="margin-top: var(--space-2);">
-        <article class="col col-4 projeto card">
-          <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg" alt="Projeto A">
-          <h3>Educar para o Futuro</h3>
-          <p>Projeto com foco em reforço escolar e oficinas culturais.</p>
-        </article>
-
-        <article class="col col-4 projeto card">
-          <img src="https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg" alt="Projeto B">
-          <h3>Biblioteca Comunitária</h3>
-          <p>Incentivo à leitura e acesso a materiais educativos para crianças.</p>
-        </article>
-
-        <article class="col col-4 projeto card">
-          <img src="https://images.pexels.com/photos/5325033/pexels-photo-5325033.jpeg" alt="Projeto C">
-          <h3>Reforço Escolar</h3>
-          <p>Atividades de apoio para alunos com dificuldades de aprendizagem.</p>
-        </article>
-      </div>
+    <section id="meio-ambiente" class="projeto">
+      <h2>Reflorestamento Comunitário</h2>
+      <img src="img/projeto2.jpg" alt="Plantio de mudas em comunidade">
+      <p>Iniciativa de reflorestamento com apoio de voluntários e moradores locais.</p>
     </section>
 
-    <section id="meio-ambiente" style="margin-top: var(--space-4);">
-      <h2>Projetos de Meio Ambiente</h2>
-      <div class="row" style="margin-top: var(--space-2);">
-        <article class="col col-6 projeto card">
-          <img src="https://images.pexels.com/photos/5325033/pexels-photo-5325033.jpeg" alt="Campanha de Inverno">
-          <h3>Campanha de Limpeza</h3>
-          <p>Mutirões de limpeza em áreas públicas e ações de reciclagem.</p>
-        </article>
-
-        <article class="col col-6 projeto card">
-          <img src="https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg" alt="Reflorestamento">
-          <h3>Reflorestamento</h3>
-          <p>Plantio de mudas em regiões degradadas com a comunidade local.</p>
-        </article>
-      </div>
+    <section id="saude" class="projeto">
+      <h2>Saúde Verde</h2>
+      <img src="img/projeto3.jpg" alt="Pessoas fazendo atividades ao ar livre">
+      <p>Atividades físicas e oficinas de bem-estar ao ar livre para promover qualidade de vida.</p>
     </section>
   </main>
 
   <footer>
-    <p>Contato: contato@ongmaisverde.org | Telefone: (11) 99999-9999</p>
-    <p>&copy; 2025 ONG MAIS VERDE</p>
+    <p>© 2025 ONG MAIS VERDE - Todos os direitos reservados.</p>
   </footer>
 
-  <script src="js/script.js"></script>
 </body>
 </html>
