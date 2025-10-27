@@ -1,152 +1,120 @@
-/* Importa variáveis */
 @import url('variables.css');
 
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   font-family: Arial, sans-serif;
-  background: var(--branco);
+  font-size: var(--fonte-base);
+  background-color: var(--branco);
   color: var(--preto);
-  line-height: 1.5;
 }
 
-/* Header */
+/* Header e Navegação */
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-16);
   background: linear-gradient(90deg, var(--verde), var(--azul));
   color: var(--branco);
-  padding: var(--space-16);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 }
 
-header .logo-header {
-  max-width: 120px;
-  display: block;
-  margin: 0 auto var(--space-8);
-}
+header .logo-header { max-width: 120px; }
 
 nav ul {
-  list-style: none;
   display: flex;
-  justify-content: center;
   gap: var(--space-16);
-  flex-wrap: wrap;
+  list-style: none;
 }
 
 nav a {
   color: var(--branco);
   text-decoration: none;
-  padding: var(--space-8) var(--space-16);
+  padding: var(--space-8);
   border-radius: 8px;
-  transition: background 0.3s;
 }
 
-nav a:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
+nav a:hover { background-color: rgba(255,255,255,0.2); }
 
 /* Hero */
 .hero {
   text-align: center;
-  padding: var(--space-32) var(--space-16);
-  background: linear-gradient(to bottom, var(--verde), var(--azul));
+  padding: var(--space-32);
+  background-color: var(--verde);
   color: var(--branco);
-  border-radius: 12px;
-  margin: var(--space-16);
 }
 
 .hero img {
   max-width: 100%;
-  height: auto;
   border-radius: 12px;
-  margin-top: var(--space-16);
+  margin: var(--space-16) 0;
 }
 
 .botao {
   display: inline-block;
+  padding: var(--space-8) var(--space-24);
+  margin-top: var(--space-16);
+  border-radius: 28px;
   background: linear-gradient(90deg, var(--laranja), var(--vermelho));
   color: var(--branco);
-  padding: var(--space-8) var(--space-16);
-  border-radius: 28px;
   text-decoration: none;
   font-weight: bold;
-  margin-top: var(--space-16);
-}
-
-.botao:hover {
-  transform: scale(1.05);
   transition: transform 0.3s;
 }
+
+.botao:hover { transform: scale(1.05); }
 
 /* Seções */
 section {
   padding: var(--space-32) var(--space-16);
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
-h1, h2, h3 {
-  color: var(--azul);
-}
+h1 { font-size: var(--fonte-h1); margin-bottom: var(--space-16); }
+h2 { font-size: var(--fonte-h2); margin-bottom: var(--space-16); color: var(--azul); }
+h3 { font-size: var(--fonte-h3); margin-bottom: var(--space-12); color: var(--roxo); }
 
-h2 {
-  border-left: 6px solid var(--verde);
-  padding-left: var(--space-8);
-  margin-bottom: var(--space-16);
-}
-
-/* Grid de projetos e blog */
-.galeria, .blog {
+/* Cards */
+.cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-16);
+  gap: var(--space-24);
 }
 
-.projeto, .blog article {
+.card {
   background: var(--branco);
-  padding: var(--space-16);
   border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
 }
 
-.projeto img, .blog article img {
+.card img {
   width: 100%;
-  border-radius: 8px;
+  height: 200px;
+  object-fit: cover;
 }
+
+.card-content { padding: var(--space-16); }
 
 /* Formulário */
 form {
+  max-width: 500px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: var(--space-16);
-  max-width: 500px;
-  margin: 0 auto;
 }
 
-label {
-  font-weight: bold;
-  color: var(--verde);
-}
-
-input, button {
+input, select, button {
   padding: var(--space-8);
   border-radius: 8px;
   border: 1px solid #ccc;
-  font-size: var(--font-md);
+  font-size: 1rem;
 }
 
-input:focus {
-  outline: none;
-  border-color: var(--verde);
-  box-shadow: 0 0 6px var(--verde);
-}
+input:focus { outline: none; border-color: var(--verde); box-shadow: 0 0 6px var(--verde); }
 
 /* Footer */
 footer {
@@ -155,5 +123,4 @@ footer {
   background: linear-gradient(90deg, var(--verde), var(--azul));
   color: var(--branco);
   margin-top: var(--space-32);
-  border-radius: 0 0 12px 12px;
 }
