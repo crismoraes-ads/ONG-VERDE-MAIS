@@ -44,15 +44,11 @@ document.addEventListener("DOMContentLoaded", () => {
     return v;
   }
 
-  const cpf = document.querySelector('#cpf');
-  const tel = document.querySelector('#telefone');
-  const cep = document.querySelector('#cep');
+  setMask(document.querySelector('#cpf'), maskCPF);
+  setMask(document.querySelector('#telefone'), maskTel);
+  setMask(document.querySelector('#cep'), maskCEP);
 
-  setMask(cpf, maskCPF);
-  setMask(tel, maskTel);
-  setMask(cep, maskCEP);
-
-  // Form validation demo
+  // Form submit demo
   const form = document.querySelector('#form-cadastro');
   if (form) {
     form.addEventListener('submit', (e) => {
@@ -62,8 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
       e.preventDefault();
-      // Simular envio
-      alert('Cadastro simulado: formulário válido. Obrigada!');
+      alert('Cadastro simulado enviado com sucesso! Obrigada.');
       form.reset();
     });
   }
