@@ -1,20 +1,21 @@
-/* Paleta de cores */
 :root {
+  /* Paleta de cores */
   --verde: #00c896;
   --azul: #0077ff;
-  --laranja: #ff9900;
+  --laranja: #ff7f00;
   --vermelho: #ff4c4c;
-  --roxo: #8000ff;
+  --roxo: #9b59b6;
   --preto: #000000;
   --branco: #ffffff;
-  --marrom: #8B4513;
+  --marrom: #8b4513;
 
   /* Tipografia */
-  --font-xs: 12px;
-  --font-sm: 14px;
-  --font-md: 16px;
-  --font-lg: 24px;
-  --font-xl: 32px;
+  --fonte-base: 16px;
+  --fonte-h1: 2.5rem;
+  --fonte-h2: 2rem;
+  --fonte-h3: 1.5rem;
+  --fonte-h4: 1.25rem;
+  --fonte-h5: 1rem;
 
   /* Espaçamento modular */
   --space-8: 8px;
