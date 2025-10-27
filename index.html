@@ -1,77 +1,75 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ONG MAIS VERDE - Início</title>
-  <link rel="stylesheet" href="css/variaveis.css">
+  <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-  <header class="header">
-    <div class="container">
-      <a class="logo" href="index.html"><span class="brand">ONG MAIS VERDE</span></a>
-      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">☰</button>
-      <nav class="main-nav" aria-label="Menu principal">
-        <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="projetos.html">Projetos</a></li>
-          <li><a href="cadastro.html">Cadastro</a></li>
-          <li><a href="blog.html">Blog</a></li>
-        </ul>
-      </nav>
-    </div>
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Google-flutter-logo.svg" alt="Logo ONG MAIS VERDE" class="logo-header">
+    <button class="menu-toggle">☰</button>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="container">
+  <main>
     <section class="hero">
-      <div class="hero-card">
-        <div class="placeholder" role="img" aria-label="Imagem hero">Comunidade & Sustentabilidade</div>
-        <div class="hero-content">
-          <h1>Bem-vindo à ONG MAIS VERDE</h1>
-          <p>Criamos oportunidades através de projetos comunitários, educação e voluntariado.</p>
-          <div class="cta-row">
-            <a class="btn primary" href="cadastro.html">Doe agora</a>
-            <a class="btn secondary" href="projetos.html">Ver projetos</a>
-          </div>
+      <h1>Bem-vindo à ONG MAIS VERDE</h1>
+      <p>Trabalhamos para gerar impacto social por meio de projetos comunitários e voluntariado.</p>
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1200" alt="Imagem ONG" class="hero-img">
+      <a href="cadastro.html" class="botao">Doe Agora</a>
+    </section>
+
+    <section>
+      <h2>Missão</h2>
+      <p>Promover inclusão social e desenvolver projetos sustentáveis que transformam vidas.</p>
+
+      <h2>Visão</h2>
+      <p>Ser referência em transformação social por meio da educação, solidariedade e inovação.</p>
+
+      <h2>Valores</h2>
+      <ul>
+        <li>Transparência e ética</li>
+        <li>Respeito à diversidade</li>
+        <li>Comprometimento social</li>
+        <li>Cooperação e solidariedade</li>
+      </ul>
+    </section>
+
+    <section class="cards">
+      <div class="card">
+        <img src="https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg" alt="Projeto 1">
+        <div class="card-content">
+          <h3>Projeto Educação</h3>
+          <p>Oferecemos atividades educativas para crianças e jovens em vulnerabilidade social.</p>
         </div>
       </div>
-    </section>
-
-    <section class="info-sections">
-      <div class="info-card"><h3>Missão</h3><p>Promover inclusão social e desenvolver projetos sustentáveis que transformam vidas.</p></div>
-      <div class="info-card"><h3>Visão</h3><p>Ser referência em transformação social por meio da educação, solidariedade e inovação.</p></div>
-      <div class="info-card"><h3>Valores</h3><ul><li>Transparência e ética</li><li>Respeito à diversidade</li><li>Comprometimento social</li><li>Cooperação e solidariedade</li></ul></div>
-    </section>
-
-    <section>
-      <h2>Últimas Notícias</h2>
-      <div class="blog-list">
-        <article class="blog-item"><div class="thumb">Campanha</div><h4>Campanha de Inverno</h4><p>Arrecadamos cobertores e roupas para famílias em vulnerabilidade social.</p></article>
-        <article class="blog-item"><div class="thumb">Voluntariado</div><h4>Voluntariado na Comunidade</h4><p>Mais de 50 voluntários participaram do projeto “Educar para o Futuro”.</p></article>
-      </div>
-    </section>
-
-    <section>
-      <h2>Cores do Sistema</h2>
-      <div class="badges">
-        <span class="badge azul">Azul</span>
-        <span class="badge verde">Verde</span>
-        <span class="badge amarelo">Amarelo</span>
-        <span class="badge vermelho">Vermelho</span>
-        <span class="badge roxo">Roxo</span>
-        <span class="badge laranja">Laranja</span>
-        <span class="badge neutra">Fundo</span>
-        <span class="badge destaque">Destaque</span>
+      <div class="card">
+        <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg" alt="Projeto 2">
+        <div class="card-content">
+          <h3>Projeto Sustentável</h3>
+          <p>Desenvolvemos hortas comunitárias e ações ambientais para comunidades locais.</p>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p>Contato: contato@ongmaisverde.org | Telefone: (11) 99999-9999</p>
-      <p>&copy; 2025 ONG MAIS VERDE</p>
-    </div>
+  <footer>
+    <p>Contato: contato@ongmaisverde.org | Telefone: (11) 99999-9999</p>
+    <p>Siga-nos: 
+      <a href="#" target="_blank">Facebook</a> | 
+      <a href="#" target="_blank">Instagram</a>
+    </p>
+    <p>&copy; 2025 ONG MAIS VERDE</p>
   </footer>
 
   <script src="js/script.js"></script>
