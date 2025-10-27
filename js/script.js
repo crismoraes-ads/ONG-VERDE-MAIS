@@ -1,36 +1,60 @@
-document.addEventListener("DOMContentLoaded",()=>{
-  // Máscaras
-  function setMask(input,maskFn){
-    input.addEventListener("input",()=>input.value=maskFn(input.value));
+document.addEventListener("DOMContentLoaded", () => {
+  // Máscaras de formulário
+  function setMask(input, maskFn) {
+    input.addEventListener("input", () => { input.value = maskFn(input.value); });
   }
-  function maskCPF(v){
-    v=v.replace(/\D/g,"");
-    v=v.replace(/(\d{3})(\d)/,"$1.$2");
-    v=v.replace(/(\d{3})(\d)/,"$1.$2");
-    v=v.replace(/(\d{3})(\d{1,2})$/,"$1-$2");
+
+  function maskCPF(v) {
+    v = v.replace(/\D/g, "");
+    v = v.replace(/(\d{3})(\d)/, "$1.$2");
+    v = v.replace(/(\d{3})(\d)/, "$1.$2");
+    v = v.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
     return v;
   }
-  function maskTel(v){
-    v=v.replace(/\D/g,"");
-    if(v.length<=10){v=v.replace(/(\d{2})(\d)/,"($1) $2"); v=v.replace(/(\d{4})(\d)/,"$1-$2");}
-    else{v=v.replace(/(\d{2})(\d)/,"($1) $2"); v=v.replace(/(\d{5})(\d)/,"$1-$2");}
+
+  function maskTel(v) {
+    v = v.replace(/\D/g, "");
+    if (v.length <= 10) {
+      v = v.replace(/(\d{2})(\d)/, "($1) $2");
+      v = v.replace(/(\d{4})(\d)/, "$1-$2");
+    } else {
+      v = v.replace(/(\d{2})(\d)/, "($1) $2");
+      v = v.replace(/(\d{5})(\d)/, "$1-$2");
+    }
     return v;
   }
-  function maskCEP(v){v=v.replace(/\D/g,""); v=v.replace(/(\d{5})(\d)/,"$1-$2"); return v;}
 
-  const cpf=document.querySelector("#cpf");
-  const tel=document.querySelector("#telefone");
-  const cep=document.querySelector("#cep");
-  if(cpf) setMask(cpf,maskCPF);
-  if(tel) setMask(tel,maskTel);
-  if(cep) setMask(cep,maskCEP);
+  function maskCEP(v) {
+    v = v.replace(/\D/g, "");
+    v = v.replace(/(\d{5})(\d)/, "$1-$2");
+    return v;
+  }
 
-  // Formulário
-  const form=document.querySelector("#form-cadastro");
-  if(form){
-    form.addEventListener("submit",(e)=>{
-      if(!form.checkValidity()){e.preventDefault(); form.reportValidity();}
-      else{e.preventDefault(); alert("Cadastro simulado com sucesso!");}
+  const cpf = document.querySelector("#cpf");
+  const tel = document.querySelector("#telefone");
+  const cep = document.querySelector("#cep");
+  if (cpf) setMask(cpf, maskCPF);
+  if (tel) setMask(tel, maskTel);
+  if (cep) setMask(cep, maskCEP);
+
+  // Validação do formulário
+  const form = document.querySelector("#form-cadastro");
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      if (!form.checkValidity()) {
+        e.preventDefault();
+        form.reportValidity();
+      } else {
+        e.preventDefault();
+        alert("Cadastro enviado com sucesso!");
+      }
     });
   }
+
+  // Menu hambúrguer
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav ul');
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
 });
