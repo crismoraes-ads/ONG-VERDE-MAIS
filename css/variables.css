@@ -1,18 +1,15 @@
-/* css/variaveis.css */
-/* Sistema de design: paleta (8 cores), tipografia e espaçamento */
-
 :root{
-  /* 8 cores */
-  --azul-primario: #0077ff;
-  --verde-primario: #00c896;
-  --amarelo-primario: #ffcc00;
-  --vermelho-primario: #ff4c4c;
-  --roxo-secundario: #8e44ff;
-  --laranja-secundario: #ff7a00;
-  --neutra-fundo: #f4f7fb;
-  --neutra-texto: #1f2937;
+  /* Paleta de cores */
+  --verde: #00b37e;
+  --azul: #0077ff;
+  --laranja: #ff8c42;
+  --vermelho: #ff4c4c;
+  --roxo: #8c4dff;
+  --preto: #0f1724;
+  --branco: #ffffff;
+  --marrom: #8b4513;
 
-  /* Tipografia (hierarquia) */
+  /* Tipografia */
   --fs-xxl: 2.25rem;
   --fs-xl: 1.75rem;
   --fs-lg: 1.25rem;
@@ -27,10 +24,10 @@
   --s-48: 48px;
   --s-64: 64px;
 
-  /* Layout / outros */
-  --container-max: 1100px;
+  /* Layout e sombras */
+  --container-w: 1100px;
   --radius: 12px;
-  --shadow-sm: 0 4px 12px rgba(2,6,23,0.06);
-  --shadow-md: 0 10px 30px rgba(2,6,23,0.08);
+  --shadow-sm: 0 6px 18px rgba(0,0,0,0.08);
+  --shadow-md: 0 12px 30px rgba(0,0,0,0.12);
   --ease: cubic-bezier(.2,.9,.2,1);
 }
