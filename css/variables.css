@@ -1,26 +1,29 @@
-/* Cores */
 :root {
-  --azul-primario: #0077ff;
-  --verde-primario: #00c896;
-  --amarelo-primario: #ffcc00;
-  --vermelho-primario: #ff4c4c;
-  --cinza-claro: #f4f7fb;
-  --cinza-escuro: #333333;
-  --branco: #ffffff;
-  --preto: #000000;
+  /* Paleta de cores */
+  --primaria-azul: #0077ff;
+  --primaria-verde: #00c896;
+  --secundaria-amarelo: #ffcc00;
+  --secundaria-vermelho: #ff4c4c;
+  --neutra-fundo: #f4f7fb;
+  --neutra-texto: #333333;
+  --neutra-claro: #ffffff;
+  --destaque: #ff6f61;
 
   /* Tipografia */
-  --fonte-pequena: 0.8rem;
-  --fonte-normal: 1rem;
-  --fonte-media: 1.2rem;
-  --fonte-grande: 1.5rem;
   --fonte-titulo: 2rem;
+  --fonte-subtitulo: 1.5rem;
+  --fonte-normal: 1rem;
+  --fonte-pequena: 0.875rem;
+  --fonte-minima: 0.75rem;
 
   /* Espaçamento modular */
-  --gap-8: 8px;
-  --gap-16: 16px;
-  --gap-24: 24px;
-  --gap-32: 32px;
-  --gap-48: 48px;
-  --gap-64: 64px;
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+
+  /* Grid */
+  --colunas: 12;
 }
