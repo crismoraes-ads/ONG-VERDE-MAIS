@@ -1,70 +1,62 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ONG MAIS VERDE - Projetos</title>
-  <link rel="stylesheet" href="css/estilos.css">
-  <script defer src="js/script.js"></script>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
   <header>
-    <div class="header-inner">
-      <a class="brand" href="index.html">
-        <img src="img/logo.png" alt="Logo ONG MAIS VERDE" class="logo-header">
-        <span class="brand-text">ONG MAIS VERDE</span>
-      </a>
-
-      <button id="menu-toggle" class="hamburger" aria-label="Abrir menu" aria-expanded="false">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-
-      <nav id="main-nav">
-        <ul>
-          <li><a href="index.html">Início</a></li>
-          <li class="nav-item has-dropdown">
-            <a href="projetos.html">Projetos ▾</a>
-            <ul class="nav-dropdown">
-              <li><a href="#educacao">Educação</a></li>
-              <li><a href="#meio-ambiente">Meio Ambiente</a></li>
-              <li><a href="#saude">Saúde</a></li>
-            </ul>
-          </li>
-          <li><a href="cadastro.html">Cadastro</a></li>
-          <li><a href="blog.html">Blog</a></li>
-        </ul>
-      </nav>
-    </div>
+    <img src="images/logo.png" alt="Logo ONG MAIS VERDE" class="logo-header">
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
-    <h1>Projetos</h1>
-
-    <section id="educacao" class="projeto">
-      <h2>Educação Ambiental</h2>
-      <img src="img/projeto1.jpg" alt="Pessoas plantando árvores">
-      <p>Projeto que leva conhecimento sobre sustentabilidade às escolas públicas e comunidades locais.</p>
+    <section class="hero">
+      <h1>Projetos Sociais</h1>
+      <p>Conheça nossos projetos e participe como voluntário ou doador.</p>
+      <img src="images/hero.jpg" alt="Imagem ONG" class="hero-img">
+      <p>
+        <a href="cadastro.html" class="botao">Seja Voluntário</a>
+        <a href="cadastro.html" class="botao gradiente">Doe Agora</a>
+      </p>
     </section>
 
-    <section id="meio-ambiente" class="projeto">
-      <h2>Reflorestamento Comunitário</h2>
-      <img src="img/projeto2.jpg" alt="Plantio de mudas em comunidade">
-      <p>Iniciativa de reflorestamento com apoio de voluntários e moradores locais.</p>
-    </section>
-
-    <section id="saude" class="projeto">
-      <h2>Saúde Verde</h2>
-      <img src="img/projeto3.jpg" alt="Pessoas fazendo atividades ao ar livre">
-      <p>Atividades físicas e oficinas de bem-estar ao ar livre para promover qualidade de vida.</p>
+    <section class="projetos">
+      <h2>Nossos Projetos</h2>
+      <div class="grid-projetos">
+        <div class="projeto-card">
+          <img src="images/projeto1.jpg" alt="Projeto 1">
+          <h3>Reciclagem Solidária</h3>
+          <p>Coletamos materiais recicláveis e geramos impacto ambiental positivo.</p>
+        </div>
+        <div class="projeto-card">
+          <img src="images/projeto2.jpg" alt="Projeto 2">
+          <h3>Voluntariado Verde</h3>
+          <p>Atividades de plantio e educação ambiental na comunidade local.</p>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 ONG MAIS VERDE - Todos os direitos reservados.</p>
+    <p>Contato: contato@ongmaisverde.org | Telefone: (11) 99999-9999</p>
+    <p>Siga-nos:
+      <a href="#" aria-label="Facebook">Facebook</a> |
+      <a href="#" aria-label="Instagram">Instagram</a>
+    </p>
+    <p>&copy; 2025 ONG MAIS VERDE</p>
   </footer>
 
+  <script src="js/script.js"></script>
 </body>
 </html>
