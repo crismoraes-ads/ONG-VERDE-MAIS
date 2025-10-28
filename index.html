@@ -16,6 +16,8 @@
 body{font-family:Arial, Helvetica, sans-serif;background:var(--cinza);color:var(--preto);line-height:1.45}
 a{text-decoration:none;color:inherit}
 .container{max-width:1200px;margin:0 auto;padding:0 var(--s-16)}
+
+/* Header */
 header{position:sticky;top:0;z-index:1100;background:linear-gradient(90deg,var(--verde),var(--azul));box-shadow:var(--shadow-sm)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;gap:16px}
 .logo img{height:56px;display:block}
@@ -24,11 +26,15 @@ nav a{color:var(--branco);padding:8px 12px;border-radius:8px;font-weight:600}
 nav a:hover{background:rgba(255,255,255,0.12)}
 .hamburger{display:none;flex-direction:column;gap:6px;cursor:pointer;background:transparent;border:0;padding:8px}
 .hamburger span{width:26px;height:3px;background:var(--branco);border-radius:3px}
+
+/* Hero */
 .hero{display:grid;grid-template-columns:1fr 480px;gap:24px;align-items:center;padding:36px 0}
 .hero .copy h1{font-size:var(--fz-xl);margin-bottom:12px}
 .hero .copy p{color:#333;margin-bottom:16px}
 .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
 .hero-img{width:100%;height:320px;object-fit:cover;border-radius:12px;box-shadow:var(--shadow-sm);display:block}
+
+/* Gallery / cards */
 .galeria{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0}
 .card{background:var(--branco);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .18s;display:flex;flex-direction:column}
 .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
@@ -37,8 +43,14 @@ nav a:hover{background:rgba(255,255,255,0.12)}
 .card h3{color:var(--verde);margin-bottom:8px}
 .card p{flex:1;color:#444;font-size:var(--fz-sm)}
 .btn{display:inline-block;padding:10px 18px;border-radius:999px;background:linear-gradient(90deg,var(--laranja),var(--vermelho));color:var(--branco);font-weight:700}
+
+/* Footer */
 .footer{background:linear-gradient(90deg,var(--verde),var(--azul));color:var(--branco);padding:20px 0;text-align:center;margin-top:28px}
+
+/* Toast simple */
 .toast{position:fixed;right:18px;bottom:18px;background:#fff;color:#111;padding:12px 16px;border-radius:8px;box-shadow:var(--shadow-md);display:none}
+
+/* Responsive */
 @media(max-width:1200px){ .hero{grid-template-columns:1fr 420px} .galeria{grid-template-columns:repeat(2,1fr)} }
 @media(max-width:992px){ .hero{grid-template-columns:1fr;text-align:center} .hero .media img{height:280px} .galeria{grid-template-columns:1fr} }
 @media(max-width:768px){
@@ -53,6 +65,146 @@ nav a:hover{background:rgba(255,255,255,0.12)}
   .hero-img{height:180px}
 }
 </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner container">
+      <a class="logo" href="index.html" aria-label="Início - ONG Mais Verde">
+        <!-- LOGO: imagem temática estável -->
+        <img id="logoImg" src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80" alt="Logo ONG MAIS VERDE"
+             onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22240%22 height=%2280%22><rect width=%22240%22 height=%2280%22 fill=%22%2300c896%22/><text x=%22120%22 y=%2248%22 font-size=%2220%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>ONG MAIS VERDE</text></svg>';">
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li class="nav-item"><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+
+      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" aria-label="Apresentação">
+      <div class="copy">
+        <h1>Transformando vidas com sustentabilidade</h1>
+        <p>Somos a ONG MAIS VERDE: plantio urbano, educação ambiental e apoio comunitário. Junte-se a nós para fazer a diferença.</p>
+        <div class="cta">
+          <a class="btn" href="cadastro.html">Seja Voluntário</a>
+          <a class="btn" href="projetos.html">Conheça Projetos</a>
+        </div>
+      </div>
+
+      <!-- HERO IMAGE (tema: voluntários em ação) -->
+      <div class="media" aria-label="Voluntários em ação plantando árvores na natureza">
+        <img class="hero-img"
+             src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?crop=entropy&cs=tinysrgb&fit=crop&w=1000&h=600&q=80"
+             alt="Voluntários trabalhando em um projeto de natureza e sustentabilidade"
+             onerror="handleImgError(this,
+               'https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=tinysrgb&fit=crop&w=1000&h=600&q=80',
+               'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22520%22><rect width=%22800%22 height=%22520%22 fill=%22%23007f3f%22/><text x=%22400%22 y=%22260%22 font-size=%2232%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>Imagem indisponível</text></svg>')">
+      </div>
+    </section>
+
+    <!-- PROJECTS (6 cards) -->
+    <section aria-label="Projetos recentes">
+      <h2 style="text-align:center;margin-top:8px">Projetos Recentes</h2>
+      <div class="galeria" role="list">
+        <!-- Card 1: Plantio urbano -->
+        <article class="card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?fit=crop&w=800&h=450&q=80"
+               alt="Plantio urbano" onerror="handleImgError(this,
+                 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80')">
+          <div class="body">
+            <h3>Comunidade Verde <span style="font-size:.75rem;background:#00c896;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Plantio</span></h3>
+            <p>Mutirões de plantio em praças e espaços urbanos com moradores locais.</p>
+            <a class="btn" href="projetos.html#plantio" style="margin-top:12px">Saiba Mais</a>
+          </div>
+        </article>
+
+        <!-- Card 2: Educação Ambiental -->
+        <article class="card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1581091870623-ec61d03b9e70?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80"
+               alt="Educação ambiental com crianças" onerror="handleImgError(this,
+                 'https://images.unsplash.com/photo-1590608897129-79c1e7cfa692?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80')">
+          <div class="body">
+            <h3>Educação Ambiental <span style="font-size:.75rem;background:#ff9500;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Oficinas</span></h3>
+            <p>Oficinas e atividades pedagógicas para crianças e jovens da comunidade.</p>
+            <a class="btn" href="projetos.html#educacao" style="margin-top:12px">Saiba Mais</a>
+          </div>
+        </article>
+
+        <!-- Card 3: Campanha de Inverno -->
+        <article class="card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?fit=crop&w=800&h=450&q=80"
+               alt="Campanha de inverno" onerror="handleImgError(this,
+                 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80')">
+          <div class="body">
+            <h3>Campanha de Inverno <span style="font-size:.75rem;background:#ff4c4c;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Doação</span></h3>
+            <p>Arrecadação e distribuição de roupas e cobertores para famílias em vulnerabilidade.</p>
+            <a class="btn" href="projetos.html#campanhas" style="margin-top:12px">Saiba Mais</a>
+          </div>
+        </article>
+
+        <!-- Card 4: Hortas Comunitárias -->
+        <article class="card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1582515073490-3998134c2d8f?fit=crop&w=600&h=340&q=60"
+               alt="Horta comunitária" onerror="handleImgError(this,
+                 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?fit=crop&w=800&h=450&q=80')">
+          <div class="body">
+            <h3>Hortas Comunitárias <span style="font-size:.75rem;background:#9b59b6;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Horta</span></h3>
+            <p>Hortas em comunidades para produção de alimentos e educação alimentar.</p>
+            <a class="btn" href="projetos.html#hortas" style="margin-top:12px">Saiba Mais</a>
+          </div>
+        </article>
+
+        <!-- Card 5: Limpeza de Praias -->
+        <article class="card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fit=crop&w=600&h=340&q=60"
+               alt="Limpeza de praia" onerror="handleImgError(this,
+                 'https://images.unsplash.com/photo-1518695574084-9eec9b5e9b33?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80')">
+          <div class="body">
+            <h3>Limpeza de Praias <span style="font-size:.75rem;background:#0077ff;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Ação</span></h3>
+            <p>Ações de limpeza e conscientização ambiental em áreas costeiras.</p>
+            <a class="btn" href="projetos.html#limpeza" style="margin-top:12px">Saiba Mais</a>
+          </div>
+        </article>
+
+        <!-- Card 6: Voluntariado Jovem -->
+        <article class="card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?fit=crop&w=800&h=450&q=80"
+               alt="Voluntariado jovem" onerror="handleImgError(this,
+                 'https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80')">
+          <div class="body">
+            <h3>Voluntariado Jovem <span style="font-size:.75rem;background:#00c896;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Volunt</span></h3>
+            <p>Programas para engajar jovens em ações comunitárias e ambientais.</p>
+            <a class="btn" href="projetos.html#voluntariado" style="margin-top:12px">Saiba Mais</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section style="text-align:center;margin-top:28px">
+      <p>Contato: <a href="mailto:contato@ongmaisverde.org">contato@ongmaisverde.org</a> • <a href="tel:+5511999999999">(11) 99999-9999</a></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 ONG MAIS VERDE — Todos os direitos reservados.</p>
+      <p><a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a> • <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a></p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
 <script>
 function handleImgError(imgEl, secondaryUrl, svgDataUrl){
   try {
@@ -66,124 +218,11 @@ function handleImgError(imgEl, secondaryUrl, svgDataUrl){
       imgEl._triedSecondary = true;
       imgEl.src = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250"><rect width="100%" height="100%" fill="#e6eef0"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#7d8a8f" font-size="18">Imagem indisponível</text></svg>');
     }
-  } catch(e){ console.error('handleImgError', e); }
+  } catch(e){
+    console.error('handleImgError', e);
+  }
 }
-</script>
-</head>
-<body>
-<header>
-<div class="header-inner container">
-<a class="logo" href="index.html" aria-label="Início - ONG Mais Verde">
-<img id="logoImg" src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80" alt="Logo ONG MAIS VERDE"
-onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22240%22 height=%2280%22><rect width=%22240%22 height=%2280%22 fill=%22%2300c896%22/><text x=%22120%22 y=%2248%22 font-size=%2220%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>ONG MAIS VERDE</text></svg>';">
-</a>
-<nav>
-<ul>
-<li><a href="index.html">Início</a></li>
-<li class="nav-item"><a href="projetos.html">Projetos</a></li>
-<li><a href="cadastro.html">Cadastro</a></li>
-<li><a href="blog.html">Blog</a></li>
-</ul>
-</nav>
-<button class="hamburger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
-</div>
-</header>
 
-<main class="container">
-<section class="hero" aria-label="Apresentação">
-<div class="copy">
-<h1>Transformando vidas com sustentabilidade</h1>
-<p>Somos a ONG MAIS VERDE: plantio urbano, educação ambiental e apoio comunitário. Junte-se a nós para fazer a diferença.</p>
-<div class="cta">
-<a class="btn" href="cadastro.html">Seja Voluntário</a>
-<a class="btn" href="projetos.html">Conheça Projetos</a>
-</div>
-</div>
-
-<div class="media" aria-label="Voluntários em ação plantando árvores na natureza">
-<img class="hero-img"
-src="https://images.unsplash.com/photo-1582719478172-3a7e8c58f3b3?crop=entropy&cs=tinysrgb&fit=crop&w=1000&h=600&q=80"
-alt="Voluntários trabalhando em um projeto de natureza e sustentabilidade"
-onerror="handleImgError(this,
-'https://i.ibb.co/2N5qfGh/hero.jpg',
-'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22520%22><rect width=%22800%22 height=%22520%22 fill=%22%23007f3f%22/><text x=%22400%22 y=%22260%22 font-size=%2232%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>Imagem indisponível</text></svg>')">
-</div>
-</section>
-
-<section aria-label="Projetos recentes">
-<h2 style="text-align:center;margin-top:8px">Projetos Recentes</h2>
-<div class="galeria" role="list">
-
-<article class="card" role="listitem">
-<img src="https://images.unsplash.com/photo-1560493671-6c4fcbb0b478?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Plantio urbano" onerror="handleImgError(this,'https://i.ibb.co/2sG2p8b/projeto1.jpg')">
-<div class="body">
-<h3>Comunidade Verde <span style="font-size:.75rem;background:#00c896;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Plantio</span></h3>
-<p>Mutirões de plantio em praças e espaços urbanos com moradores locais.</p>
-<a class="btn" href="projetos.html#plantio" style="margin-top:12px">Saiba Mais</a>
-</div>
-</article>
-
-<article class="card" role="listitem">
-<img src="https://images.unsplash.com/photo-1596495577886-d920f1e9f13d?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Educação ambiental com crianças" onerror="handleImgError(this,'https://i.ibb.co/4FgDxSx/projeto2.jpg')">
-<div class="body">
-<h3>Educação Ambiental <span style="font-size:.75rem;background:#ff9500;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Oficinas</span></h3>
-<p>Oficinas e atividades pedagógicas para crianças e jovens da comunidade.</p>
-<a class="btn" href="projetos.html#educacao" style="margin-top:12px">Saiba Mais</a>
-</div>
-</article>
-
-<article class="card" role="listitem">
-<img src="https://images.unsplash.com/photo-1602924468633-742d48291b85?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Campanha de inverno" onerror="handleImgError(this,'https://i.ibb.co/2sG2p8b/projeto3.jpg')">
-<div class="body">
-<h3>Campanha de Inverno <span style="font-size:.75rem;background:#ff4c4c;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Doação</span></h3>
-<p>Arrecadação e distribuição de roupas e cobertores para famílias em vulnerabilidade.</p>
-<a class="btn" href="projetos.html#campanhas" style="margin-top:12px">Saiba Mais</a>
-</div>
-</article>
-
-<article class="card" role="listitem">
-<img src="https://images.unsplash.com/photo-1606788075763-90b1f3d12b4d?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Horta comunitária" onerror="handleImgError(this,'https://i.ibb.co/2sG2p8b/projeto1.jpg')">
-<div class="body">
-<h3>Hortas Comunitárias <span style="font-size:.75rem;background:#9b59b6;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Horta</span></h3>
-<p>Hortas em comunidades para produção de alimentos e educação alimentar.</p>
-<a class="btn" href="projetos.html#hortas" style="margin-top:12px">Saiba Mais</a>
-</div>
-</article>
-
-<article class="card" role="listitem">
-<img src="https://images.unsplash.com/photo-1588681938286-cf0bff8ffb69?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Limpeza de praia" onerror="handleImgError(this,'https://i.ibb.co/4FgDxSx/projeto2.jpg')">
-<div class="body">
-<h3>Limpeza de Praias <span style="font-size:.75rem;background:#0077ff;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Ação</span></h3>
-<p>Ações de limpeza e conscientização ambiental em áreas costeiras.</p>
-<a class="btn" href="projetos.html#limpeza" style="margin-top:12px">Saiba Mais</a>
-</div>
-</article>
-
-<article class="card" role="listitem">
-<img src="https://images.unsplash.com/photo-1599932846443-24d7422185f5?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Voluntariado jovem" onerror="handleImgError(this,'https://i.ibb.co/2sG2p8b/projeto3.jpg')">
-<div class="body">
-<h3>Voluntariado Jovem <span style="font-size:.75rem;background:#00c896;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Volunt</span></h3>
-<p>Programas para engajar jovens em ações comunitárias e ambientais.</p>
-<a class="btn" href="projetos.html#voluntariado" style="margin-top:12px">Saiba Mais</a>
-</div>
-</article>
-
-</div>
-</section>
-
-<section style="text-align:center;margin-top:28px">
-<p>Contato: <a href="mailto:contato@ongmaisverde.org">contato@ongmaisverde.org</a> • <a href="tel:+5511999999999">(11) 99999-9999</a></p>
-</section>
-</main>
-
-<footer class="footer">
-<div class="container">
-<p>&copy; 2025 ONG MAIS VERDE — Todos os direitos reservados.</p>
-<p><a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a> • <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a></p>
-</div>
-</footer>
-
-<script>
 document.addEventListener('DOMContentLoaded', function(){
   const hamburger = document.querySelector('.hamburger');
   const navUl = document.querySelector('nav ul');
@@ -194,6 +233,9 @@ document.addEventListener('DOMContentLoaded', function(){
       navUl.classList.toggle('active');
     });
   }
+
+  const toast = document.getElementById('toast');
+  if (toast) toast.style.display = 'none';
 });
 </script>
 </body>
