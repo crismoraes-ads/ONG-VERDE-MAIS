@@ -1,277 +1,193 @@
-/* ==========================
-   Importando Variáveis
-========================== */
-@import url('variables.css');
+/* Importar variáveis */
+@import url('variaveis.css');
 
-/* ==========================
-   Reset Básico
-========================== */
+/* Reset básico */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: var(--fonte-base);
-  background-color: var(--cor-fundo);
-  color: var(--cor-texto);
+  font-family: Arial, sans-serif;
+  background: var(--branco);
+  color: var(--preto);
   line-height: 1.6;
 }
 
-/* ==========================
-   Header e Navegação
-========================== */
+/* Header e navegação */
 header {
-  background: linear-gradient(90deg, var(--cor-verde), var(--cor-azul));
-  color: var(--cor-branco);
-  padding: var(--gap-16);
+  background: linear-gradient(90deg, var(--verde), var(--azul));
+  color: var(--branco);
+  padding: var(--space-16);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo-header {
-  max-width: 140px;
-  display: block;
-  margin: 0 auto var(--gap-8);
+  width: 140px;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: center;
-  gap: var(--gap-16);
-  flex-wrap: wrap;
+  gap: var(--space-16);
 }
 
 nav a {
-  color: var(--cor-branco);
   text-decoration: none;
-  padding: var(--gap-8) var(--gap-16);
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 6px;
-  font-weight: 600;
-  transition: background 0.3s;
+  color: var(--branco);
+  font-weight: bold;
+  padding: var(--space-8) var(--space-16);
+  border-radius: 8px;
+  transition: 0.3s;
 }
 
 nav a:hover {
-  background: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.2);
 }
 
-/* ==========================
-   Menu Hambúrguer Mobile
-========================== */
-.menu-hamburguer {
+/* Hamburger */
+.hamburger {
   display: none;
+  flex-direction: column;
   cursor: pointer;
-  font-size: 2rem;
 }
 
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--branco);
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: var(--space-32);
+  background: var(--verde);
+  color: var(--branco);
+}
+
+.hero img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: var(--space-16) 0;
+}
+
+/* Botões */
+.botao {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--laranja), var(--vermelho));
+  color: var(--branco);
+  padding: var(--space-16) var(--space-32);
+  border-radius: 28px;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: var(--space-16);
+  transition: 0.3s;
+}
+
+.botao:hover {
+  transform: scale(1.05);
+}
+
+/* Seções */
+section {
+  padding: var(--space-32) var(--space-16);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 { font-size: var(--fonte-titulo); margin-bottom: var(--space-16); }
+h2 { font-size: var(--fonte-secao); margin-bottom: var(--space-16); color: var(--roxo); }
+h3 { font-size: var(--fonte-subtitulo); margin-bottom: var(--space-8); }
+
+/* Cards de Projetos */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-24);
+}
+
+.projeto {
+  background: var(--verde);
+  color: var(--branco);
+  padding: var(--space-16);
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.projeto img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: var(--space-16);
+}
+
+.projeto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+input, select, textarea, button {
+  padding: var(--space-12);
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: var(--fonte-texto);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--azul);
+  box-shadow: 0 0 6px var(--azul);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: var(--space-16);
+  background: linear-gradient(90deg, var(--verde), var(--azul));
+  color: var(--branco);
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
   nav ul {
     display: none;
     flex-direction: column;
-    background: var(--cor-verde);
+    background: var(--verde);
     position: absolute;
-    top: 100%;
-    width: 100%;
-    left: 0;
-    padding: var(--gap-16) 0;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: var(--space-16);
+    border-radius: 8px;
   }
 
   nav ul.active {
     display: flex;
   }
 
-  .menu-hamburguer {
-    display: block;
-    text-align: center;
-    color: var(--cor-branco);
+  .hamburger {
+    display: flex;
   }
-}
-
-/* ==========================
-   Hero Section
-========================== */
-.hero {
-  text-align: center;
-  padding: var(--gap-32) var(--gap-16);
-}
-
-.hero h1 {
-  font-size: var(--fonte-titulo1);
-  color: var(--cor-verde);
-  margin-bottom: var(--gap-16);
-}
-
-.hero p {
-  font-size: var(--fonte-normal);
-  margin-bottom: var(--gap-24);
-}
-
-.hero img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  margin-bottom: var(--gap-24);
-}
-
-.hero .botao {
-  display: inline-block;
-  background: linear-gradient(90deg, var(--cor-laranja), var(--cor-vermelho));
-  color: var(--cor-branco);
-  padding: var(--gap-8) var(--gap-24);
-  border-radius: 28px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: transform 0.3s;
-}
-
-.hero .botao:hover {
-  transform: scale(1.05);
-}
-
-/* ==========================
-   Seções de Missão, Visão, Valores
-========================== */
-section {
-  padding: var(--gap-32) var(--gap-16);
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-section h2 {
-  font-size: var(--fonte-titulo2);
-  border-left: 6px solid var(--cor-verde);
-  padding-left: var(--gap-8);
-  margin-bottom: var(--gap-16);
-}
-
-section p, section ul {
-  font-size: var(--fonte-normal);
-  margin-bottom: var(--gap-16);
-}
-
-section ul li {
-  margin-bottom: var(--gap-8);
-}
-
-/* ==========================
-   Cards de Projetos
-========================== */
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--gap-24);
-}
-
-.projeto {
-  background: var(--cor-branco);
-  border-radius: 12px;
-  padding: var(--gap-16);
-  text-align: center;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-.projeto img {
-  max-width: 100%;
-  border-radius: 12px;
-  margin-bottom: var(--gap-16);
-}
-
-.projeto:hover {
-  transform: translateY(-5px);
-}
-
-.projeto h3 {
-  font-size: var(--fonte-titulo3);
-  color: var(--cor-azul);
-  margin-bottom: var(--gap-8);
-}
-
-.projeto p {
-  font-size: var(--fonte-normal);
-}
-
-/* ==========================
-   Formulários
-========================== */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-16);
-  max-width: 520px;
-  margin: 0 auto;
-}
-
-label {
-  font-weight: 700;
-  color: var(--cor-verde);
-}
-
-input, button {
-  padding: var(--gap-8);
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: var(--fonte-normal);
-}
-
-input:focus {
-  outline: none;
-  border-color: var(--cor-verde);
-  box-shadow: 0 0 6px var(--cor-verde);
-}
-
-button {
-  background: linear-gradient(90deg, var(--cor-laranja), var(--cor-vermelho));
-  color: var(--cor-branco);
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-button:hover {
-  transform: scale(1.05);
-}
-
-/* ==========================
-   Blog e Notícias
-========================== */
-.blog article, .noticias article {
-  background: var(--cor-branco);
-  padding: var(--gap-16);
-  border-radius: 12px;
-  margin-bottom: var(--gap-16);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-}
-
-/* ==========================
-   Footer
-========================== */
-footer {
-  text-align: center;
-  padding: var(--gap-16);
-  background: linear-gradient(90deg, var(--cor-verde), var(--cor-azul));
-  color: var(--cor-branco);
-  margin-top: var(--gap-32);
-}
-
-/* ==========================
-   Responsividade
-========================== */
-@media (max-width: 1024px) {
-  .hero h1 { font-size: var(--fonte-titulo2); }
-}
-
-@media (max-width: 768px) {
-  .hero h1 { font-size: var(--fonte-titulo3); }
-  nav ul { gap: var(--gap-8); }
-}
-
-@media (max-width: 480px) {
-  .hero h1 { font-size: var(--fonte-normal); }
-  .projeto h3 { font-size: var(--fonte-normal); }
 }
