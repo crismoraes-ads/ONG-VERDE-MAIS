@@ -2,9 +2,9 @@
   /* Paleta de cores */
   --verde: #00c896;
   --azul: #0077ff;
-  --laranja: #ff9000;
+  --laranja: #ff7f00;
   --vermelho: #ff4c4c;
-  --roxo: #8000ff;
+  --roxo: #800080;
   --preto: #000000;
   --branco: #ffffff;
   --marrom: #8b4513;
@@ -14,7 +14,7 @@
   --font-sm: 0.875rem;
   --font-md: 1rem;
   --font-lg: 1.25rem;
-  --font-xl: 1.5rem;
+  --font-xl: 2rem;
 
   /* Espaçamento modular */
   --space-8: 8px;
