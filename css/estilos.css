@@ -1,59 +1,146 @@
-@import url('variaveis.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: Arial, sans-serif; background: var(--branco); color: var(--preto); }
-
-header {
-  background: linear-gradient(90deg, var(--verde), var(--azul));
-  color: var(--branco);
-  padding: var(--space-16);
-  position: sticky;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 100;
+body {
+  font-family: var(--fonte-principal);
+  margin: 0;
+  color: var(--preto);
+  background-color: #f7f7f7;
 }
 
-.logo-header { max-width: 140px; }
+/* ===== Cabeçalho ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--verde);
+  color: var(--branco);
+  padding: var(--esp-2) var(--esp-3);
+}
 
-nav ul { list-style: none; display: flex; gap: var(--space-16); }
-nav a { color: var(--branco); text-decoration: none; padding: 8px 16px; border-radius: 6px; font-weight: 600; }
-nav a:hover { background: rgba(255, 255, 255, 0.2); }
+.logo-header {
+  height: 50px;
+}
 
-/* Hamburger Menu */
-.hamburger { display: none; flex-direction: column; cursor: pointer; gap: 4px; }
-.hamburger div { width: 30px; height: 4px; background: var(--branco); border-radius: 2px; }
+nav ul {
+  display: flex;
+  gap: var(--esp-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-/* Hero */
-.hero { text-align: center; margin: var(--space-32) 0; }
-.hero-img { width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin: var(--space-16) 0; }
-.botao { display: inline-block; background: linear-gradient(90deg, var(--laranja), var(--vermelho)); color: var(--branco); padding: 10px 20px; border-radius: 28px; font-weight: 700; text-decoration: none; }
-.botao:hover { transform: scale(1.05); transition: 0.3s; }
+nav a {
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: 600;
+}
 
-/* Seções */
-section { padding: var(--space-32) var(--space-16); max-width: 980px; margin: auto; }
+nav a:hover {
+  color: var(--laranja);
+}
 
-/* Galeria / Cards */
-.galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-16); }
-.projeto { background: var(--branco); border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.1); text-align: center; padding: var(--space-16); }
-.projeto img { width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: var(--space-8); }
-.projeto h3 { color: var(--verde); margin-bottom: var(--space-8); }
+/* ===== Menu hamburguer ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--branco);
+}
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: var(--verde);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+  }
+  nav ul.show {
+    display: flex;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
 
-/* Formulário */
-form { display: flex; flex-direction: column; gap: var(--space-16); max-width: 520px; margin: auto; background: var(--branco); padding: var(--space-16); border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);}
-label { font-weight: 700; color: var(--verde); }
-input, button { padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-size: var(--font-md); }
-input:focus { outline: none; border-color: var(--verde); box-shadow: 0 0 6px var(--verde); }
-button { background: var(--verde); color: var(--branco); font-weight: 700; cursor: pointer; }
-button:hover { background: var(--azul); }
+/* ===== Hero Section ===== */
+.hero {
+  text-align: center;
+  background: linear-gradient(var(--verde), var(--azul));
+  color: var(--branco);
+  padding: var(--esp-5) var(--esp-3);
+}
 
-/* Footer */
-footer { text-align: center; padding: var(--space-16); background: linear-gradient(90deg, var(--verde), var(--azul)); color: var(--branco); margin-top: var(--space-32); border-radius: 0 0 12px 12px; }
+.hero img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: var(--esp-1);
+}
 
-/* Responsividade */
-@media(max-width:768px){
-  nav ul { display: none; flex-direction: column; background: var(--verde); position: absolute; right: 0; top: 60px; width: 200px; padding: var(--space-16); }
-  nav ul.active { display: flex; }
-  .hamburger { display: flex; }
+.botao {
+  display: inline-block;
+  margin-top: var(--esp-2);
+  padding: var(--esp-2) var(--esp-3);
+  background: var(--laranja);
+  color: var(--branco);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.botao:hover {
+  background: var(--vermelho);
+}
+
+/* ===== Cards ===== */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--esp-3);
+  padding: var(--esp-4);
+}
+
+.projeto {
+  background: var(--branco);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.projeto:hover {
+  transform: scale(1.03);
+}
+
+.projeto img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.conteudo {
+  padding: var(--esp-2);
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  background: var(--preto);
+  color: var(--branco);
+  padding: var(--esp-3);
+  font-size: var(--texto-pequeno);
+}
+footer a {
+  color: var(--laranja);
+  text-decoration: none;
+  margin: 0 4px;
+}
+footer a:hover {
+  text-decoration: underline;
 }
