@@ -1,21 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
-  function setMask(input, maskFn) {
-    input.addEventListener("input", () => {
-      input.value = maskFn(input.value);
+  const hamburguer = document.querySelector(".hamburguer");
+  const navMenu = document.querySelector("nav ul");
+
+  if(hamburguer) {
+    hamburguer.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
     });
   }
 
+  // Máscaras e validação de formulário
+  function setMask(input, maskFn) {
+    input.addEventListener("input", () => input.value = maskFn(input.value));
+  }
+
   function maskCPF(v){
-    v = v.replace(/\D/g,"");
-    v = v.replace(/(\d{3})(\d)/,"$1.$2");
-    v = v.replace(/(\d{3})(\d)/,"$1.$2");
-    v = v.replace(/(\d{3})(\d{1,2})$/,"$1-$2");
+    v=v.replace(/\D/g,"");
+    v=v.replace(/(\d{3})(\d)/,"$1.$2");
+    v=v.replace(/(\d{3})(\d)/,"$1.$2");
+    v=v.replace(/(\d{3})(\d{1,2})$/,"$1-$2");
     return v;
   }
 
   function maskTel(v){
-    v = v.replace(/\D/g,"");
-    if(v.length <=10){
+    v=v.replace(/\D/g,"");
+    if(v.length<=10){
       v=v.replace(/(\d{2})(\d)/,"($1) $2");
       v=v.replace(/(\d{4})(\d)/,"$1-$2");
     } else {
@@ -40,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if(cep) setMask(cep, maskCEP);
 
   const form = document.querySelector("#form-cadastro");
-  if(form){
+  if(form) {
     form.addEventListener("submit",(e)=>{
       if(!form.checkValidity()){
         e.preventDefault();
@@ -49,15 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         alert("Cadastro simulado: formulário válido!");
       }
-    });
-  }
-
-  // Menu hamburguer toggle
-  const menuHamb = document.querySelector(".menu-hamburguer");
-  const menuList = document.querySelector("nav ul");
-  if(menuHamb){
-    menuHamb.addEventListener("click", ()=>{
-      menuList.classList.toggle("ativo");
     });
   }
 });
