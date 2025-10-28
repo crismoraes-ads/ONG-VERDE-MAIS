@@ -13,7 +13,6 @@
   --roxo: #9b59b6;
   --preto: #111111;
   --branco: #ffffff;
-  --marrom: #8b4513;
 
   --fz-xs: 0.75rem;
   --fz-sm: 0.875rem;
@@ -32,12 +31,10 @@
   --shadow-md: 0 12px 30px rgba(0,0,0,0.12);
 }
 
-/* Reset e base */
-*{margin:0;padding:0;box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:Arial, Helvetica, sans-serif; background:#f6f8fb; color:var(--preto); line-height:1.45;}
 a{text-decoration:none;}
 
-/* Header */
 header{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:linear-gradient(90deg,var(--verde),var(--azul));color:var(--branco);position:sticky;top:0;z-index:1000;box-shadow:var(--shadow-sm);}
 .logo-header{width:160px;height:auto;}
 nav ul{display:flex;list-style:none;gap:12px;}
@@ -46,7 +43,6 @@ nav a:hover{background:rgba(255,255,255,0.15);}
 .hamburger{display:none;flex-direction:column;gap:6px;cursor:pointer;}
 .hamburger div{width:28px;height:3px;background:var(--branco);border-radius:3px;}
 
-/* Hero */
 .hero{text-align:center;padding:28px 18px;}
 .hero h1{font-size:var(--fz-xl);margin-bottom:8px;}
 .hero p{margin-bottom:16px;font-size:var(--fz-md);}
@@ -54,7 +50,6 @@ nav a:hover{background:rgba(255,255,255,0.15);}
 .botao{display:inline-block;padding:10px 22px;border-radius:28px;color:var(--branco);background:linear-gradient(90deg,var(--laranja),var(--vermelho));font-weight:700;transition: transform .16s ease, box-shadow .16s ease;}
 .botao:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
 
-/* Projetos */
 .galeria{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;align-items:start;margin:28px 0;}
 .projeto{background:var(--branco);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .22s ease,box-shadow .22s ease;text-align:left;}
 .projeto:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
@@ -64,11 +59,9 @@ nav a:hover{background:rgba(255,255,255,0.15);}
 .projeto p{font-size:var(--fz-sm);}
 .projeto .botao{margin-top:8px;}
 
-/* Footer */
 footer{text-align:center;background:linear-gradient(90deg,var(--verde),var(--azul));color:var(--branco);padding:16px;margin-top:28px;}
 footer a{color:var(--branco);text-decoration:underline;}
 
-/* Responsivo */
 @media(max-width:768px){
   nav ul{display:none;position:absolute;right:12px;top:64px;background:rgba(255,255,255,0.96);padding:12px;border-radius:8px;flex-direction:column;gap:8px;box-shadow:var(--shadow-md);}
   nav ul.active{display:flex;}
@@ -80,7 +73,7 @@ footer a{color:var(--branco);text-decoration:underline;}
 <body>
 
 <header>
-  <img src="https://i.ibb.co/4Wf4gkS/logo.png" alt="Logo ONG MAIS VERDE" class="logo-header">
+  <img src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=160&h=80" alt="Logo ONG MAIS VERDE" class="logo-header">
   <nav>
     <ul>
       <li><a href="index.html">Início</a></li>
@@ -96,7 +89,7 @@ footer a{color:var(--branco);text-decoration:underline;}
   <section class="hero">
     <h1>Bem-vindo à ONG MAIS VERDE</h1>
     <p>Impacto social através de projetos sustentáveis e voluntariado.</p>
-    <img src="https://i.ibb.co/2N5qfGh/hero.jpg" alt="Banner ONG" class="hero-img">
+    <img src="https://images.unsplash.com/photo-1581349485293-76c1d25a8510?fit=crop&w=800&h=400" alt="Banner ONG" class="hero-img">
     <a href="cadastro.html" class="botao">Doe Agora</a>
   </section>
 
@@ -104,7 +97,7 @@ footer a{color:var(--branco);text-decoration:underline;}
     <h2>Projetos Recentes</h2>
     <div class="galeria">
       <div class="projeto">
-        <img src="https://i.ibb.co/2sG2p8b/projeto1.jpg" alt="Projeto Comunidade Verde">
+        <img src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=400&h=250" alt="Projeto Comunidade Verde">
         <div class="conteudo">
           <h3>Projeto Comunidade Verde</h3>
           <p>Plantio e preservação de áreas verdes urbanas.</p>
@@ -112,7 +105,7 @@ footer a{color:var(--branco);text-decoration:underline;}
         </div>
       </div>
       <div class="projeto">
-        <img src="https://i.ibb.co/4FgDxSx/projeto2.jpg" alt="Educação Ambiental">
+        <img src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=400&h=250" alt="Educação Ambiental">
         <div class="conteudo">
           <h3>Educação Ambiental</h3>
           <p>Oficinas de educação ambiental para jovens e crianças.</p>
@@ -120,7 +113,7 @@ footer a{color:var(--branco);text-decoration:underline;}
         </div>
       </div>
       <div class="projeto">
-        <img src="https://i.ibb.co/2sG2p8b/projeto1.jpg" alt="Campanha de Inverno">
+        <img src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=400&h=250" alt="Campanha de Inverno">
         <div class="conteudo">
           <h3>Campanha de Inverno</h3>
           <p>Arrecadação de roupas e cobertores.</p>
