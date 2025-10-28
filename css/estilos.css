@@ -1,6 +1,6 @@
 /* RESET básico */
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
+html,body{height:100%;}
 
 /* base */
 body{
@@ -28,7 +28,7 @@ header{
 .logo-header{ max-width:160px; height:auto; display:block; }
 
 /* nav */
-nav{ display:flex; align-items:center; gap:12px; position:relative; }
+nav{ display:flex; align-items:center; gap:12px; }
 nav ul{ list-style:none; display:flex; gap:12px; align-items:center; margin:0; padding:0; }
 nav a{
   color:var(--branco);
@@ -74,7 +74,7 @@ main{ max-width:1200px; margin:28px auto; padding:0 18px; }
 .botao:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); }
 
 /* seções e títulos */
-section{ margin-bottom:32px; padding:0 6px; }
+section{ margin-bottom:32px; }
 h2{ color:var(--roxo); margin-bottom:12px; }
 
 /* galeria/cards */
@@ -110,8 +110,6 @@ form{
   max-width:680px;
   margin:0 auto;
 }
-fieldset{ border:none; padding:0; margin:0; }
-legend{ font-weight:800; color:var(--preto); margin-bottom:8px; }
 label{ font-weight:700; color:var(--azul); font-size:var(--fz-sm); }
 input, select, textarea{
   padding:10px 12px;
@@ -143,7 +141,7 @@ footer{
 @media (max-width:1200px){ main{ padding:0 24px } }
 @media (max-width:992px){ .hero h1{ font-size:1.8rem } }
 @media (max-width:768px){
-  nav ul{ display:none; position:absolute; right:12px; top:64px; background:rgba(255,255,255,0.96); padding:12px; border-radius:8px; flex-direction:column; gap:8px; box-shadow:var(--shadow-md); color:var(--preto); }
+  nav ul{ display:none; position:absolute; right:12px; top:64px; background:rgba(255,255,255,0.96); padding:12px; border-radius:8px; flex-direction:column; gap:8px; box-shadow:var(--shadow-md); }
   nav ul.active{ display:flex; }
   .hamburger{ display:flex; }
   .hero-img{ max-height:300px; }
