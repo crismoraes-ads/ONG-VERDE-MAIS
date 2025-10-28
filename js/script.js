@@ -1,9 +1,15 @@
-// menu hamburguer
-document.addEventListener('DOMContentLoaded', () => {
-  const hamburger = document.querySelector('.hamburger');
-  const menu = document.querySelector('nav ul');
+// Menu hamburguer
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector("nav ul");
 
-  hamburger.addEventListener('click', () => {
-    menu.classList.toggle('show');
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+
+// Fechar menu ao clicar em link
+const navLinks = document.querySelectorAll("nav ul li a");
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("active");
   });
 });
