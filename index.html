@@ -55,24 +55,23 @@ nav a:hover{background:rgba(255,255,255,0.12)}
 </style>
 
 <script>
-// Fallback de imagens confiável
-function handleImgError(imgEl, secondaryUrl, svgDataUrl){
-  if(imgEl._triedSecondary){
-    imgEl.src = svgDataUrl || 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250"><rect width="100%" height="100%" fill="#e6eef0"/><text x="50%" y="50" dominant-baseline="middle" text-anchor="middle" fill="#7d8a8f" font-size="18">Imagem indisponível</text></svg>';
+// Fallback de imagens
+function handleImgError(imgEl, fallback){
+  if(imgEl._tried){
+    imgEl.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250"><rect width="100%" height="100%" fill="#e6eef0"/><text x="50%" y="50" dominant-baseline="middle" text-anchor="middle" fill="#7d8a8f" font-size="18">Imagem indisponível</text></svg>';
   } else {
-    imgEl._triedSecondary = true;
-    imgEl.src = secondaryUrl;
+    imgEl._tried = true;
+    imgEl.src = fallback;
   }
 }
 </script>
-
 </head>
 <body>
+
 <header>
 <div class="header-inner container">
 <a class="logo" href="index.html" aria-label="Início - ONG Mais Verde">
-<img id="logoImg" src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80" alt="Logo ONG MAIS VERDE"
-onerror="handleImgError(this,'https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80')">
+<img src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80" alt="Logo ONG MAIS VERDE" onerror="handleImgError(this,'https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80')">
 </a>
 <nav>
 <ul>
@@ -99,13 +98,8 @@ onerror="handleImgError(this,'https://images.unsplash.com/photo-1599058917215-70
 </div>
 </div>
 
-<!-- HERO -->
 <div class="media" aria-label="Voluntários em ação plantando árvores na natureza">
-<img class="hero-img"
-src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?crop=entropy&cs=tinysrgb&fit=crop&w=1000&h=600&q=80"
-alt="Voluntários trabalhando em um projeto de natureza e sustentabilidade"
-onerror="handleImgError(this,
-'https://images.unsplash.com/photo-1509099836639-18ba1795216d?crop=entropy&cs=tinysrgb&fit=crop&w=1000&h=600&q=80')">
+<img class="hero-img" src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?crop=entropy&cs=tinysrgb&fit=crop&w=1000&h=600&q=80" alt="Voluntários trabalhando em projeto" onerror="handleImgError(this,'https://images.unsplash.com/photo-1509099836639-18ba1795216d?crop=entropy&cs=tinysrgb&fit=crop&w=1000&h=600&q=80')">
 </div>
 </section>
 
@@ -113,7 +107,7 @@ onerror="handleImgError(this,
 <h2 style="text-align:center;margin-top:8px">Projetos Recentes</h2>
 <div class="galeria" role="list">
 
-<!-- Card 1 - Plantio -->
+<!-- Card 1: Plantio -->
 <article class="card" role="listitem">
 <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Plantio urbano" onerror="handleImgError(this,'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80')">
 <div class="body">
@@ -123,7 +117,7 @@ onerror="handleImgError(this,
 </div>
 </article>
 
-<!-- Card 2 - Educação Ambiental -->
+<!-- Card 2: Educação Ambiental -->
 <article class="card" role="listitem">
 <img src="https://images.unsplash.com/photo-1590608897129-79c1e7cfa692?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Educação ambiental com crianças" onerror="handleImgError(this,'https://images.unsplash.com/photo-1590608897129-79c1e7cfa692?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80')">
 <div class="body">
@@ -133,7 +127,7 @@ onerror="handleImgError(this,
 </div>
 </article>
 
-<!-- Card 3 - Campanha de Inverno -->
+<!-- Card 3: Campanha de Inverno -->
 <article class="card" role="listitem">
 <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Campanha de inverno" onerror="handleImgError(this,'https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80')">
 <div class="body">
@@ -143,7 +137,7 @@ onerror="handleImgError(this,
 </div>
 </article>
 
-<!-- Card 4 - Hortas Comunitárias -->
+<!-- Card 4: Hortas Comunitárias -->
 <article class="card" role="listitem">
 <img src="https://images.unsplash.com/photo-1603052875441-5c5a3b4870ff?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Horta comunitária" onerror="handleImgError(this,'https://images.unsplash.com/photo-1603052875441-5c5a3b4870ff?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80')">
 <div class="body">
@@ -153,7 +147,7 @@ onerror="handleImgError(this,
 </div>
 </article>
 
-<!-- Card 5 - Limpeza de Praias -->
+<!-- Card 5: Limpeza de Praias -->
 <article class="card" role="listitem">
 <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Limpeza de praia" onerror="handleImgError(this,'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80')">
 <div class="body">
@@ -163,7 +157,7 @@ onerror="handleImgError(this,
 </div>
 </article>
 
-<!-- Card 6 - Voluntariado Jovem -->
+<!-- Card 6: Voluntariado Jovem -->
 <article class="card" role="listitem">
 <img src="https://images.unsplash.com/photo-1531476780119-1e2c26a5cfde?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Voluntariado jovem" onerror="handleImgError(this,'https://images.unsplash.com/photo-1531476780119-1e2c26a5cfde?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80')">
 <div class="body">
@@ -175,11 +169,6 @@ onerror="handleImgError(this,
 
 </div>
 </section>
-
-<section style="text-align:center;margin-top:28px">
-<p>Contato: <a href="mailto:contato@ongmaisverde.org">contato@ongmaisverde.org</a> • <a href="tel:+5511999999999">(11) 99999-9999</a></p>
-</section>
-</main>
 
 <footer class="footer">
 <div class="container">
