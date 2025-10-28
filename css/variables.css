@@ -1,4 +1,4 @@
-:root{
+:root {
   /* Cores */
   --verde: #00c896;
   --azul: #0077ff;
@@ -7,7 +7,8 @@
   --roxo: #9b59b6;
   --preto: #111111;
   --branco: #ffffff;
-  --marrom: #8b4513;
+  --cinza-claro: #f6f8fb;
+  --cinza-escuro: #333333;
 
   /* Tipografia */
   --fz-xs: 0.75rem;
