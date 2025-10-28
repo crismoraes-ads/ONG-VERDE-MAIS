@@ -7,9 +7,6 @@ hamburger.addEventListener("click", () => {
 });
 
 // Fechar menu ao clicar em link
-const navLinks = document.querySelectorAll("nav ul li a");
-navLinks.forEach(link => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("active");
-  });
+document.querySelectorAll("nav ul li a").forEach(link => {
+  link.addEventListener("click", () => navMenu.classList.remove("active"));
 });
