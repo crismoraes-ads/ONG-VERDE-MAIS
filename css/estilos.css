@@ -1,193 +1,59 @@
-/* Importar variáveis */
 @import url('variaveis.css');
 
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; background: var(--branco); color: var(--preto); }
 
-body {
-  font-family: Arial, sans-serif;
-  background: var(--branco);
-  color: var(--preto);
-  line-height: 1.6;
-}
-
-/* Header e navegação */
 header {
   background: linear-gradient(90deg, var(--verde), var(--azul));
   color: var(--branco);
   padding: var(--space-16);
   position: sticky;
   top: 0;
-  z-index: 1000;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  z-index: 100;
 }
 
-.logo-header {
-  width: 140px;
-}
+.logo-header { max-width: 140px; }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: var(--space-16);
-}
+nav ul { list-style: none; display: flex; gap: var(--space-16); }
+nav a { color: var(--branco); text-decoration: none; padding: 8px 16px; border-radius: 6px; font-weight: 600; }
+nav a:hover { background: rgba(255, 255, 255, 0.2); }
 
-nav a {
-  text-decoration: none;
-  color: var(--branco);
-  font-weight: bold;
-  padding: var(--space-8) var(--space-16);
-  border-radius: 8px;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-/* Hamburger */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.hamburger div {
-  width: 25px;
-  height: 3px;
-  background-color: var(--branco);
-  margin: 4px 0;
-  transition: 0.4s;
-}
+/* Hamburger Menu */
+.hamburger { display: none; flex-direction: column; cursor: pointer; gap: 4px; }
+.hamburger div { width: 30px; height: 4px; background: var(--branco); border-radius: 2px; }
 
 /* Hero */
-.hero {
-  text-align: center;
-  padding: var(--space-32);
-  background: var(--verde);
-  color: var(--branco);
-}
-
-.hero img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin: var(--space-16) 0;
-}
-
-/* Botões */
-.botao {
-  display: inline-block;
-  background: linear-gradient(90deg, var(--laranja), var(--vermelho));
-  color: var(--branco);
-  padding: var(--space-16) var(--space-32);
-  border-radius: 28px;
-  font-weight: 700;
-  text-decoration: none;
-  margin-top: var(--space-16);
-  transition: 0.3s;
-}
-
-.botao:hover {
-  transform: scale(1.05);
-}
+.hero { text-align: center; margin: var(--space-32) 0; }
+.hero-img { width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin: var(--space-16) 0; }
+.botao { display: inline-block; background: linear-gradient(90deg, var(--laranja), var(--vermelho)); color: var(--branco); padding: 10px 20px; border-radius: 28px; font-weight: 700; text-decoration: none; }
+.botao:hover { transform: scale(1.05); transition: 0.3s; }
 
 /* Seções */
-section {
-  padding: var(--space-32) var(--space-16);
-  max-width: 1200px;
-  margin: 0 auto;
-}
+section { padding: var(--space-32) var(--space-16); max-width: 980px; margin: auto; }
 
-h1 { font-size: var(--fonte-titulo); margin-bottom: var(--space-16); }
-h2 { font-size: var(--fonte-secao); margin-bottom: var(--space-16); color: var(--roxo); }
-h3 { font-size: var(--fonte-subtitulo); margin-bottom: var(--space-8); }
-
-/* Cards de Projetos */
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-24);
-}
-
-.projeto {
-  background: var(--verde);
-  color: var(--branco);
-  padding: var(--space-16);
-  border-radius: 12px;
-  text-align: center;
-  transition: 0.3s;
-}
-
-.projeto img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: var(--space-16);
-}
-
-.projeto:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
+/* Galeria / Cards */
+.galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-16); }
+.projeto { background: var(--branco); border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.1); text-align: center; padding: var(--space-16); }
+.projeto img { width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: var(--space-8); }
+.projeto h3 { color: var(--verde); margin-bottom: var(--space-8); }
 
 /* Formulário */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-16);
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-input, select, textarea, button {
-  padding: var(--space-12);
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: var(--fonte-texto);
-}
-
-input:focus, select:focus, textarea:focus {
-  outline: none;
-  border-color: var(--azul);
-  box-shadow: 0 0 6px var(--azul);
-}
+form { display: flex; flex-direction: column; gap: var(--space-16); max-width: 520px; margin: auto; background: var(--branco); padding: var(--space-16); border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);}
+label { font-weight: 700; color: var(--verde); }
+input, button { padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-size: var(--font-md); }
+input:focus { outline: none; border-color: var(--verde); box-shadow: 0 0 6px var(--verde); }
+button { background: var(--verde); color: var(--branco); font-weight: 700; cursor: pointer; }
+button:hover { background: var(--azul); }
 
 /* Footer */
-footer {
-  text-align: center;
-  padding: var(--space-16);
-  background: linear-gradient(90deg, var(--verde), var(--azul));
-  color: var(--branco);
-}
+footer { text-align: center; padding: var(--space-16); background: linear-gradient(90deg, var(--verde), var(--azul)); color: var(--branco); margin-top: var(--space-32); border-radius: 0 0 12px 12px; }
 
 /* Responsividade */
-@media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background: var(--verde);
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-    padding: var(--space-16);
-    border-radius: 8px;
-  }
-
-  nav ul.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex;
-  }
+@media(max-width:768px){
+  nav ul { display: none; flex-direction: column; background: var(--verde); position: absolute; right: 0; top: 60px; width: 200px; padding: var(--space-16); }
+  nav ul.active { display: flex; }
+  .hamburger { display: flex; }
 }
