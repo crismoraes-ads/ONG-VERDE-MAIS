@@ -1,26 +1,30 @@
-:root {
-  /* Paleta de cores (8 cores) */
-  --primary: #2E7D32;
-  --secondary: #81C784;
-  --accent: #FFB74D;
-  --neutral-light: #F5F5F5;
-  --neutral-medium: #CCCCCC;
-  --neutral-dark: #212121;
-  --white: #ffffff;
-  --danger: #E53935;
+:root{
+  /* Paleta (8 cores) */
+  --verde: #00c896;
+  --azul: #0077ff;
+  --laranja: #ff9500;
+  --vermelho: #ff4c4c;
+  --roxo: #9b59b6;
+  --preto: #111111;
+  --branco: #ffffff;
+  --marrom: #8b4513;
 
   /* Tipografia */
-  --font-small: 0.8rem;
-  --font-medium: 1rem;
-  --font-large: 1.25rem;
-  --font-xlarge: 1.5rem;
-  --font-xxlarge: 2rem;
+  --fz-xs: 0.75rem;
+  --fz-sm: 0.875rem;
+  --fz-md: 1rem;
+  --fz-lg: 1.25rem;
+  --fz-xl: 2rem;
 
-  /* Espaçamento modular */
-  --space-8: 8px;
-  --space-16: 16px;
-  --space-24: 24px;
-  --space-32: 32px;
-  --space-48: 48px;
-  --space-64: 64px;
+  /* Espaçamento */
+  --s-8: 8px;
+  --s-16: 16px;
+  --s-24: 24px;
+  --s-32: 32px;
+  --s-48: 48px;
+  --s-64: 64px;
+
+  /* Sombra */
+  --shadow-sm: 0 6px 18px rgba(0,0,0,0.08);
+  --shadow-md: 0 12px 30px rgba(0,0,0,0.12);
 }
