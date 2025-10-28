@@ -53,30 +53,29 @@ nav a:hover{background:rgba(255,255,255,0.12)}
   .hero-img{height:180px}
 }
 </style>
-
 <script>
-// Função de fallback com link alternativo e SVG
-function handleImgError(imgEl, primary, secondary){
-  if(imgEl._triedSecondary){
-    imgEl.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250"><rect width="100%" height="100%" fill="#e6eef0"/><text x="50%" y="50" dominant-baseline="middle" text-anchor="middle" fill="#7d8a8f" font-size="18">Imagem indisponível</text></svg>';
-  } else if(imgEl._triedPrimary){
-    imgEl._triedSecondary = true;
-    if(secondary) imgEl.src = secondary;
-    else imgEl.src = imgEl.src;
-  } else {
-    imgEl._triedPrimary = true;
-    imgEl.src = primary;
-  }
+function handleImgError(imgEl, secondaryUrl, svgDataUrl){
+  try {
+    if (imgEl._triedSecondary) {
+      if (svgDataUrl) imgEl.src = svgDataUrl;
+      else imgEl.src = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250"><rect width="100%" height="100%" fill="#e6eef0"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#7d8a8f" font-size="18">Imagem indisponível</text></svg>');
+    } else if (secondaryUrl) {
+      imgEl._triedSecondary = true;
+      imgEl.src = secondaryUrl;
+    } else {
+      imgEl._triedSecondary = true;
+      imgEl.src = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250"><rect width="100%" height="100%" fill="#e6eef0"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#7d8a8f" font-size="18">Imagem indisponível</text></svg>');
+    }
+  } catch(e){ console.error('handleImgError', e); }
 }
 </script>
 </head>
 <body>
-
 <header>
 <div class="header-inner container">
 <a class="logo" href="index.html" aria-label="Início - ONG Mais Verde">
-<img src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80" alt="Logo ONG MAIS VERDE" 
-onerror="handleImgError(this,'https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80','https://images.unsplash.com/photo-1604166571325-9b518c9a9bbf?fit=crop&w=240&h=80')">
+<img id="logoImg" src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80" alt="Logo ONG MAIS VERDE"
+onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22240%22 height=%2280%22><rect width=%22240%22 height=%2280%22 fill=%22%2300c896%22/><text x=%22120%22 y=%2248%22 font-size=%2220%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>ONG MAIS VERDE</text></svg>';">
 </a>
 <nav>
 <ul>
@@ -100,10 +99,14 @@ onerror="handleImgError(this,'https://images.unsplash.com/photo-1599058917215-70
 <a class="btn" href="projetos.html">Conheça Projetos</a>
 </div>
 </div>
+
 <div class="media" aria-label="Voluntários em ação plantando árvores na natureza">
-<img class="hero-img" src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?crop=entropy&cs=tinysrgb&fit=crop&w=1000&h=600&q=80"
-alt="Voluntários trabalhando em projeto"
-onerror="handleImgError(this,'https://images.unsplash.com/photo-1509099836639-18ba1795216d?crop=entropy&cs=tinysrgb&fit=crop&w=1000&h=600&q=80','https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=tinysrgb&fit=crop&w=1000&h=600')">
+<img class="hero-img"
+src="https://images.unsplash.com/photo-1582719478172-3a7e8c58f3b3?crop=entropy&cs=tinysrgb&fit=crop&w=1000&h=600&q=80"
+alt="Voluntários trabalhando em um projeto de natureza e sustentabilidade"
+onerror="handleImgError(this,
+'https://i.ibb.co/2N5qfGh/hero.jpg',
+'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22520%22><rect width=%22800%22 height=%22520%22 fill=%22%23007f3f%22/><text x=%22400%22 y=%22260%22 font-size=%2232%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>Imagem indisponível</text></svg>')">
 </div>
 </section>
 
@@ -111,11 +114,8 @@ onerror="handleImgError(this,'https://images.unsplash.com/photo-1509099836639-18
 <h2 style="text-align:center;margin-top:8px">Projetos Recentes</h2>
 <div class="galeria" role="list">
 
-<!-- Card 1: Plantio -->
 <article class="card" role="listitem">
-<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80"
-alt="Plantio urbano"
-onerror="handleImgError(this,'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80','https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450')">
+<img src="https://images.unsplash.com/photo-1560493671-6c4fcbb0b478?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Plantio urbano" onerror="handleImgError(this,'https://i.ibb.co/2sG2p8b/projeto1.jpg')">
 <div class="body">
 <h3>Comunidade Verde <span style="font-size:.75rem;background:#00c896;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Plantio</span></h3>
 <p>Mutirões de plantio em praças e espaços urbanos com moradores locais.</p>
@@ -123,11 +123,8 @@ onerror="handleImgError(this,'https://images.unsplash.com/photo-1501004318641-b3
 </div>
 </article>
 
-<!-- Card 2: Educação Ambiental -->
 <article class="card" role="listitem">
-<img src="https://images.unsplash.com/photo-1590608897129-79c1e7cfa692?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80"
-alt="Educação ambiental com crianças"
-onerror="handleImgError(this,'https://images.unsplash.com/photo-1590608897129-79c1e7cfa692?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80','https://images.unsplash.com/photo-1581091870623-ec61d03b9e70?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450')">
+<img src="https://images.unsplash.com/photo-1596495577886-d920f1e9f13d?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Educação ambiental com crianças" onerror="handleImgError(this,'https://i.ibb.co/4FgDxSx/projeto2.jpg')">
 <div class="body">
 <h3>Educação Ambiental <span style="font-size:.75rem;background:#ff9500;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Oficinas</span></h3>
 <p>Oficinas e atividades pedagógicas para crianças e jovens da comunidade.</p>
@@ -135,11 +132,8 @@ onerror="handleImgError(this,'https://images.unsplash.com/photo-1590608897129-79
 </div>
 </article>
 
-<!-- Card 3: Campanha de Inverno -->
 <article class="card" role="listitem">
-<img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80"
-alt="Campanha de inverno"
-onerror="handleImgError(this,'https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80','https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450')">
+<img src="https://images.unsplash.com/photo-1602924468633-742d48291b85?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Campanha de inverno" onerror="handleImgError(this,'https://i.ibb.co/2sG2p8b/projeto3.jpg')">
 <div class="body">
 <h3>Campanha de Inverno <span style="font-size:.75rem;background:#ff4c4c;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Doação</span></h3>
 <p>Arrecadação e distribuição de roupas e cobertores para famílias em vulnerabilidade.</p>
@@ -147,11 +141,8 @@ onerror="handleImgError(this,'https://images.unsplash.com/photo-1603791440384-56
 </div>
 </article>
 
-<!-- Card 4: Hortas Comunitárias -->
 <article class="card" role="listitem">
-<img src="https://images.unsplash.com/photo-1603052875441-5c5a3b4870ff?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80"
-alt="Horta comunitária"
-onerror="handleImgError(this,'https://images.unsplash.com/photo-1603052875441-5c5a3b4870ff?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80','https://images.unsplash.com/photo-1587300003388-59208cc962cb?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450')">
+<img src="https://images.unsplash.com/photo-1606788075763-90b1f3d12b4d?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Horta comunitária" onerror="handleImgError(this,'https://i.ibb.co/2sG2p8b/projeto1.jpg')">
 <div class="body">
 <h3>Hortas Comunitárias <span style="font-size:.75rem;background:#9b59b6;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Horta</span></h3>
 <p>Hortas em comunidades para produção de alimentos e educação alimentar.</p>
@@ -159,11 +150,8 @@ onerror="handleImgError(this,'https://images.unsplash.com/photo-1603052875441-5c
 </div>
 </article>
 
-<!-- Card 5: Limpeza de Praias -->
 <article class="card" role="listitem">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80"
-alt="Limpeza de praia"
-onerror="handleImgError(this,'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80','https://images.unsplash.com/photo-1518695574084-9eec9b5e9b33?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450')">
+<img src="https://images.unsplash.com/photo-1588681938286-cf0bff8ffb69?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Limpeza de praia" onerror="handleImgError(this,'https://i.ibb.co/4FgDxSx/projeto2.jpg')">
 <div class="body">
 <h3>Limpeza de Praias <span style="font-size:.75rem;background:#0077ff;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Ação</span></h3>
 <p>Ações de limpeza e conscientização ambiental em áreas costeiras.</p>
@@ -171,11 +159,8 @@ onerror="handleImgError(this,'https://images.unsplash.com/photo-1507525428034-b7
 </div>
 </article>
 
-<!-- Card 6: Voluntariado Jovem -->
 <article class="card" role="listitem">
-<img src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80"
-alt="Voluntariado jovem"
-onerror="handleImgError(this,'https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80','https://images.unsplash.com/photo-1532187863487-0d439f1f07a9?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450')">
+<img src="https://images.unsplash.com/photo-1599932846443-24d7422185f5?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Voluntariado jovem" onerror="handleImgError(this,'https://i.ibb.co/2sG2p8b/projeto3.jpg')">
 <div class="body">
 <h3>Voluntariado Jovem <span style="font-size:.75rem;background:#00c896;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Volunt</span></h3>
 <p>Programas para engajar jovens em ações comunitárias e ambientais.</p>
@@ -211,6 +196,5 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 });
 </script>
-
 </body>
 </html>
