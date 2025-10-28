@@ -1,19 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
-  const navMenu = document.querySelector("nav ul");
+  const navUl = document.querySelector("nav ul");
 
   hamburger.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
+    navUl.classList.toggle("active");
   });
 
-  // Máscaras de formulário
   function setMask(input, maskFn) {
     input.addEventListener("input", () => {
       input.value = maskFn(input.value);
     });
   }
 
-  function maskCPF(v) {
+  function maskCPF(v){
     v = v.replace(/\D/g, "");
     v = v.replace(/(\d{3})(\d)/, "$1.$2");
     v = v.replace(/(\d{3})(\d)/, "$1.$2");
@@ -21,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return v;
   }
 
-  function maskTel(v) {
+  function maskTel(v){
     v = v.replace(/\D/g, "");
     if (v.length <= 10) {
       v = v.replace(/(\d{2})(\d)/, "($1) $2");
@@ -33,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return v;
   }
 
-  function maskCEP(v) {
+  function maskCEP(v){
     v = v.replace(/\D/g, "");
     v = v.replace(/(\d{5})(\d)/, "$1-$2");
     return v;
@@ -43,14 +42,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const tel = document.querySelector("#telefone");
   const cep = document.querySelector("#cep");
 
-  if (cpf) setMask(cpf, maskCPF);
-  if (tel) setMask(tel, maskTel);
-  if (cep) setMask(cep, maskCEP);
+  if(cpf) setMask(cpf, maskCPF);
+  if(tel) setMask(tel, maskTel);
+  if(cep) setMask(cep, maskCEP);
 
   const form = document.querySelector("#form-cadastro");
-  if (form) {
+  if(form){
     form.addEventListener("submit", (e) => {
-      if (!form.checkValidity()) {
+      if(!form.checkValidity()){
         e.preventDefault();
         form.reportValidity();
       } else {
