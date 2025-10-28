@@ -28,7 +28,7 @@ main { max-width: 1200px; margin:28px auto; padding:0 18px; }
 .hero { text-align:center; padding:28px 0; min-height:400px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; }
 .hero h1 { font-size:var(--fz-xl); color:var(--preto); margin-bottom:12px; }
 .hero p { font-size:var(--fz-md); color: var(--cinza-escuro); margin-bottom:16px; max-width:600px; }
-.hero-img { width:100%; max-height:400px; object-fit:cover; border-radius:12px; margin:0 auto; display:block; }
+.hero-img { width:100%; max-height:400px; object-fit:cover; border-radius:12px; display:block; margin:0 auto; }
 
 /* BOTÃO */
 .botao {
@@ -54,19 +54,10 @@ h2 { color: var(--roxo); margin-bottom:12px; }
   box-shadow: var(--shadow-sm); transition: transform 0.2s, box-shadow 0.2s; text-align:left;
 }
 .projeto:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-.projeto img { width:100%; height:200px; object-fit:cover; display:block; }
+.projeto img { width:100%; height:200px; object-fit:cover; display:block; border-radius:8px; }
 .projeto .conteudo { padding:12px 14px 18px 14px; display:flex; flex-direction:column; gap:8px; }
 .projeto h3 { color:var(--verde); font-size:var(--fz-lg); }
 .projeto p { font-size: var(--fz-sm); color: var(--cinza-escuro); }
-.projeto .botao { align-self:flex-start; }
-
-/* FORMULÁRIO */
-form { display:flex; flex-direction:column; gap:12px; background: var(--branco); padding:16px; border-radius:12px; box-shadow: var(--shadow-sm); max-width:680px; margin:0 auto; }
-label { font-weight:700; color:var(--azul); font-size:var(--fz-sm); }
-input, select, textarea { padding:10px 12px; border-radius:8px; border:1px solid #d0d7df; font-size:var(--fz-md); width:100%; }
-input:focus, textarea:focus, select:focus { outline:none; border-color:var(--azul); box-shadow:0 0 8px rgba(0,119,255,0.12); }
-button[type="submit"] { padding:12px 16px; border-radius:10px; background:var(--verde); color:var(--branco); font-weight:700; cursor:pointer; border:none; }
-button[type="submit"]:hover { background:var(--azul); }
 
 /* FOOTER */
 footer { background: linear-gradient(90deg,var(--verde),var(--azul)); color: var(--branco); padding:16px; text-align:center; }
