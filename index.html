@@ -16,8 +16,6 @@
 body{font-family:Arial, Helvetica, sans-serif;background:var(--cinza);color:var(--preto);line-height:1.45}
 a{text-decoration:none;color:inherit}
 .container{max-width:1200px;margin:0 auto;padding:0 var(--s-16)}
-
-/* Header */
 header{position:sticky;top:0;z-index:1100;background:linear-gradient(90deg,var(--verde),var(--azul));box-shadow:var(--shadow-sm)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;gap:16px}
 .logo img{height:56px;display:block}
@@ -26,15 +24,11 @@ nav a{color:var(--branco);padding:8px 12px;border-radius:8px;font-weight:600}
 nav a:hover{background:rgba(255,255,255,0.12)}
 .hamburger{display:none;flex-direction:column;gap:6px;cursor:pointer;background:transparent;border:0;padding:8px}
 .hamburger span{width:26px;height:3px;background:var(--branco);border-radius:3px}
-
-/* Hero */
 .hero{display:grid;grid-template-columns:1fr 480px;gap:24px;align-items:center;padding:36px 0}
 .hero .copy h1{font-size:var(--fz-xl);margin-bottom:12px}
 .hero .copy p{color:#333;margin-bottom:16px}
 .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
 .hero-img{width:100%;height:320px;object-fit:cover;border-radius:12px;box-shadow:var(--shadow-sm);display:block}
-
-/* Gallery / cards */
 .galeria{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0}
 .card{background:var(--branco);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .18s;display:flex;flex-direction:column}
 .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
@@ -43,14 +37,8 @@ nav a:hover{background:rgba(255,255,255,0.12)}
 .card h3{color:var(--verde);margin-bottom:8px}
 .card p{flex:1;color:#444;font-size:var(--fz-sm)}
 .btn{display:inline-block;padding:10px 18px;border-radius:999px;background:linear-gradient(90deg,var(--laranja),var(--vermelho));color:var(--branco);font-weight:700}
-
-/* Footer */
 .footer{background:linear-gradient(90deg,var(--verde),var(--azul));color:var(--branco);padding:20px 0;text-align:center;margin-top:28px}
-
-/* Toast simple */
 .toast{position:fixed;right:18px;bottom:18px;background:#fff;color:#111;padding:12px 16px;border-radius:8px;box-shadow:var(--shadow-md);display:none}
-
-/* Responsive */
 @media(max-width:1200px){ .hero{grid-template-columns:1fr 420px} .galeria{grid-template-columns:repeat(2,1fr)} }
 @media(max-width:992px){ .hero{grid-template-columns:1fr;text-align:center} .hero .media img{height:280px} .galeria{grid-template-columns:1fr} }
 @media(max-width:768px){
@@ -76,7 +64,7 @@ nav a:hover{background:rgba(255,255,255,0.12)}
     <nav>
       <ul>
         <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
+        <li class="nav-item"><a href="projetos.html">Projetos</a></li>
         <li><a href="cadastro.html">Cadastro</a></li>
         <li><a href="blog.html">Blog</a></li>
       </ul>
@@ -113,9 +101,9 @@ nav a:hover{background:rgba(255,255,255,0.12)}
   <section aria-label="Projetos recentes">
     <h2 style="text-align:center;margin-top:8px">Projetos Recentes</h2>
     <div class="galeria" role="list">
-      <!-- Card 1: Comunidade Verde -->
+      <!-- Card 1: Plantio urbano -->
       <article class="card" role="listitem">
-        <img src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80"
+        <img src="https://images.unsplash.com/photo-1521033719794-41049d18a1f8?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80"
              alt="Plantio urbano" onerror="handleImgError(this,'https://i.ibb.co/2sG2p8b/projeto1.jpg')">
         <div class="body">
           <h3>Comunidade Verde <span style="font-size:.75rem;background:#00c896;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Plantio</span></h3>
@@ -124,9 +112,9 @@ nav a:hover{background:rgba(255,255,255,0.12)}
         </div>
       </article>
 
-      <!-- Card 2: Educação Ambiental -->
+      <!-- Card 2: Educação ambiental -->
       <article class="card" role="listitem">
-        <img src="https://images.unsplash.com/photo-1581093448794-1f6e92f6f9e6?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80"
+        <img src="https://images.unsplash.com/photo-1601597117501-94f3b2fa0d2c?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80"
              alt="Educação ambiental com crianças" onerror="handleImgError(this,'https://i.ibb.co/4FgDxSx/projeto2.jpg')">
         <div class="body">
           <h3>Educação Ambiental <span style="font-size:.75rem;background:#ff9500;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Oficinas</span></h3>
@@ -135,9 +123,9 @@ nav a:hover{background:rgba(255,255,255,0.12)}
         </div>
       </article>
 
-      <!-- Card 3: Campanha de Inverno -->
+      <!-- Card 3: Campanha de inverno -->
       <article class="card" role="listitem">
-        <img src="https://images.unsplash.com/photo-1605902711622-cfb43c4431b4?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80"
+        <img src="https://images.unsplash.com/photo-1601758123927-3b67d8d07a06?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80"
              alt="Campanha de inverno" onerror="handleImgError(this,'https://i.ibb.co/2sG2p8b/projeto3.jpg')">
         <div class="body">
           <h3>Campanha de Inverno <span style="font-size:.75rem;background:#ff4c4c;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Doação</span></h3>
@@ -146,9 +134,9 @@ nav a:hover{background:rgba(255,255,255,0.12)}
         </div>
       </article>
 
-      <!-- Card 4: Hortas Comunitárias -->
+      <!-- Card 4: Hortas comunitárias -->
       <article class="card" role="listitem">
-        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80"
+        <img src="https://images.unsplash.com/photo-1603031146240-7b3d5e32d89a?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80"
              alt="Horta comunitária" onerror="handleImgError(this,'https://i.ibb.co/2sG2p8b/projeto1.jpg')">
         <div class="body">
           <h3>Hortas Comunitárias <span style="font-size:.75rem;background:#9b59b6;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Horta</span></h3>
@@ -157,9 +145,9 @@ nav a:hover{background:rgba(255,255,255,0.12)}
         </div>
       </article>
 
-      <!-- Card 5: Limpeza de Praias -->
+      <!-- Card 5: Limpeza de praias -->
       <article class="card" role="listitem">
-        <img src="https://images.unsplash.com/photo-1582719478250-17b5f3baf0c3?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80"
+        <img src="https://images.unsplash.com/photo-1522199670076-2852f80289c8?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80"
              alt="Limpeza de praia" onerror="handleImgError(this,'https://i.ibb.co/4FgDxSx/projeto2.jpg')">
         <div class="body">
           <h3>Limpeza de Praias <span style="font-size:.75rem;background:#0077ff;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Ação</span></h3>
@@ -168,9 +156,9 @@ nav a:hover{background:rgba(255,255,255,0.12)}
         </div>
       </article>
 
-      <!-- Card 6: Voluntariado Jovem -->
+      <!-- Card 6: Voluntariado jovem -->
       <article class="card" role="listitem">
-        <img src="https://images.unsplash.com/photo-1597587353580-8778eddbb5d5?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80"
+        <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80"
              alt="Voluntariado jovem" onerror="handleImgError(this,'https://i.ibb.co/2sG2p8b/projeto3.jpg')">
         <div class="body">
           <h3>Voluntariado Jovem <span style="font-size:.75rem;background:#00c896;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Volunt</span></h3>
@@ -196,31 +184,28 @@ nav a:hover{background:rgba(255,255,255,0.12)}
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
 <script>
-// robust image fallback: tries secondaryUrl then inline SVG placeholder
 function handleImgError(imgEl, secondaryUrl, svgDataUrl){
   try {
-    if (imgEl._triedSecondary) {
-      if (svgDataUrl) imgEl.src = svgDataUrl;
-      else imgEl.src = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250"><rect width="100%" height="100%" fill="#e6eef0"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#7d8a8f" font-size="18">Imagem indisponível</text></svg>');
-    } else if (secondaryUrl) {
-      imgEl._triedSecondary = true;
-      imgEl.src = secondaryUrl;
+    if(imgEl._triedSecondary){
+      if(svgDataUrl) imgEl.src = svgDataUrl;
+      else imgEl.src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250"><rect width="100%" height="100%" fill="#e6eef0"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#7d8a8f" font-size="18">Imagem indisponível</text></svg>';
+    } else if(secondaryUrl){
+      imgEl._triedSecondary=true;
+      imgEl.src=secondaryUrl;
     } else {
-      imgEl._triedSecondary = true;
-      imgEl.src = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250"><rect width="100%" height="100%" fill="#e6eef0"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#7d8a8f" font-size="18">Imagem indisponível</text></svg>');
+      imgEl._triedSecondary=true;
+      imgEl.src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250"><rect width="100%" height="100%" fill="#e6eef0"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#7d8a8f" font-size="18">Imagem indisponível</text></svg>';
     }
-  } catch(e){
-    console.error('handleImgError', e);
-  }
+  } catch(e){ console.error('handleImgError', e); }
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-  const hamburger = document.querySelector('.hamburger');
-  const navUl = document.querySelector('nav ul');
-  if (hamburger && navUl) {
-    hamburger.addEventListener('click', () => {
-      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', String(!expanded));
+  const hamburger=document.querySelector('.hamburger');
+  const navUl=document.querySelector('nav ul');
+  if(hamburger && navUl){
+    hamburger.addEventListener('click',()=>{
+      const expanded=hamburger.getAttribute('aria-expanded')==='true';
+      hamburger.setAttribute('aria-expanded',String(!expanded));
       navUl.classList.toggle('active');
     });
   }
