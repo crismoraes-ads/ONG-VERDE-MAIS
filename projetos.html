@@ -1,54 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ONG MAIS VERDE - Projetos</title>
-  <link rel="stylesheet" href="css/variaveis.css">
-  <link rel="stylesheet" href="css/estilos.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONG Verde Mais - Projetos</title>
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 <header>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Google-flutter-logo.svg" alt="Logo ONG MAIS VERDE" class="logo-header">
+  <div class="logo">
+    <img src="https://via.placeholder.com/150x50?text=Logo" alt="Logo ONG Verde Mais">
+  </div>
   <nav>
     <ul>
       <li><a href="index.html">Início</a></li>
       <li><a href="projetos.html">Projetos</a></li>
-      <li><a href="cadastro.html">Cadastro</a></li>
       <li><a href="blog.html">Blog</a></li>
+      <li><a href="cadastro.html">Cadastro</a></li>
     </ul>
-    <div class="hamburger">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+    <div class="hamburger"><div></div><div></div><div></div></div>
   </nav>
 </header>
 
-<main>
-  <section class="galeria">
-    <div class="projeto">
-      <img src="https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg" alt="Projeto 1">
-      <h3>Projeto Comunidade</h3>
-      <p>Transformando vidas através da educação.</p>
-    </div>
-    <div class="projeto">
-      <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg" alt="Projeto 2">
-      <h3>Voluntariado Jovem</h3>
-      <p>Engajando jovens em atividades sociais.</p>
-    </div>
-    <div class="projeto">
-      <img src="https://images.pexels.com/photos/3184297/pexels-photo-3184297.jpeg" alt="Projeto 3">
-      <h3>Campanha de Inverno</h3>
-      <p>Distribuição de roupas e cobertores para famílias.</p>
-    </div>
+<main class="container">
+  <section class="card">
+    <img src="https://via.placeholder.com/400x250?text=Voluntariado" alt="Voluntariado">
+    <h2>Voluntariado</h2>
+    <p>Participe das ações ambientais e contribua para a comunidade.</p>
+    <span class="badge">Aberto</span>
+    <button>Saiba mais</button>
+  </section>
+
+  <section class="card">
+    <img src="https://via.placeholder.com/400x250?text=Doacoes" alt="Doações">
+    <h2>Doações</h2>
+    <p>Faça doações para apoiar nossos projetos de preservação ambiental.</p>
+    <span class="badge">Aberto</span>
+    <button>Saiba mais</button>
+  </section>
+
+  <section class="card">
+    <img src="https://via.placeholder.com/400x250?text=Educacao" alt="Educação Ambiental">
+    <h2>Educação Ambiental</h2>
+    <p>Programas educativos para escolas e comunidades sobre sustentabilidade.</p>
+    <span class="badge">Em andamento</span>
+    <button>Saiba mais</button>
   </section>
 </main>
 
-<footer>
-  <p>Contato: contato@ongmaisverde.org | Telefone: (11) 99999-9999</p>
-  <p>Siga-nos: <a href="https://www.facebook.com" target="_blank">Facebook</a> | <a href="https://www.instagram.com" target="_blank">Instagram</a></p>
-  <p>&copy; 2025 ONG MAIS VERDE</p>
+<footer class="container">
+  <h2>Contato</h2>
+  <p>Email: <a href="mailto:contato@ongverdemais.org">contato@ongverdemais.org</a></p>
+  <p>Instagram: <a href="https://www.instagram.com" target="_blank">@ongverdemais</a></p>
+  <p>Facebook: <a href="https://www.facebook.com" target="_blank">ONG Verde Mais</a></p>
 </footer>
 
 <script src="js/script.js"></script>
