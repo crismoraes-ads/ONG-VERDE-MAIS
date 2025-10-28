@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     v = v.replace(/(\d{3})(\d)/,'$1.$2');
     v = v.replace(/(\d{3})(\d)/,'$1.$2');
     v = v.replace(/(\d{3})(\d{1,2})$/,'$1-$2');
-    return v;
+    return v.substring(0,14);
   }
   function maskTel(v){
     v = v.replace(/\D/g,'');
@@ -25,12 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
       v = v.replace(/(\d{2})(\d)/,'($1) $2');
       v = v.replace(/(\d{5})(\d)/,'$1-$2');
     }
-    return v;
+    return v.substring(0,15);
   }
   function maskCEP(v){
     v = v.replace(/\D/g,'');
     v = v.replace(/(\d{5})(\d)/,'$1-$2');
-    return v;
+    return v.substring(0,9);
   }
 
   const cpf = document.querySelector('#cpf');
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         form.reportValidity();
       } else {
         e.preventDefault();
-        alert('Cadastro simulado: formulário válido!');
+        alert('Cadastro simulado: formulário válido! Obrigado.');
         form.reset();
       }
     });
