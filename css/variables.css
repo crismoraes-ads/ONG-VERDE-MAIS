@@ -1,26 +1,29 @@
 :root {
-  /* Paleta de cores */
-  --verde: #00c896;
-  --azul: #0077ff;
-  --laranja: #ff7f00;
-  --vermelho: #ff4c4c;
-  --roxo: #800080;
-  --preto: #000000;
+  /* 🎨 Paleta de 8 cores */
+  --verde: #2ecc71;
+  --azul: #3498db;
+  --laranja: #e67e22;
+  --vermelho: #e74c3c;
+  --roxo: #9b59b6;
+  --preto: #2c3e50;
   --branco: #ffffff;
-  --marrom: #8b4513;
+  --marrom: #8e6e53;
 
-  /* Tipografia */
-  --font-xs: 0.75rem;
-  --font-sm: 0.875rem;
-  --font-md: 1rem;
-  --font-lg: 1.25rem;
-  --font-xl: 2rem;
+  /* 🅰️ Tipografia */
+  --fonte-principal: 'Poppins', sans-serif;
 
-  /* Espaçamento modular */
-  --space-8: 8px;
-  --space-16: 16px;
-  --space-24: 24px;
-  --space-32: 32px;
-  --space-48: 48px;
-  --space-64: 64px;
+  /* 🔠 Tamanhos de fonte */
+  --titulo-grande: 2.5rem;
+  --titulo-medio: 1.8rem;
+  --texto-normal: 1rem;
+  --texto-pequeno: 0.875rem;
+  --texto-mini: 0.75rem;
+
+  /* 📏 Espaçamento */
+  --esp-1: 8px;
+  --esp-2: 16px;
+  --esp-3: 24px;
+  --esp-4: 32px;
+  --esp-5: 48px;
+  --esp-6: 64px;
 }
