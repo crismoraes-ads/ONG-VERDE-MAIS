@@ -1,112 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ONG MAIS VERDE - Início</title>
-<link rel="stylesheet" href="css/estilos.css">
-<link rel="stylesheet" href="css/variables.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ONG MAIS VERDE - Início</title>
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-
-<header>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Google-flutter-logo.svg" 
-       alt="Logo ONG MAIS VERDE" class="logo-header">
-  <button class="menu-toggle">&#9776;</button>
-  <nav>
-    <ul>
-      <li><a href="index.html">Início</a></li>
-      <li><a href="projetos.html">Projetos</a></li>
-      <li><a href="cadastro.html">Cadastro</a></li>
-      <li><a href="blog.html">Blog</a></li>
-    </ul>
-  </nav>
-</header>
-
-<main>
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Bem-vindo à ONG MAIS VERDE</h1>
-    <p>Trabalhamos para gerar impacto social por meio de projetos comunitários e voluntariado.</p>
-    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1200" 
-         alt="Imagem ONG" class="hero-img">
-    <a href="cadastro.html" class="botao">Doe Agora</a>
-  </section>
-
-  <!-- Missão / Visão / Valores -->
-  <section class="informacoes">
-    <h2>Missão</h2>
-    <p>Promover inclusão social e desenvolver projetos sustentáveis que transformam vidas.</p>
-
-    <h2>Visão</h2>
-    <p>Ser referência em transformação social por meio da educação, solidariedade e inovação.</p>
-
-    <h2>Valores</h2>
-    <ul>
-      <li>Transparência e ética</li>
-      <li>Respeito à diversidade</li>
-      <li>Comprometimento social</li>
-      <li>Cooperação e solidariedade</li>
-    </ul>
-  </section>
-
-  <!-- Cards de Projetos -->
-  <section class="cards">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1581579182162-cbd7d9673676?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" alt="Projeto 1">
-      <div class="card-content">
-        <h3>Projeto Educação</h3>
-        <p>Ensino e capacitação para jovens em situação de vulnerabilidade.</p>
-      </div>
+  <header>
+    <img src="images/logo.png" alt="Logo ONG MAIS VERDE" class="logo-header">
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1521805103035-5e6a7f6c1c24?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" alt="Projeto 2">
-      <div class="card-content">
-        <h3>Projeto Saúde</h3>
-        <p>Campanhas de saúde e prevenção para a comunidade local.</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" alt="Projeto 3">
-      <div class="card-content">
-        <h3>Projeto Meio Ambiente</h3>
-        <p>Plantio de árvores e ações de conscientização ambiental.</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" alt="Projeto 4">
-      <div class="card-content">
-        <h3>Projeto Cultural</h3>
-        <p>Atividades artísticas e culturais para crianças e jovens.</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1523875194681-bedd468c58bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" alt="Projeto 5">
-      <div class="card-content">
-        <h3>Projeto Voluntariado</h3>
-        <p>Mobilização de voluntários para ações comunitárias.</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1517511620798-cec17d428bc0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" alt="Projeto 6">
-      <div class="card-content">
-        <h3>Projeto Alimentação</h3>
-        <p>Distribuição de alimentos para famílias em vulnerabilidade.</p>
-      </div>
-    </div>
-  </section>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
 
-</main>
+  <main>
+    <section class="hero">
+      <h1>Bem-vindo à ONG MAIS VERDE</h1>
+      <p>Trabalhamos para gerar impacto social por meio de projetos comunitários e voluntariado.</p>
+      <img src="images/hero.jpg" alt="Imagem ONG" class="hero-img">
+      <a href="cadastro.html" class="botao">Doe Agora</a>
+    </section>
 
-<footer>
-  <p>Contato: contato@ongmaisverde.org | Telefone: (11) 99999-9999</p>
-  <p>Siga-nos: 
-    <a href="#" aria-label="Facebook">Facebook</a> | 
-    <a href="#" aria-label="Instagram">Instagram</a>
-  </p>
-  <p>&copy; 2025 ONG MAIS VERDE</p>
-</footer>
+    <section>
+      <h2>Missão</h2>
+      <p>Promover inclusão social e desenvolver projetos sustentáveis que transformam vidas.</p>
 
-<script src="js/script.js"></script>
+      <h2>Visão</h2>
+      <p>Ser referência em transformação social por meio da educação, solidariedade e inovação.</p>
+
+      <h2>Valores</h2>
+      <ul>
+        <li>Transparência e ética</li>
+        <li>Respeito à diversidade</li>
+        <li>Comprometimento social</li>
+        <li>Cooperação e solidariedade</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Projetos Recentes</h2>
+      <div class="galeria">
+        <div class="projeto">
+          <img src="images/projeto1.jpg" alt="Projeto 1">
+          <h3>Projeto Comunidade Verde</h3>
+          <p>Iniciativa de plantio e preservação de áreas verdes urbanas.</p>
+        </div>
+        <div class="projeto">
+          <img src="images/projeto2.jpg" alt="Projeto 2">
+          <h3>Educação Ambiental</h3>
+          <p>Oficinas de educação ambiental para jovens e crianças da comunidade.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Contato: contato@ongmaisverde.org | Telefone: (11) 99999-9999</p>
+    <p>
+      Siga-nos: 
+      <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">Facebook</a> | 
+      <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">Instagram</a>
+    </p>
+    <p>&copy; 2025 ONG MAIS VERDE</p>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
