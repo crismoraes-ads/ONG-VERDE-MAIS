@@ -1,47 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>ONG MAIS VERDE - Blog</title>
   <link rel="stylesheet" href="css/variaveis.css">
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
   <header>
-    <img src="https://i.ibb.co/4Wf4gkS/logo.png" alt="Logo ONG MAIS VERDE" class="logo-header">
-    <nav role="navigation">
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
-      <div class="hamburger" aria-expanded="false"><div></div><div></div><div></div></div>
-    </nav>
+    <div class="header-inner container">
+      <a class="logo" href="index.html"><img src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80" alt="Logo"></a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
   </header>
 
-  <main>
+  <main class="container" style="padding-top:24px">
     <h1>Blog</h1>
-    <section>
-      <div class="galeria">
-        <div class="projeto">
-          <img src="https://i.ibb.co/2sG2p8b/projeto1.jpg" alt="Campanha de Inverno">
-          <div class="conteudo"><h3>Campanha de Inverno</h3><p>Distribuição de cobertores e roupas para famílias carentes.</p></div>
-        </div>
-        <div class="projeto">
-          <img src="https://i.ibb.co/4FgDxSx/projeto2.jpg" alt="Voluntariado Jovem">
-          <div class="conteudo"><h3>Voluntariado Jovem</h3><p>Atividades educacionais e culturais com jovens da comunidade.</p></div>
-        </div>
-      </div>
+    <section class="galeria" style="margin-top:16px">
+      <article class="card"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fit=crop&w=800&h=450&q=80" alt=""><div class="card-body"><h3>Limpeza de Praias</h3><p>Resumo sobre a ação...</p><a class="btn" href="#">Leia Mais</a></div></article>
+      <article class="card"><img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?fit=crop&w=800&h=450&q=80" alt=""><div class="card-body"><h3>Voluntariado Jovem</h3><p>Resumo sobre atividades...</p><a class="btn" href="#">Leia Mais</a></div></article>
     </section>
   </main>
 
-  <footer>
-    <p>Contato: contato@ongmaisverde.org | Telefone: (11) 99999-9999</p>
-    <p>&copy; 2025 ONG MAIS VERDE</p>
-  </footer>
-
-  <script src="js/script.js"></script>
+  <footer class="footer"><div class="container"><p>&copy; 2025 ONG MAIS VERDE</p></div></footer>
+  <script src="js/script.js" defer></script>
 </body>
 </html>
