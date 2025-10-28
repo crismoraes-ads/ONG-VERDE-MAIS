@@ -1,72 +1,120 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ONG MAIS VERDE - Início</title>
-<link rel="stylesheet" href="css/variaveis.css">
-<link rel="stylesheet" href="css/estilos.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ONG MAIS VERDE - Início</title>
+  <link rel="stylesheet" href="css/variaveis.css">
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
+  <header>
+    <div class="header-inner container">
+      <a class="logo" href="index.html" aria-label="Início">
+        <img src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80" alt="Logo ONG MAIS VERDE">
+      </a>
 
-<header>
-  <img src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=160&h=80" alt="Logo ONG MAIS VERDE" class="logo-header">
-  <nav>
-    <ul>
-      <li><a href="index.html">Início</a></li>
-      <li><a href="projetos.html">Projetos</a></li>
-      <li><a href="cadastro.html">Cadastro</a></li>
-      <li><a href="blog.html">Blog</a></li>
-    </ul>
-    <div class="hamburger"><div></div><div></div><div></div></div>
-  </nav>
-</header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
 
-<main>
-  <section class="hero">
-    <h1>Bem-vindo à ONG MAIS VERDE</h1>
-    <p>Impacto social através de projetos sustentáveis e voluntariado.</p>
-    <img src="https://images.unsplash.com/photo-1581349485293-76c1d25a8510?fit=crop&w=800&h=400" alt="Banner ONG" class="hero-img">
-    <a href="cadastro.html" class="botao">Doe Agora</a>
-  </section>
-
-  <section>
-    <h2>Projetos Recentes</h2>
-    <div class="galeria">
-      <div class="projeto">
-        <img src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=400&h=250" alt="Projeto Comunidade Verde">
-        <div class="conteudo">
-          <h3>Projeto Comunidade Verde</h3>
-          <p>Plantio e preservação de áreas verdes urbanas.</p>
-          <a href="projetos.html" class="botao">Saiba Mais</a>
-        </div>
-      </div>
-      <div class="projeto">
-        <img src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=400&h=250" alt="Educação Ambiental">
-        <div class="conteudo">
-          <h3>Educação Ambiental</h3>
-          <p>Oficinas de educação ambiental para jovens e crianças.</p>
-          <a href="projetos.html" class="botao">Saiba Mais</a>
-        </div>
-      </div>
-      <div class="projeto">
-        <img src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=400&h=250" alt="Campanha de Inverno">
-        <div class="conteudo">
-          <h3>Campanha de Inverno</h3>
-          <p>Arrecadação de roupas e cobertores.</p>
-          <a href="projetos.html" class="botao">Saiba Mais</a>
-        </div>
-      </div>
+      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
-  </section>
-</main>
+  </header>
 
-<footer>
-  <p>Contato: <a href="mailto:contato@ongmaisverde.org">contato@ongmaisverde.org</a> | Telefone: <a href="tel:+5511999999999">(11) 99999-9999</a></p>
-  <p>Siga-nos: <a href="https://www.facebook.com" target="_blank">Facebook</a> | <a href="https://www.instagram.com" target="_blank">Instagram</a></p>
-  <p>&copy; 2025 ONG MAIS VERDE</p>
-</footer>
+  <main class="container">
+    <section class="hero" aria-label="Apresentação">
+      <div class="copy">
+        <h1>Transformando vidas com sustentabilidade</h1>
+        <p>Somos a ONG MAIS VERDE: plantio urbano, educação ambiental e apoio comunitário. Junte-se a nós.</p>
+        <div class="cta">
+          <a class="btn" href="cadastro.html">Seja Voluntário</a>
+          <a class="btn" href="projetos.html">Conheça Projetos</a>
+        </div>
+      </div>
+      <div class="media">
+        <img class="hero-img" src="https://images.unsplash.com/photo-1581349485293-76c1d25a8510?fit=crop&w=800&h=520&q=80" alt="Voluntários plantando árvores">
+      </div>
+    </section>
 
-<script src="js/script.js"></script>
+    <section aria-label="Projetos recentes">
+      <h2 style="text-align:center;margin-top:8px">Projetos Recentes</h2>
+      <div class="galeria" role="list">
+        <!-- 6 cards -->
+        <article class="card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?fit=crop&w=800&h=450&q=80" alt="Plantio urbano">
+          <div class="card-body">
+            <h3>Comunidade Verde <span class="badge">Plantio</span></h3>
+            <p>Mutirões de plantio em praças e espaços urbanos com moradores locais.</p>
+            <a class="btn" href="projetos.html#plantio" style="margin-top:12px">Saiba Mais</a>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?fit=crop&w=800&h=450&q=80" alt="Educação ambiental">
+          <div class="card-body">
+            <h3>Educação Ambiental <span class="badge">Oficinas</span></h3>
+            <p>Oficinas pedagógicas em escolas e centros comunitários.</p>
+            <a class="btn" href="projetos.html#educacao" style="margin-top:12px">Saiba Mais</a>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?fit=crop&w=800&h=450&q=80" alt="Campanha de inverno">
+          <div class="card-body">
+            <h3>Campanha de Inverno <span class="badge">Doação</span></h3>
+            <p>Arrecadação e distribuição de roupas e cobertores para famílias em vulnerabilidade.</p>
+            <a class="btn" href="projetos.html#campanhas" style="margin-top:12px">Saiba Mais</a>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?fit=crop&w=800&h=450&q=80" alt="Horta comunitária">
+          <div class="card-body">
+            <h3>Hortas Comunitárias <span class="badge">Horta</span></h3>
+            <p>Hortas em comunidades para produção de alimentos e educação alimentar.</p>
+            <a class="btn" href="projetos.html#hortas" style="margin-top:12px">Saiba Mais</a>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?fit=crop&w=800&h=450&q=80" alt="Limpeza de praias">
+          <div class="card-body">
+            <h3>Limpeza de Praias <span class="badge">Ação</span></h3>
+            <p>Ações de limpeza e conscientização ambiental em áreas costeiras.</p>
+            <a class="btn" href="projetos.html#limpeza" style="margin-top:12px">Saiba Mais</a>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?fit=crop&w=800&h=450&q=80" alt="Voluntariado jovem">
+          <div class="card-body">
+            <h3>Voluntariado Jovem <span class="badge">Volunt</span></h3>
+            <p>Programas para engajar jovens em ações comunitárias e ambientais.</p>
+            <a class="btn" href="projetos.html#voluntariado" style="margin-top:12px">Saiba Mais</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section style="text-align:center;margin-top:28px">
+      <p>Contato: <a href="mailto:contato@ongmaisverde.org">contato@ongmaisverde.org</a> • <a href="tel:+5511999999999">(11) 99999-9999</a></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 ONG MAIS VERDE — Todos os direitos reservados.</p>
+      <p><a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a> • <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a></p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/script.js" defer></script>
 </body>
 </html>
