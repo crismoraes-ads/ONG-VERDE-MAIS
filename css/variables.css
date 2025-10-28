@@ -1,23 +1,23 @@
-:root {
-  /* Cores */
-  --verde: #00c896;
-  --azul: #0077ff;
-  --laranja: #ff9500;
-  --vermelho: #ff4c4c;
-  --roxo: #9b59b6;
-  --preto: #111111;
-  --branco: #ffffff;
-  --cinza-claro: #f6f8fb;
-  --cinza-escuro: #333333;
+:root{
+  /* Paleta (mín. 8 cores) */
+  --primary-1: #00c896;
+  --primary-2: #0077ff;
+  --secondary-1: #ff9500;
+  --secondary-2: #ff4c4c;
+  --accent-1: #9b59b6;
+  --neutral-1: #111111;
+  --neutral-2: #ffffff;
+  --neutral-3: #f6f8fb;
 
-  /* Tipografia */
+  /* Tipografia (mín. 5 tamanhos) */
+  --fz-xxs: 0.625rem;
   --fz-xs: 0.75rem;
   --fz-sm: 0.875rem;
   --fz-md: 1rem;
   --fz-lg: 1.25rem;
   --fz-xl: 2rem;
 
-  /* Espaçamento */
+  /* Espaçamentos (modular) */
   --s-8: 8px;
   --s-16: 16px;
   --s-24: 24px;
@@ -25,7 +25,8 @@
   --s-48: 48px;
   --s-64: 64px;
 
-  /* Sombra */
+  /* Sombras e layout */
   --shadow-sm: 0 6px 18px rgba(0,0,0,0.08);
   --shadow-md: 0 12px 30px rgba(0,0,0,0.12);
+  --container-max: 1200px;
 }
