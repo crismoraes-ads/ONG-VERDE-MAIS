@@ -1,100 +1,181 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ONG MAIS VERDE - Início</title>
-  <link rel="stylesheet" href="css/variaveis.css">
-  <link rel="stylesheet" href="css/estilos.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ONG MAIS VERDE - Início</title>
+<style>
+:root{
+  --verde:#00c896;--azul:#0077ff;--laranja:#ff9500;--vermelho:#ff4c4c;
+  --roxo:#9b59b6;--preto:#111111;--branco:#ffffff;--cinza:#f6f8fb;
+  --fz-xs:.75rem;--fz-sm:.875rem;--fz-md:1rem;--fz-lg:1.25rem;--fz-xl:2rem;
+  --s-8:8px;--s-16:16px;--s-24:24px;--s-32:32px;
+  --shadow-sm:0 6px 18px rgba(0,0,0,.08);--shadow-md:0 12px 30px rgba(0,0,0,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial, Helvetica, sans-serif;background:var(--cinza);color:var(--preto);line-height:1.45}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 var(--s-16)}
+
+/* Header */
+header{position:sticky;top:0;z-index:1100;background:linear-gradient(90deg,var(--verde),var(--azul));box-shadow:var(--shadow-sm)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;gap:16px}
+.logo img{height:56px;display:block}
+nav ul{display:flex;gap:12px;list-style:none;align-items:center;margin:0;padding:0}
+nav a{color:var(--branco);padding:8px 12px;border-radius:8px;font-weight:600}
+nav a:hover{background:rgba(255,255,255,0.12)}
+.hamburger{display:none;flex-direction:column;gap:6px;cursor:pointer;background:transparent;border:0;padding:8px}
+.hamburger span{width:26px;height:3px;background:var(--branco);border-radius:3px}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 480px;gap:24px;align-items:center;padding:36px 0}
+.hero .copy h1{font-size:var(--fz-xl);margin-bottom:12px}
+.hero .copy p{color:#333;margin-bottom:16px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero-img{width:100%;height:320px;object-fit:cover;border-radius:12px;box-shadow:var(--shadow-sm);display:block}
+
+/* Gallery / cards */
+.galeria{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0}
+.card{background:var(--branco);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .18s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+.card img{width:100%;height:180px;object-fit:cover;display:block}
+.card .body{padding:14px;flex:1;display:flex;flex-direction:column}
+.card h3{color:var(--verde);margin-bottom:8px}
+.card p{flex:1;color:#444;font-size:var(--fz-sm)}
+.btn{display:inline-block;padding:10px 18px;border-radius:999px;background:linear-gradient(90deg,var(--laranja),var(--vermelho));color:var(--branco);font-weight:700}
+
+/* Footer */
+.footer{background:linear-gradient(90deg,var(--verde),var(--azul));color:var(--branco);padding:20px 0;text-align:center;margin-top:28px}
+
+/* Toast simple */
+.toast{position:fixed;right:18px;bottom:18px;background:#fff;color:#111;padding:12px 16px;border-radius:8px;box-shadow:var(--shadow-md);display:none}
+
+/* Responsive */
+@media(max-width:1200px){ .hero{grid-template-columns:1fr 420px} .galeria{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:992px){ .hero{grid-template-columns:1fr;text-align:center} .hero .media img{height:280px} .galeria{grid-template-columns:1fr} }
+@media(max-width:768px){
+  .hamburger{display:flex}
+  nav ul{display:none;position:absolute;right:12px;top:64px;background:var(--branco);padding:12px;border-radius:8px;box-shadow:var(--shadow-md);flex-direction:column;gap:8px}
+  nav ul.active{display:flex}
+  .hero{padding:24px 0}
+  .hero-img{height:220px}
+}
+@media(max-width:576px){
+  .logo img{height:48px}
+  .hero-img{height:180px}
+}
+</style>
 </head>
 <body>
   <header>
     <div class="header-inner container">
-      <a class="logo" href="index.html" aria-label="Início">
-        <img src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80" alt="Logo ONG MAIS VERDE">
+      <a class="logo" href="index.html" aria-label="Início - ONG Mais Verde">
+        <!-- logo: primary online, fallback handled by onerror -->
+        <img id="logoImg" src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80" alt="Logo ONG MAIS VERDE"
+             onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22240%22 height=%2280%22><rect width=%22240%22 height=%2280%22 fill=%22%2300c896%22/><text x=%22120%22 y=%2248%22 font-size=%2220%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>ONG MAIS VERDE</text></svg>';">
       </a>
 
       <nav>
         <ul>
           <li><a href="index.html">Início</a></li>
-          <li><a href="projetos.html">Projetos</a></li>
+          <li class="nav-item"><a href="projetos.html">Projetos</a></li>
           <li><a href="cadastro.html">Cadastro</a></li>
           <li><a href="blog.html">Blog</a></li>
         </ul>
       </nav>
 
-      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
   <main class="container">
+    <!-- HERO -->
     <section class="hero" aria-label="Apresentação">
       <div class="copy">
         <h1>Transformando vidas com sustentabilidade</h1>
-        <p>Somos a ONG MAIS VERDE: plantio urbano, educação ambiental e apoio comunitário. Junte-se a nós.</p>
+        <p>Somos a ONG MAIS VERDE: plantio urbano, educação ambiental e apoio comunitário. Junte-se a nós para fazer a diferença.</p>
         <div class="cta">
           <a class="btn" href="cadastro.html">Seja Voluntário</a>
           <a class="btn" href="projetos.html">Conheça Projetos</a>
         </div>
       </div>
       <div class="media">
-        <img class="hero-img" src="https://images.unsplash.com/photo-1581349485293-76c1d25a8510?fit=crop&w=800&h=520&q=80" alt="Voluntários plantando árvores">
+        <!-- hero image with two fallback options: primary online, secondary online, then SVG -->
+        <img class="hero-img" src="https://images.unsplash.com/photo-1581349485293-76c1d25a8510?fit=crop&w=800&h=520&q=80"
+             alt="Voluntários plantando árvores"
+             onerror="handleImgError(this,
+               'https://i.ibb.co/2N5qfGh/hero.jpg',
+               'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22520%22><rect width=%22800%22 height=%22520%22 fill=%22%23007f3f%22/><text x=%22400%22 y=%22260%22 font-size=%2232%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>Imagem indisponível</text></svg>')">
       </div>
     </section>
 
+    <!-- PROJECTS (6 cards) -->
     <section aria-label="Projetos recentes">
       <h2 style="text-align:center;margin-top:8px">Projetos Recentes</h2>
       <div class="galeria" role="list">
-        <!-- 6 cards -->
+        <!-- Card 1 -->
         <article class="card" role="listitem">
-          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?fit=crop&w=800&h=450&q=80" alt="Plantio urbano">
-          <div class="card-body">
-            <h3>Comunidade Verde <span class="badge">Plantio</span></h3>
+          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?fit=crop&w=800&h=450&q=80"
+               alt="Plantio urbano" onerror="handleImgError(this,'https://i.ibb.co/2sG2p8b/projeto1.jpg')">
+          <div class="body">
+            <h3>Comunidade Verde <span style="font-size:.75rem;background:#00c896;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Plantio</span></h3>
             <p>Mutirões de plantio em praças e espaços urbanos com moradores locais.</p>
             <a class="btn" href="projetos.html#plantio" style="margin-top:12px">Saiba Mais</a>
           </div>
         </article>
 
+        <!-- Card 2 -->
         <article class="card" role="listitem">
-          <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?fit=crop&w=800&h=450&q=80" alt="Educação ambiental">
-          <div class="card-body">
-            <h3>Educação Ambiental <span class="badge">Oficinas</span></h3>
-            <p>Oficinas pedagógicas em escolas e centros comunitários.</p>
+          <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?fit=crop&w=800&h=450&q=80"
+               alt="Educação ambiental com crianças" onerror="handleImgError(this,'https://i.ibb.co/4FgDxSx/projeto2.jpg')">
+          <div class="body">
+            <h3>Educação Ambiental <span style="font-size:.75rem;background:#ff9500;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Oficinas</span></h3>
+            <p>Oficinas e atividades pedagógicas para crianças e jovens da comunidade.</p>
             <a class="btn" href="projetos.html#educacao" style="margin-top:12px">Saiba Mais</a>
           </div>
         </article>
 
+        <!-- Card 3 -->
         <article class="card" role="listitem">
-          <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?fit=crop&w=800&h=450&q=80" alt="Campanha de inverno">
-          <div class="card-body">
-            <h3>Campanha de Inverno <span class="badge">Doação</span></h3>
+          <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?fit=crop&w=800&h=450&q=80"
+               alt="Campanha de inverno" onerror="handleImgError(this,'https://i.ibb.co/2sG2p8b/projeto3.jpg')">
+          <div class="body">
+            <h3>Campanha de Inverno <span style="font-size:.75rem;background:#ff4c4c;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Doação</span></h3>
             <p>Arrecadação e distribuição de roupas e cobertores para famílias em vulnerabilidade.</p>
             <a class="btn" href="projetos.html#campanhas" style="margin-top:12px">Saiba Mais</a>
           </div>
         </article>
 
+        <!-- Card 4 -->
         <article class="card" role="listitem">
-          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?fit=crop&w=800&h=450&q=80" alt="Horta comunitária">
-          <div class="card-body">
-            <h3>Hortas Comunitárias <span class="badge">Horta</span></h3>
+          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?fit=crop&w=800&h=450&q=80"
+               alt="Horta comunitária" onerror="handleImgError(this,'https://i.ibb.co/2sG2p8b/projeto1.jpg')">
+          <div class="body">
+            <h3>Hortas Comunitárias <span style="font-size:.75rem;background:#9b59b6;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Horta</span></h3>
             <p>Hortas em comunidades para produção de alimentos e educação alimentar.</p>
             <a class="btn" href="projetos.html#hortas" style="margin-top:12px">Saiba Mais</a>
           </div>
         </article>
 
+        <!-- Card 5 -->
         <article class="card" role="listitem">
-          <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?fit=crop&w=800&h=450&q=80" alt="Limpeza de praias">
-          <div class="card-body">
-            <h3>Limpeza de Praias <span class="badge">Ação</span></h3>
+          <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?fit=crop&w=800&h=450&q=80"
+               alt="Limpeza de praia" onerror="handleImgError(this,'https://i.ibb.co/4FgDxSx/projeto2.jpg')">
+          <div class="body">
+            <h3>Limpeza de Praias <span style="font-size:.75rem;background:#0077ff;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Ação</span></h3>
             <p>Ações de limpeza e conscientização ambiental em áreas costeiras.</p>
             <a class="btn" href="projetos.html#limpeza" style="margin-top:12px">Saiba Mais</a>
           </div>
         </article>
 
+        <!-- Card 6 -->
         <article class="card" role="listitem">
-          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?fit=crop&w=800&h=450&q=80" alt="Voluntariado jovem">
-          <div class="card-body">
-            <h3>Voluntariado Jovem <span class="badge">Volunt</span></h3>
+          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?fit=crop&w=800&h=450&q=80"
+               alt="Voluntariado jovem" onerror="handleImgError(this,'https://i.ibb.co/2sG2p8b/projeto3.jpg')">
+          <div class="body">
+            <h3>Voluntariado Jovem <span style="font-size:.75rem;background:#00c896;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Volunt</span></h3>
             <p>Programas para engajar jovens em ações comunitárias e ambientais.</p>
             <a class="btn" href="projetos.html#voluntariado" style="margin-top:12px">Saiba Mais</a>
           </div>
@@ -115,6 +196,45 @@
   </footer>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <script src="js/script.js" defer></script>
+
+<script>
+// robust image fallback: tries secondaryUrl then inline SVG placeholder
+function handleImgError(imgEl, secondaryUrl, svgDataUrl){
+  try {
+    if (imgEl._triedSecondary) {
+      // already tried secondary -> use svg placeholder (if provided) or simple gray box
+      if (svgDataUrl) imgEl.src = svgDataUrl;
+      else imgEl.src = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250"><rect width="100%" height="100%" fill="#e6eef0"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#7d8a8f" font-size="18">Imagem indisponível</text></svg>');
+    } else if (secondaryUrl) {
+      imgEl._triedSecondary = true;
+      imgEl.src = secondaryUrl;
+    } else {
+      imgEl._triedSecondary = true;
+      imgEl.src = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250"><rect width="100%" height="100%" fill="#e6eef0"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#7d8a8f" font-size="18">Imagem indisponível</text></svg>');
+    }
+  } catch(e){
+    console.error('handleImgError', e);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  // hamburger toggle
+  const hamburger = document.querySelector('.hamburger');
+  const navUl = document.querySelector('nav ul');
+  if (hamburger && navUl) {
+    hamburger.addEventListener('click', () => {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!expanded));
+      navUl.classList.toggle('active');
+    });
+  }
+
+  // quick visual confirmation toast (optional)
+  const toast = document.getElementById('toast');
+  if (toast) {
+    toast.style.display = 'none';
+  }
+});
+</script>
 </body>
 </html>
