@@ -1,16 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ONG MAIS VERDE - Cadastro</title>
-  <link rel="stylesheet" href="css/variaveis.css">
-  <link rel="stylesheet" href="css/estilos.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ONG MAIS VERDE - Cadastro</title>
+<style>
+:root{
+  --verde:#00c896;--azul:#0077ff;--laranja:#ff9500;--vermelho:#ff4c4c;
+  --preto:#111111;--branco:#ffffff;--cinza:#f6f8fb;
+  --fz-sm:.875rem;--fz-md:1rem;--s-16:16px;--s-24:24px;
+  --shadow-sm:0 6px 18px rgba(0,0,0,.08);--shadow-md:0 12px 30px rgba(0,0,0,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial, Helvetica, sans-serif;background:var(--cinza);color:var(--preto);line-height:1.45}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 var(--s-16)}
+
+/* header */
+header{position:sticky;top:0;z-index:1100;background:linear-gradient(90deg,var(--verde),var(--azul));box-shadow:var(--shadow-sm)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
+.logo img{height:56px;display:block}
+nav ul{display:flex;gap:12px;list-style:none}
+nav a{color:var(--branco);padding:8px 12px;border-radius:8px;font-weight:600}
+.hamburger{display:none;flex-direction:column;gap:6px;cursor:pointer}
+.hamburger span{width:26px;height:3px;background:var(--branco);border-radius:3px}
+
+/* form */
+main{padding:28px 0}
+h1{text-align:center;color:var(--verde);margin-bottom:12px}
+.form-card{background:var(--branco);padding:18px;border-radius:12px;box-shadow:var(--shadow-sm);max-width:760px;margin:0 auto}
+.form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+label{font-weight:700;color:var(--azul);font-size:var(--fz-sm)}
+input,select,textarea{padding:10px 12px;border-radius:8px;border:1px solid #dfe6ee;background:#fff;font-size:var(--fz-md)}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--azul);box-shadow:0 0 8px rgba(0,119,255,0.08)}
+.btn{display:inline-block;padding:10px 18px;border-radius:999px;background:linear-gradient(90deg,var(--laranja),var(--vermelho));color:var(--branco);font-weight:700;border:none;cursor:pointer}
+
+/* footer */
+.footer{background:linear-gradient(90deg,var(--verde),var(--azul));color:var(--branco);padding:20px 0;text-align:center;margin-top:28px}
+
+/* responsive */
+@media(max-width:768px){
+  .hamburger{display:flex}
+  nav ul{display:none;position:absolute;right:12px;top:64px;background:var(--branco);padding:12px;border-radius:8px;box-shadow:var(--shadow-md);flex-direction:column;gap:8px}
+  nav ul.active{display:flex}
+}
+</style>
 </head>
 <body>
   <header>
     <div class="header-inner container">
-      <a class="logo" href="index.html"><img src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80" alt="Logo"></a>
+      <a class="logo" href="index.html"><img src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80" alt="Logo"
+        onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22240%22 height=%2280%22><rect width=%22240%22 height=%2280%22 fill=%22%2300c896%22/><text x=%22120%22 y=%2248%22 font-size=%2220%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>ONG MAIS VERDE</text></svg>';"></a>
+
       <nav>
         <ul>
           <li><a href="index.html">Início</a></li>
@@ -19,16 +60,17 @@
           <li><a href="blog.html">Blog</a></li>
         </ul>
       </nav>
+
       <button class="hamburger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </header>
 
-  <main class="container" style="padding-top:24px">
+  <main class="container">
     <h1>Cadastro de Voluntário / Doador</h1>
 
     <form id="form-cadastro" class="form-card" novalidate>
       <fieldset>
-        <legend>Informações Pessoais</legend>
+        <legend style="font-weight:700;margin-bottom:12px">Informações Pessoais</legend>
 
         <div class="form-group">
           <label for="nome">Nome Completo</label>
@@ -56,8 +98,8 @@
         </div>
       </fieldset>
 
-      <fieldset>
-        <legend>Endereço</legend>
+      <fieldset style="margin-top:12px">
+        <legend style="font-weight:700;margin-bottom:12px">Endereço</legend>
 
         <div class="form-group">
           <label for="endereco">Endereço</label>
@@ -80,13 +122,75 @@
         </div>
       </fieldset>
 
-      <button class="btn" type="submit">Enviar Cadastro</button>
+      <div style="text-align:center;margin-top:12px">
+        <button class="btn" type="submit">Enviar Cadastro</button>
+      </div>
     </form>
   </main>
 
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <footer class="footer"><div class="container"><p>&copy; 2025 ONG MAIS VERDE</p></div></footer>
+  <footer class="footer">
+    <div class="container"><p>&copy; 2025 ONG MAIS VERDE</p></div>
+  </footer>
 
-  <script src="js/script.js" defer></script>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script>
+function handleImgError(imgEl, secondaryUrl, svgDataUrl){
+  try {
+    if (imgEl._triedSecondary) {
+      if (svgDataUrl) imgEl.src = svgDataUrl;
+      else imgEl.src = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250"><rect width="100%" height="100%" fill="#e6eef0"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#7d8a8f" font-size="18">Imagem indisponível</text></svg>');
+    } else if (secondaryUrl) {
+      imgEl._triedSecondary = true;
+      imgEl.src = secondaryUrl;
+    } else {
+      imgEl._triedSecondary = true;
+      imgEl.src = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250"><rect width="100%" height="100%" fill="#e6eef0"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#7d8a8f" font-size="18">Imagem indisponível</text></svg>');
+    }
+  } catch(e){
+    console.error('handleImgError', e);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  // hamburger toggle
+  const hamburger = document.querySelector('.hamburger');
+  const navUl = document.querySelector('nav ul');
+  if (hamburger && navUl) {
+    hamburger.addEventListener('click', () => {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!expanded));
+      navUl.classList.toggle('active');
+    });
+  }
+
+  // masks and form
+  function setMask(input, fn){ input.addEventListener('input', ()=> input.value = fn(input.value)); }
+  function maskCPF(v){ v=v.replace(/\D/g,''); v=v.replace(/(\d{3})(\d)/,'$1.$2'); v=v.replace(/(\d{3})(\d)/,'$1.$2'); v=v.replace(/(\d{3})(\d{1,2})$/,'$1-$2'); return v; }
+  function maskTel(v){ v=v.replace(/\D/g,''); if(v.length<=10){ v=v.replace(/(\d{2})(\d)/,'($1) $2'); v=v.replace(/(\d{4})(\d)/,'$1-$2'); } else { v=v.replace(/(\d{2})(\d)/,'($1) $2'); v=v.replace(/(\d{5})(\d)/,'$1-$2'); } return v; }
+  function maskCEP(v){ v=v.replace(/\D/g,''); v=v.replace(/(\d{5})(\d)/,'$1-$2'); return v; }
+
+  const cpf = document.querySelector('#cpf');
+  const tel = document.querySelector('#telefone');
+  const cep = document.querySelector('#cep');
+  if (cpf) setMask(cpf, maskCPF);
+  if (tel) setMask(tel, maskTel);
+  if (cep) setMask(cep, maskCEP);
+
+  const form = document.querySelector('#form-cadastro');
+  const toast = document.querySelector('#toast');
+  if (form) {
+    form.addEventListener('submit', (e)=>{
+      if (!form.checkValidity()) { e.preventDefault(); form.reportValidity(); }
+      else { e.preventDefault(); showToast('Cadastro enviado (simulado). Obrigado!'); form.reset(); }
+    });
+  }
+  function showToast(msg){
+    if (!toast) return;
+    toast.textContent = msg; toast.style.display='block';
+    setTimeout(()=> { toast.style.opacity='0'; setTimeout(()=>{ toast.style.display='none'; toast.style.opacity='1'; },300); }, 3000);
+  }
+});
+</script>
 </body>
 </html>
