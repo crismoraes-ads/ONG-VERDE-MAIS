@@ -3,122 +3,113 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Projetos - ONG MAIS VERDE</title>
+<title>ONG MAIS VERDE - Projetos</title>
 <style>
 :root{
   --verde:#00c896;--azul:#0077ff;--laranja:#ff9500;--vermelho:#ff4c4c;
-  --roxo:#9b59b6;--preto:#111;--branco:#fff;--cinza:#f6f8fb;
+  --roxo:#9b59b6;--preto:#111111;--branco:#ffffff;--cinza:#f6f8fb;
   --fz-xs:.75rem;--fz-sm:.875rem;--fz-md:1rem;--fz-lg:1.25rem;--fz-xl:2rem;
   --s-8:8px;--s-16:16px;--s-24:24px;--s-32:32px;
-  --shadow-sm:0 4px 12px rgba(0,0,0,.08);--shadow-md:0 10px 28px rgba(0,0,0,.15);
+  --shadow-sm:0 6px 18px rgba(0,0,0,.08);--shadow-md:0 12px 30px rgba(0,0,0,.12);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,Helvetica,sans-serif;background:var(--cinza);color:var(--preto);line-height:1.5}
+body{font-family:Arial, Helvetica, sans-serif;background:var(--cinza);color:var(--preto);line-height:1.45}
 a{text-decoration:none;color:inherit}
 .container{max-width:1200px;margin:0 auto;padding:0 var(--s-16)}
-
-/* HEADER */
-header{position:sticky;top:0;background:linear-gradient(90deg,var(--verde),var(--azul));box-shadow:var(--shadow-sm);z-index:1000}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
-.logo img{height:56px}
-nav ul{display:flex;gap:12px;list-style:none}
-nav a{color:var(--branco);font-weight:600;padding:8px 12px;border-radius:8px}
-nav a:hover{background:rgba(255,255,255,.15)}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:0}
-.hamburger span{width:26px;height:3px;background:var(--branco);border-radius:3px}
-
-/* GRID PROJECTS */
-main{padding:40px 0}
-h1{text-align:center;margin-bottom:24px;font-size:var(--fz-xl);color:var(--verde)}
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.card{background:var(--branco);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:transform .2s}
+header{position:sticky;top:0;z-index:1100;background:linear-gradient(90deg,var(--verde),var(--azul));box-shadow:var(--shadow-sm)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;gap:16px}
+.logo img{height:56px;display:block}
+nav ul{display:flex;gap:12px;list-style:none;align-items:center;margin:0;padding:0}
+nav a{color:var(--branco);padding:8px 12px;border-radius:8px;font-weight:600;transition:background .2s}
+nav a:hover{background:rgba(255,255,255,0.15)}
+.hamburger{display:none;flex-direction:column;gap:6px;cursor:pointer;background:transparent;border:0;padding:8px}
+.hamburger span{width:26px;height:3px;background:var(--branco);border-radius:3px;transition:all .3s}
+.galeria{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0}
+.card{background:var(--branco);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .18s;display:flex;flex-direction:column}
 .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
-.card img{width:100%;height:200px;object-fit:cover}
-.card .body{padding:16px;display:flex;flex-direction:column;gap:10px}
-.card h3{color:var(--verde)}
-.card p{flex:1;color:#333}
-.btn{display:inline-block;padding:10px 16px;border-radius:999px;background:linear-gradient(90deg,var(--laranja),var(--vermelho));color:var(--branco);font-weight:600;text-align:center}
-
-/* FOOTER */
-footer{background:linear-gradient(90deg,var(--verde),var(--azul));color:var(--branco);text-align:center;padding:16px;margin-top:32px}
-
-/* RESPONSIVO */
+.card img{width:100%;height:180px;object-fit:cover;display:block}
+.card .body{padding:14px;flex:1;display:flex;flex-direction:column}
+.card h3{color:var(--verde);margin-bottom:8px}
+.card p{flex:1;color:#222;font-size:var(--fz-sm)}
+.btn{display:inline-block;padding:10px 18px;border-radius:999px;background:linear-gradient(90deg,var(--laranja),var(--vermelho));color:var(--branco);font-weight:700;transition:opacity .2s}
+.btn:hover{opacity:.85}
+.footer{background:linear-gradient(90deg,var(--verde),var(--azul));color:var(--branco);padding:20px 0;text-align:center;margin-top:28px}
+body.high-contrast { background: #000 !important; color: #fff !important; }
+body.high-contrast a, body.high-contrast .btn { color: #000 !important; background: #fff !important; border: 2px solid #fff; }
+body.high-contrast nav ul.active { background: #000 !important; }
+body.high-contrast nav a:hover { background: #fff !important; color: #000 !important; }
+@media(max-width:1200px){ .galeria{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:992px){ .galeria{grid-template-columns:1fr} }
 @media(max-width:768px){
   .hamburger{display:flex}
-  nav ul{display:none;position:absolute;top:64px;right:10px;background:var(--branco);flex-direction:column;gap:8px;padding:10px;border-radius:8px;box-shadow:var(--shadow-md)}
+  nav ul{display:none;position:absolute;right:12px;top:64px;background:var(--branco);padding:12px;border-radius:8px;box-shadow:var(--shadow-md);flex-direction:column;gap:8px}
   nav ul.active{display:flex}
 }
 </style>
 </head>
 <body>
 <header>
-  <div class="header-inner container">
-    <a class="logo" href="index.html">
-      <img src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80" alt="ONG MAIS VERDE">
-    </a>
-    <nav>
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
-    </nav>
-    <button class="hamburger"><span></span><span></span><span></span></button>
-  </div>
+<div class="header-inner container">
+<a class="logo" href="index.html" aria-label="Início - ONG Mais Verde">
+<img src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80" alt="Logo ONG MAIS VERDE"
+onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22240%22 height=%2280%22><rect width=%22240%22 height=%2280%22 fill=%22%2300c896%22/><text x=%22120%22 y=%2248%22 font-size=%2220%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>ONG MAIS VERDE</text></svg>';">
+</a>
+<nav>
+<ul>
+<li><a href="index.html">Início</a></li>
+<li><a href="projetos.html">Projetos</a></li>
+<li><a href="cadastro.html">Cadastro</a></li>
+<li><a href="blog.html">Blog</a></li>
+</ul>
+</nav>
+<button class="hamburger" aria-label="Abrir menu" aria-expanded="false" tabindex="0">
+<span></span><span></span><span></span>
+</button>
+</div>
 </header>
 
+<button id="toggleContrast" style="position:fixed;bottom:20px;right:20px;padding:10px 12px;z-index:1200;">Alto Contraste</button>
+
 <main class="container">
-  <h1>Nossos Projetos Sustentáveis</h1>
-  <div class="projects-grid">
-    <article class="card">
-      <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?fit=crop&w=800&h=450&q=80" alt="Plantio urbano">
-      <div class="body">
-        <h3>Plantio Urbano</h3>
-        <p>Mutirões para arborizar praças e avenidas com espécies nativas, promovendo qualidade de vida.</p>
-        <a href="#" class="btn">Saiba Mais</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?fit=crop&w=800&h=450&q=80" alt="Educação ambiental">
-      <div class="body">
-        <h3>Educação Ambiental</h3>
-        <p>Oficinas e palestras para escolas, ensinando práticas sustentáveis de forma interativa.</p>
-        <a href="#" class="btn">Saiba Mais</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?fit=crop&w=800&h=450&q=80" alt="Campanhas solidárias">
-      <div class="body">
-        <h3>Campanhas Solidárias</h3>
-        <p>Doações e ações sociais em comunidades carentes com foco em bem-estar e inclusão.</p>
-        <a href="#" class="btn">Saiba Mais</a>
-      </div>
-    </article>
-  </div>
+<h1 style="text-align:center;margin-top:16px;">Projetos da ONG MAIS VERDE</h1>
+<div class="galeria" role="list">
+<!-- Copie seus 6 cards do index.html ou os projetos que você tinha -->
+</div>
 </main>
 
-<footer>
-  <p>&copy; 2025 ONG MAIS VERDE — Todos os direitos reservados.</p>
-  <p><a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a> • <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a></p>
+<footer class="footer">
+<div class="container">
+<p>&copy; 2025 ONG MAIS VERDE — Todos os direitos reservados.</p>
+<p><a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a> • <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a></p>
+</div>
 </footer>
 
 <script>
-document.addEventListener('DOMContentLoaded',()=>{
-  const btn=document.querySelector('.hamburger');
-  const nav=document.querySelector('nav ul');
-  btn.addEventListener('click',()=>{
-    nav.classList.toggle('active');
-  });
+document.addEventListener('DOMContentLoaded', function(){
+  const hamburger = document.querySelector('.hamburger');
+  const navUl = document.querySelector('nav ul');
+  if(hamburger && navUl){
+    hamburger.addEventListener('click', toggleMenu);
+    hamburger.addEventListener('keydown', (e) => {
+      if(e.key==='Enter'||e.key===' ') toggleMenu();
+    });
+  }
+  function toggleMenu(){
+    const expanded = hamburger.getAttribute('aria-expanded')==='true';
+    hamburger.setAttribute('aria-expanded',String(!expanded));
+    navUl.classList.toggle('active');
+  }
 });
+
+document.getElementById('toggleContrast').addEventListener('click', ()=>{
+  document.body.classList.toggle('high-contrast');
+});
+
+function handleImgError(imgEl, secondaryUrl){
+  if(imgEl._triedSecondary) imgEl.src='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250"><rect width="100%" height="100%" fill="#e6eef0"/><text x="50%" y="50" dominant-baseline="middle" text-anchor="middle" fill="#7d8a8f" font-size="18">Imagem indisponível</text></svg>');
+  else if(secondaryUrl){ imgEl._triedSecondary=true; imgEl.src=secondaryUrl; }
+  else{ imgEl._triedSecondary=true; imgEl.src='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250"><rect width="100%" height="100%" fill="#e6eef0"/><text x="50%" y="50" dominant-baseline="middle" text-anchor="middle" fill="#7d8a8f" font-size="18">Imagem indisponível</text></svg>'); }
+}
 </script>
-<!-- Scripts globais -->
-<script src="js/app.js"></script>
-<script src="js/pageEnhancements.js"></script>
-<script src="js/router.js"></script>
-<script src="js/templates.js"></script>
-<script src="js/formValidation.js"></script>
 </body>
 </html>
