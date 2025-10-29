@@ -1,0 +1,66 @@
+nome: Otimização para Produção
+
+ao:
+  push:
+    branches:
+      - funcionalidade/finalizacao-4entrega
+  workflow_dispatch: {}
+
+tarefas:
+  construir-e-otimizar:
+    nome: Construir, Minificar e Comprimir
+    executa-em: ubuntu-latest
+    passos:
+      - nome: Obter repositório
+        usa: actions/checkout@v4
+        com:
+          fetch-depth: 0
+
+      - nome: Configurar Node.js
+        usa: actions/setup-node@v4
+        com:
+          node-version: '18'
+
+      - nome: Instalar ferramentas de imagem
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y jpegoptim optipng
+
+      - nome: Instalar minificadores
+        run: |
+          npm install -g html-minifier-terser csso-cli terser
+
+      - nome: Preparar pasta dist (copiar arquivos)
+        run: |
+          rm -rf dist
+          mkdir -p dist
+          rsync -av --exclude='.git' --exclude='.github' --exclude='node_modules' --exclude='.gitignore' ./ dist/ >/dev/null
+
+      - nome: Minificar HTML
+        run: |
+          find dist -type f -name '*.html' -print0 | xargs -0 -n1 -I{} sh -c 'html-minifier-terser --collapse-whitespace --remove-comments --remove-optional-tags --minify-css true --minify-js true --use-short-doctype -o "{}" "{}" || true'
+
+      - nome: Minificar CSS
+        run: |
+          find dist -type f -name '*.css' -print0 | xargs -0 -n1 -I{} sh -c 'csso "{}" --output "{}" || true'
+
+      - nome: Minificar JS
+        run: |
+          find dist -type f -name '*.js' -print0 | xargs -0 -n1 -I{} sh -c 'terser "{}" -o "{}" --compress --mangle || true'
+
+      - nome: Comprimir imagens
+        run: |
+          find dist -type f \( -iname '*.jpg' -o -iname '*.jpeg' \) -print0 | xargs -0 -n1 -I{} sh -c 'jpegoptim --strip-all --max=85 "{}" || true'
+          find dist -type f -iname '*.png' -print0 | xargs -0 -n1 -I{} sh -c 'optipng -o2 "{}" || true'
+
+      - nome: Resumo dos arquivos em dist
+        run: |
+          echo "=== Resumo da pasta dist ==="
+          du -sh dist || true
+          find dist -maxdepth 3 -type f -printf "%p %k KB\n" | sort -nr -k2 | head -n 40 || true
+
+      - nome: Fazer upload do artefato
+        usa: actions/upload-artifact@v4
+        com:
+          name: site-dist
+          path: dist
