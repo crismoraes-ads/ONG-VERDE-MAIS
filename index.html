@@ -54,6 +54,7 @@ nav a:hover{background:rgba(255,255,255,0.12)}
 }
 </style>
 
+<!-- ✅ Define a função de fallback antes de qualquer imagem -->
 <script>
 function handleImgError(imgEl, secondaryUrl, svgDataUrl){
   try {
@@ -76,16 +77,16 @@ function handleImgError(imgEl, secondaryUrl, svgDataUrl){
 <body>
 <header>
 <div class="header-inner container">
-<a class="logo" href="#" aria-label="Início - ONG Mais Verde">
+<a class="logo" href="index.html" aria-label="Início - ONG Mais Verde">
 <img id="logoImg" src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80" alt="Logo ONG MAIS VERDE"
 onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22240%22 height=%2280%22><rect width=%22240%22 height=%2280%22 fill=%22%2300c896%22/><text x=%22120%22 y=%2248%22 font-size=%2220%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>ONG MAIS VERDE</text></svg>';">
 </a>
 <nav>
 <ul>
-<li><a href="#" data-page="home">Início</a></li>
-<li><a href="#" data-page="projetos">Projetos</a></li>
-<li><a href="#" data-page="cadastro">Cadastro</a></li>
-<li><a href="#" data-page="blog">Blog</a></li>
+<li><a href="index.html">Início</a></li>
+<li class="nav-item"><a href="projetos.html">Projetos</a></li>
+<li><a href="cadastro.html">Cadastro</a></li>
+<li><a href="blog.html">Blog</a></li>
 </ul>
 </nav>
 <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
@@ -94,8 +95,99 @@ onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http:
 </div>
 </header>
 
-<main class="container" id="app">
-<!-- Conteúdo SPA será injetado aqui -->
+<main class="container">
+<!-- HERO -->
+<section class="hero" aria-label="Apresentação">
+<div class="copy">
+<h1>Transformando vidas com sustentabilidade</h1>
+<p>Somos a ONG MAIS VERDE: plantio urbano, educação ambiental e apoio comunitário. Junte-se a nós para fazer a diferença.</p>
+<div class="cta">
+<a class="btn" href="cadastro.html">Seja Voluntário</a>
+<a class="btn" href="projetos.html">Conheça Projetos</a>
+</div>
+</div>
+
+<!-- HERO EDITADO -->
+<div class="media" aria-label="Voluntários em ação plantando árvores na natureza">
+<img class="hero-img"
+     src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?crop=entropy&cs=tinysrgb&fit=crop&w=1000&h=600&q=80"
+     alt="Voluntários trabalhando em um projeto de natureza e sustentabilidade"
+     onerror="handleImgError(this,
+       'https://i.ibb.co/2N5qfGh/hero.jpg',
+       'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22520%22><rect width=%22800%22 height=%22520%22 fill=%22%23007f3f%22/><text x=%22400%22 y=%22260%22 font-size=%2232%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>Imagem indisponível</text></svg>')">
+</div>
+</section>
+
+<!-- PROJECTS (6 cards) -->
+<section aria-label="Projetos recentes">
+<h2 style="text-align:center;margin-top:8px">Projetos Recentes</h2>
+<div class="galeria" role="list">
+<!-- Card 1 -->
+<article class="card" role="listitem">
+<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Plantio urbano" onerror="handleImgError(this,'https://i.ibb.co/2sG2p8b/projeto1.jpg')">
+<div class="body">
+<h3>Comunidade Verde <span style="font-size:.75rem;background:#00c896;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Plantio</span></h3>
+<p>Mutirões de plantio em praças e espaços urbanos com moradores locais.</p>
+<a class="btn" href="projetos.html#plantio" style="margin-top:12px">Saiba Mais</a>
+</div>
+</article>
+
+<!-- Card 2 -->
+<article class="card" role="listitem">
+<img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Educação ambiental com crianças" onerror="handleImgError(this,'https://i.ibb.co/4FgDxSx/projeto2.jpg')">
+<div class="body">
+<h3>Educação Ambiental <span style="font-size:.75rem;background:#ff9500;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Oficinas</span></h3>
+<p>Oficinas e atividades pedagógicas para crianças e jovens da comunidade.</p>
+<a class="btn" href="projetos.html#educacao" style="margin-top:12px">Saiba Mais</a>
+</div>
+</article>
+
+<!-- Card 3 -->
+<article class="card" role="listitem">
+<img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Campanha de inverno" onerror="handleImgError(this,'https://i.ibb.co/2sG2p8b/projeto3.jpg')">
+<div class="body">
+<h3>Campanha de Inverno <span style="font-size:.75rem;background:#ff4c4c;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Doação</span></h3>
+<p>Arrecadação e distribuição de roupas e cobertores para famílias em vulnerabilidade.</p>
+<a class="btn" href="projetos.html#campanhas" style="margin-top:12px">Saiba Mais</a>
+</div>
+</article>
+
+<!-- Card 4 -->
+<article class="card" role="listitem">
+<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Horta comunitária" onerror="handleImgError(this,'https://i.ibb.co/2sG2p8b/projeto1.jpg')">
+<div class="body">
+<h3>Hortas Comunitárias <span style="font-size:.75rem;background:#9b59b6;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Horta</span></h3>
+<p>Hortas em comunidades para produção de alimentos e educação alimentar.</p>
+<a class="btn" href="projetos.html#hortas" style="margin-top:12px">Saiba Mais</a>
+</div>
+</article>
+
+<!-- Card 5 -->
+<article class="card" role="listitem">
+<img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Limpeza de praia" onerror="handleImgError(this,'https://i.ibb.co/4FgDxSx/projeto2.jpg')">
+<div class="body">
+<h3>Limpeza de Praias <span style="font-size:.75rem;background:#0077ff;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Ação</span></h3>
+<p>Ações de limpeza e conscientização ambiental em áreas costeiras.</p>
+<a class="btn" href="projetos.html#limpeza" style="margin-top:12px">Saiba Mais</a>
+</div>
+</article>
+
+<!-- Card 6 -->
+<article class="card" role="listitem">
+<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Voluntariado jovem" onerror="handleImgError(this,'https://i.ibb.co/2sG2p8b/projeto3.jpg')">
+<div class="body">
+<h3>Voluntariado Jovem <span style="font-size:.75rem;background:#00c896;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Volunt</span></h3>
+<p>Programas para engajar jovens em ações comunitárias e ambientais.</p>
+<a class="btn" href="projetos.html#voluntariado" style="margin-top:12px">Saiba Mais</a>
+</div>
+</article>
+
+</div>
+</section>
+
+<section style="text-align:center;margin-top:28px">
+<p>Contato: <a href="mailto:contato@ongmaisverde.org">contato@ongmaisverde.org</a> • <a href="tel:+5511999999999">(11) 99999-9999</a></p>
+</section>
 </main>
 
 <footer class="footer">
@@ -106,7 +198,6 @@ onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http:
 </footer>
 
 <script>
-// Hamburger menu
 document.addEventListener('DOMContentLoaded', function(){
   const hamburger = document.querySelector('.hamburger');
   const navUl = document.querySelector('nav ul');
@@ -117,108 +208,11 @@ document.addEventListener('DOMContentLoaded', function(){
       navUl.classList.toggle('active');
     });
   }
-
-  // SPA navigation
-  const app = document.getElementById('app');
-  const pages = {
-    home: () => `
-      <section class="hero" aria-label="Apresentação">
-        <div class="copy">
-          <h1>Transformando vidas com sustentabilidade</h1>
-          <p>Somos a ONG MAIS VERDE: plantio urbano, educação ambiental e apoio comunitário. Junte-se a nós para fazer a diferença.</p>
-          <div class="cta">
-            <a class="btn" href="#" data-page="cadastro">Seja Voluntário</a>
-            <a class="btn" href="#" data-page="projetos">Conheça Projetos</a>
-          </div>
-        </div>
-        <div class="media" aria-label="Voluntários em ação plantando árvores na natureza">
-          <img class="hero-img" src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?crop=entropy&cs=tinysrgb&fit=crop&w=1000&h=600&q=80"
-          alt="Voluntários trabalhando em um projeto de natureza e sustentabilidade" onerror="handleImgError(this)">
-        </div>
-      </section>
-      <section aria-label="Projetos recentes">
-        <h2 style="text-align:center;margin-top:8px">Projetos Recentes</h2>
-        <div class="galeria" role="list">
-          <!-- Cards gerados via JS -->
-        </div>
-      </section>
-      <section style="text-align:center;margin-top:28px">
-        <p>Contato: <a href="mailto:contato@ongmaisverde.org">contato@ongmaisverde.org</a> • <a href="tel:+5511999999999">(11) 99999-9999</a></p>
-      </section>
-    `,
-    projetos: () => `<h2>Seção Projetos</h2><p>Aqui você pode listar os projetos detalhados.</p>`,
-    cadastro: () => `<h2>Cadastro</h2>
-      <form id="formCadastro">
-        <label>Nome: <input type="text" name="nome" required></label><br><br>
-        <label>Email: <input type="email" name="email" required></label><br><br>
-        <button class="btn" type="submit">Enviar</button>
-      </form>
-      <div id="formMsg"></div>
-    `,
-    blog: () => `<h2>Blog</h2><p>Seus posts de blog aparecerão aqui.</p>`
-  };
-
-  function loadPage(page) {
-    if (!pages[page]) page = 'home';
-    app.innerHTML = pages[page]();
-    if (page === 'home') renderCards();
-    if (page === 'cadastro') attachFormValidation();
-  }
-
-  // Links SPA
-  document.querySelectorAll('[data-page]').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const page = link.getAttribute('data-page');
-      loadPage(page);
-    });
-  });
-
-  loadPage('home'); // Página inicial
-
-  // Cards gerados dinamicamente
-  const projectData = [
-    {title:'Comunidade Verde', tag:'Plantio', color:'#00c896', desc:'Mutirões de plantio em praças e espaços urbanos com moradores locais.'},
-    {title:'Educação Ambiental', tag:'Oficinas', color:'#ff9500', desc:'Oficinas e atividades pedagógicas para crianças e jovens da comunidade.'},
-    {title:'Campanha de Inverno', tag:'Doação', color:'#ff4c4c', desc:'Arrecadação e distribuição de roupas e cobertores para famílias em vulnerabilidade.'},
-    {title:'Hortas Comunitárias', tag:'Horta', color:'#9b59b6', desc:'Hortas em comunidades para produção de alimentos e educação alimentar.'},
-    {title:'Limpeza de Praias', tag:'Ação', color:'#0077ff', desc:'Ações de limpeza e conscientização ambiental em áreas costeiras.'},
-    {title:'Voluntariado Jovem', tag:'Volunt', color:'#00c896', desc:'Programas para engajar jovens em ações comunitárias e ambientais.'}
-  ];
-
-  function renderCards() {
-    const galeria = document.querySelector('.galeria');
-    if (!galeria) return;
-    galeria.innerHTML = projectData.map(p => `
-      <article class="card" role="listitem">
-        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="${p.title}" onerror="handleImgError(this)">
-        <div class="body">
-          <h3>${p.title} <span style="font-size:.75rem;background:${p.color};color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">${p.tag}</span></h3>
-          <p>${p.desc}</p>
-          <a class="btn" href="#" style="margin-top:12px">Saiba Mais</a>
-        </div>
-      </article>
-    `).join('');
-  }
-
-  // Form validation
-  function attachFormValidation() {
-    const form = document.getElementById('formCadastro');
-    const msg = document.getElementById('formMsg');
-    if (!form) return;
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const nome = form.nome.value.trim();
-      const email = form.email.value.trim();
-      if (!nome || !email || !/\S+@\S+\.\S+/.test(email)) {
-        msg.innerHTML = '<p style="color:red">Por favor, preencha os campos corretamente.</p>';
-      } else {
-        msg.innerHTML = '<p style="color:green">Cadastro enviado com sucesso!</p>';
-        form.reset();
-      }
-    });
-  }
 });
 </script>
+
+<!-- SCRIPTS ADICIONADOS (NÃO ALTERAM SEU HTML) -->
+<script src="js/pageEnhancements.js"></script>
+<script src="js/router.js"></script>
 </body>
 </html>
