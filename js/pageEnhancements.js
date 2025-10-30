@@ -1,12 +1,1 @@
-document.addEventListener('DOMContentLoaded', function(){
-  const heroImgs = document.querySelectorAll('.hero-img, .card img');
-  heroImgs.forEach(img => {
-    if(img.complete) {
-      img.style.height = 'auto';
-    } else {
-      img.addEventListener('load', () => {
-        img.style.height = 'auto';
-      });
-    }
-  });
-});
+document.addEventListener("DOMContentLoaded",function(){let e=document.querySelectorAll(".hero-img, .card img");e.forEach(e=>{e.complete?e.style.height="auto":e.addEventListener("load",()=>{e.style.height="auto"})})});
