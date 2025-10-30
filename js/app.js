@@ -1,11 +1,1 @@
-// js/app.js
-// Inicializador principal — conecta módulos do projeto
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("🌱 ONG MAIS VERDE - App iniciado");
-
-  // Inicializações (se as funções existirem)
-  if (typeof initPageEnhancements === "function") initPageEnhancements();
-  if (typeof initRouter === "function") initRouter();
-  if (typeof initTemplates === "function") initTemplates();
-  if (typeof initFormValidation === "function") initFormValidation();
-});
+document.addEventListener("DOMContentLoaded",()=>{console.log("\uD83C\uDF31 ONG MAIS VERDE - App iniciado"),"function"==typeof initPageEnhancements&&initPageEnhancements(),"function"==typeof initRouter&&initRouter(),"function"==typeof initTemplates&&initTemplates(),"function"==typeof initFormValidation&&initFormValidation()});
