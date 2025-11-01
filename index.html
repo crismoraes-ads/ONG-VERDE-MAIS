@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ONG MAIS VERDE - Início</title>
-  <link rel="stylesheet" href="css/estilos.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ONG MAIS VERDE - Início</title>
+<link rel="stylesheet" href="css/estilos.css">
+<script defer src="js/script.js"></script>
 </head>
 <body>
+
 <header>
   <div class="header-inner container">
     <a class="logo" href="index.html" aria-label="Início - ONG Mais Verde">
@@ -15,26 +17,76 @@
     <nav>
       <ul>
         <li><a href="index.html">Início</a></li>
-        <li class="nav-item"><a href="projetos.html">Projetos</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
         <li><a href="cadastro.html">Cadastro</a></li>
         <li><a href="blog.html">Blog</a></li>
       </ul>
     </nav>
     <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
 </header>
 
 <main class="container">
-  <!-- Conteúdo da página (hero, galeria, etc.) -->
+  <section class="hero" aria-label="Apresentação">
+    <div class="copy">
+      <h1>Transformando vidas com sustentabilidade</h1>
+      <p>Somos a ONG MAIS VERDE: plantio urbano, educação ambiental e apoio comunitário. Junte-se a nós para fazer a diferença.</p>
+      <div class="cta">
+        <a class="btn" href="cadastro.html">Seja Voluntário</a>
+        <a class="btn" href="projetos.html">Conheça Projetos</a>
+      </div>
+    </div>
+    <div class="media">
+      <img class="hero-img" src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?crop=entropy&cs=tinysrgb&fit=crop&w=1000&h=600&q=80" alt="Voluntários trabalhando em projeto de sustentabilidade">
+    </div>
+  </section>
+
+  <section class="galeria" aria-label="Projetos recentes">
+    <h2 style="text-align:center;margin-top:8px">Projetos Recentes</h2>
+    <div class="cards">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Plantio urbano">
+        <div class="body">
+          <h3>Comunidade Verde</h3>
+          <p>Mutirões de plantio em praças e espaços urbanos com moradores locais.</p>
+          <a class="btn" href="projetos.html#plantio">Saiba Mais</a>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Educação ambiental com crianças">
+        <div class="body">
+          <h3>Educação Ambiental</h3>
+          <p>Oficinas e atividades pedagógicas para crianças e jovens da comunidade.</p>
+          <a class="btn" href="projetos.html#educacao">Saiba Mais</a>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Campanha de inverno">
+        <div class="body">
+          <h3>Campanha de Inverno</h3>
+          <p>Arrecadação e distribuição de roupas e cobertores para famílias em vulnerabilidade.</p>
+          <a class="btn" href="projetos.html#campanhas">Saiba Mais</a>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" alt="Horta comunitária">
+        <div class="body">
+          <h3>Hortas Comunitárias</h3>
+          <p>Incentivo à alimentação saudável e integração social por meio de hortas urbanas.</p>
+          <a class="btn" href="projetos.html#hortas">Saiba Mais</a>
+        </div>
+      </article>
+    </div>
+  </section>
 </main>
 
 <footer class="footer">
-  <p>© ONG MAIS VERDE</p>
+  <p>© ONG MAIS VERDE - Todos os direitos reservados</p>
 </footer>
 
-<!-- Script JS corrigido -->
-<script src="js/script.js" defer></script>
 </body>
 </html>
