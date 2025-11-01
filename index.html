@@ -1,71 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ONG MAIS VERDE - Início</title>
-  <link rel="stylesheet" href="css/estilos.css" />
-  <script src="js/script.js" defer></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ONG MAIS VERDE - Início</title>
+<link rel="stylesheet" href="css/estilos.css" />
+<script src="js/script.js" defer></script>
 </head>
 <body>
-  <header>
-    <div class="header-inner container">
-      <a class="logo" href="index.html" aria-label="Início - ONG Mais Verde">
-        <img id="logoImg" src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80" 
-        alt="Logo ONG MAIS VERDE"
-        onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22240%22 height=%2280%22><rect width=%22240%22 height=%2280%22 fill=%22%2300c896%22/><text x=%22120%22 y=%2248%22 font-size=%2220%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>ONG MAIS VERDE</text></svg>';">
-      </a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Início</a></li>
-          <li class="nav-item"><a href="projetos.html">Projetos</a></li>
-          <li><a href="cadastro.html">Cadastro</a></li>
-          <li><a href="blog.html">Blog</a></li>
-        </ul>
-      </nav>
-      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+<header>
+  <div class="header-inner container">
+    <a class="logo" href="index.html" aria-label="Início - ONG Mais Verde">
+      <img id="logoImg" src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80" 
+           alt="Logo ONG MAIS VERDE"
+           onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22240%22 height=%2280%22><rect width=%22240%22 height=%2280%22 fill=%22%2300c896%22/><text x=%22120%22 y=%2248%22 font-size=%2220%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>ONG MAIS VERDE</text></svg>';">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li class="nav-item"><a href="projetos.html">Projetos</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" aria-label="Apresentação">
+    <div class="copy">
+      <h1>Transformando vidas com sustentabilidade</h1>
+      <p>Somos a ONG MAIS VERDE: plantio urbano, educação ambiental e apoio comunitário. Junte-se a nós para fazer a diferença.</p>
+      <div class="cta">
+        <a class="btn" href="cadastro.html">Seja Voluntário</a>
+        <a class="btn" href="projetos.html">Conheça Projetos</a>
+      </div>
     </div>
-  </header>
+    <div class="media" aria-label="Voluntários em ação plantando árvores na natureza">
+      <img class="hero-img" 
+           src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?crop=entropy&cs=tinysrgb&fit=crop&w=1000&h=600&q=80" 
+           alt="Voluntários trabalhando em um projeto de natureza e sustentabilidade"
+           onerror="handleImgError(this, 'https://i.ibb.co/2N5qfGh/hero.jpg')">
+    </div>
+  </section>
 
-  <main class="container">
-    <section class="hero" aria-label="Apresentação">
-      <div class="copy">
-        <h1>Transformando vidas com sustentabilidade</h1>
-        <p>Somos a ONG MAIS VERDE: plantio urbano, educação ambiental e apoio comunitário. Junte-se a nós para fazer a diferença.</p>
-        <div class="cta">
-          <a class="btn" href="cadastro.html">Seja Voluntário</a>
-          <a class="btn" href="projetos.html">Conheça Projetos</a>
+  <section aria-label="Projetos recentes">
+    <h2 style="text-align:center;margin-top:8px">Projetos Recentes</h2>
+    <div class="galeria" role="list">
+      <article class="card" role="listitem">
+        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" 
+             alt="Plantio urbano"
+             onerror="handleImgError(this,'https://i.ibb.co/2sG2p8b/projeto1.jpg')">
+        <div class="body">
+          <h3>Comunidade Verde <span style="font-size:.75rem;background:#00c896;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Plantio</span></h3>
+          <p>Mutirões de plantio em praças e espaços urbanos com moradores locais.</p>
+          <a class="btn" href="projetos.html#plantio" style="margin-top:12px">Saiba Mais</a>
         </div>
-      </div>
-      <div class="media" aria-label="Voluntários em ação plantando árvores na natureza">
-        <img class="hero-img" src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?crop=entropy&cs=tinysrgb&fit=crop&w=1000&h=600&q=80" 
-        alt="Voluntários trabalhando em um projeto de natureza e sustentabilidade"
-        onerror="handleImgError(this)">
-      </div>
-    </section>
+      </article>
+      <article class="card" role="listitem">
+        <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" 
+             alt="Educação ambiental com crianças"
+             onerror="handleImgError(this,'https://i.ibb.co/4FgDxSx/projeto2.jpg')">
+        <div class="body">
+          <h3>Educação Ambiental <span style="font-size:.75rem;background:#ff9500;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Oficinas</span></h3>
+          <p>Oficinas e atividades pedagógicas para crianças e jovens da comunidade.</p>
+          <a class="btn" href="projetos.html#educacao" style="margin-top:12px">Saiba Mais</a>
+        </div>
+      </article>
+      <!-- Outras cards podem continuar aqui mantendo o mesmo padrão -->
+    </div>
+  </section>
+</main>
 
-    <section aria-label="Projetos recentes">
-      <h2 style="text-align:center;margin-top:8px">Projetos Recentes</h2>
-      <div class="galeria" role="list">
-        <!-- Cards de exemplo (mantendo proporções corretas) -->
-        <article class="card" role="listitem">
-          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?crop=entropy&cs=tinysrgb&fit=crop&w=800&h=450&q=80" 
-          alt="Plantio urbano" onerror="handleImgError(this)">
-          <div class="body">
-            <h3>Comunidade Verde <span style="font-size:.75rem;background:#00c896;color:#fff;padding:4px 8px;border-radius:999px;margin-left:8px">Plantio</span></h3>
-            <p>Mutirões de plantio em praças e espaços urbanos com moradores locais.</p>
-            <a class="btn" href="projetos.html#plantio" style="margin-top:12px">Saiba Mais</a>
-          </div>
-        </article>
-        <!-- Replicar cards conforme necessário -->
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>© 2025 ONG MAIS VERDE</p>
-  </footer>
+<footer class="footer">
+  <p>© ONG MAIS VERDE 2025</p>
+</footer>
 </body>
 </html>
