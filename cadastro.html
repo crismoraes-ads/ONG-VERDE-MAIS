@@ -1,18 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ONG MAIS VERDE - Cadastro</title>
 <link rel="stylesheet" href="css/variaveis.css">
 <link rel="stylesheet" href="css/estilos.css">
+<style>
+/* Ajuste do hambúrguer no mobile */
+@media(max-width:768px){
+  .hamburger span {
+    background-color: #111; /* letras pretas */
+  }
+  nav ul {
+    display:none;
+    position:absolute;
+    right:12px;
+    top:64px;
+    background:#fff; /* fundo branco */
+    padding:12px;
+    border-radius:8px;
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+    flex-direction:column;
+    gap:8px;
+  }
+  nav ul.active {
+    display:flex;
+  }
+  nav ul a {
+    color:#111; /* links pretos */
+  }
+}
+</style>
 </head>
 <body>
 <header>
   <div class="header-inner container">
-    <a class="logo" href="index.html" aria-label="Início - ONG MAIS VERDE">
+    <a class="logo" href="index.html">
       <img src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80" 
-           alt="Logo ONG MAIS VERDE"
+           alt="ONG MAIS VERDE"
            onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22240%22 height=%2280%22><rect width=%22240%22 height=%2280%22 fill=%22%2300c896%22/><text x=%22120%22 y=%2248%22 font-size=%2220%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>ONG MAIS VERDE</text></svg>';">
     </a>
     <nav>
@@ -46,7 +72,7 @@
       </div>
       <div class="form-group">
         <label for="cpf">CPF</label>
-        <input id="cpf" name="cpf" type="text" placeholder="000.000.000-00" required>
+        <input id="cpf" name="cpf" type="text" inputmode="numeric" placeholder="000.000.000-00" required>
       </div>
       <div class="form-group">
         <label for="telefone">Telefone</label>
@@ -78,7 +104,7 @@
       </div>
     </fieldset>
 
-    <div style="text-align:center; margin-top:12px;">
+    <div style="text-align:center;margin-top:12px">
       <button class="btn" type="submit">Enviar Cadastro</button>
     </div>
   </form>
@@ -90,6 +116,21 @@
   </div>
 </footer>
 
-<script src="js/scripts.js"></script>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const hamburger = document.querySelector('.hamburger');
+  const navUl = document.querySelector('nav ul');
+
+  if(hamburger && navUl){
+    hamburger.addEventListener('click', () => {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!expanded));
+      navUl.classList.toggle('active');
+    });
+  }
+});
+</script>
 </body>
 </html>
