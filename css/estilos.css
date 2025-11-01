@@ -210,3 +210,10 @@ nav ul a:hover{
 nav ul, nav ul.active{
   transition:opacity .18s ease, transform .18s ease;
 }
+
+/* --- Ajustes extras para logo e hambúrguer --- */
+.logo img{
+  object-fit:contain;
+  max-width:100%;
+  height:auto;
+}
