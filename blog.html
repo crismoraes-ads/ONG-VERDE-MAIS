@@ -4,47 +4,35 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ONG MAIS VERDE - Blog</title>
+<link rel="stylesheet" href="css/variaveis.css">
+<link rel="stylesheet" href="css/estilos.css">
 <style>
-:root{
-  --verde:#00c896;
-  --azul:#0077ff;
-  --laranja:#ff9500;
-  --vermelho:#ff4c4c;
-  --preto:#111111;
-  --branco:#ffffff;
-  --cinza:#f6f8fb;
-  --fz-sm:.875rem;
-  --fz-md:1rem;
-  --s-16:16px;
-  --shadow-sm:0 6px 18px rgba(0,0,0,.08);
-  --shadow-md:0 12px 30px rgba(0,0,0,.12);
+/* Ajuste do menu mobile do hambúrguer */
+@media(max-width:768px){
+  nav ul{
+    display:none;
+    position:absolute;
+    right:12px;
+    top:64px;
+    background:#fff; /* fundo branco */
+    padding:12px;
+    border-radius:8px;
+    box-shadow:var(--shadow-md);
+    flex-direction:column;
+    gap:8px;
+  }
+  nav ul.active{
+    display:flex;
+  }
+  nav ul a{
+    color:#111; /* letras pretas */
+  }
+  .hamburger{
+    display:flex;
+  }
 }
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:Arial, Helvetica, sans-serif;background:var(--cinza);color:var(--preto);line-height:1.45;}
-a{text-decoration:none;color:inherit;}
-.container{max-width:1200px;margin:0 auto;padding:0 var(--s-16);}
-header{position:sticky;top:0;z-index:1100;background:linear-gradient(90deg,var(--verde),var(--azul));box-shadow:var(--shadow-sm);}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;}
-.logo img{height:56px;display:block;}
-nav ul{display:flex;gap:12px;list-style:none;}
-nav a{color:var(--branco);padding:8px 12px;border-radius:8px;font-weight:600;}
-.hamburger{display:none;flex-direction:column;gap:6px;cursor:pointer;}
-/* COR DO HAMBÚRGUER AJUSTADA PARA PRETO */
-.hamburger span{width:26px;height:3px;background-color:#111;border-radius:3px;}
-main{padding:28px 0;}
-h1{text-align:center;color:var(--verde);margin-bottom:12px;}
-.galeria{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
-.card{background:var(--branco);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);}
-.card img{width:100%;height:220px;object-fit:cover;}
-.card .card-body{padding:14px;}
-.card h3{color:var(--primary,var(--verde));margin-bottom:8px;}
-.btn{display:inline-block;padding:10px 18px;border-radius:999px;background:linear-gradient(90deg,var(--laranja),var(--vermelho));color:var(--branco);font-weight:700;text-decoration:none;}
-.footer{background:linear-gradient(90deg,var(--verde),var(--azul));color:var(--branco);padding:20px 0;text-align:center;margin-top:28px;}
-@media(max-width:992px){ .galeria{grid-template-columns:1fr;} }
-@media(max-width:768px){ 
-  .hamburger{display:flex;} 
-  nav ul{display:none;position:absolute;right:12px;top:64px;background:var(--branco);padding:12px;border-radius:8px;box-shadow:var(--shadow-md);flex-direction:column;gap:8px;} 
-  nav ul.active{display:flex;}
+.hamburger span{
+  background-color:#111; /* linhas do hambúrguer pretas */
 }
 </style>
 </head>
@@ -52,7 +40,7 @@ h1{text-align:center;color:var(--verde);margin-bottom:12px;}
 <header>
   <div class="header-inner container">
     <a class="logo" href="index.html">
-      <img src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80" alt="Logo ONG MAIS VERDE" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22240%22 height=%2280%22><rect width=%22240%22 height=%2280%22 fill=%22%2300c896%22/><text x=%22120%22 y=%2248%22 font-size=%2220%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>ONG MAIS VERDE</text></svg>';">
+      <img src="https://images.unsplash.com/photo-1599058917215-707144a49d8f?fit=crop&w=240&h=80&q=80" alt="Logo ONG MAIS VERDE">
     </a>
     <nav>
       <ul>
@@ -63,9 +51,7 @@ h1{text-align:center;color:var(--verde);margin-bottom:12px;}
       </ul>
     </nav>
     <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
   </div>
 </header>
@@ -74,7 +60,7 @@ h1{text-align:center;color:var(--verde);margin-bottom:12px;}
   <h1>Blog</h1>
   <section class="galeria" role="list">
     <article class="card" role="listitem">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fit=crop&w=800&h=450&q=80" alt="Limpeza de Praias" onerror="handleImgError(this,'https://i.ibb.co/4FgDxSx/projeto2.jpg')">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fit=crop&w=800&h=450&q=80" alt="Limpeza de Praias">
       <div class="card-body">
         <h3>Limpeza de Praias</h3>
         <p>Resumo sobre a ação de limpeza de praias e conscientização ambiental.</p>
@@ -82,7 +68,7 @@ h1{text-align:center;color:var(--verde);margin-bottom:12px;}
       </div>
     </article>
     <article class="card" role="listitem">
-      <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?fit=crop&w=800&h=450&q=80" alt="Voluntariado Jovem" onerror="handleImgError(this,'https://i.ibb.co/2sG2p8b/projeto3.jpg')">
+      <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?fit=crop&w=800&h=450&q=80" alt="Voluntariado Jovem">
       <div class="card-body">
         <h3>Voluntariado Jovem</h3>
         <p>Atividades para engajar jovens em projetos socioambientais.</p>
@@ -98,37 +84,6 @@ h1{text-align:center;color:var(--verde);margin-bottom:12px;}
   </div>
 </footer>
 
-<script>
-function handleImgError(imgEl, secondaryUrl, svgDataUrl){
-  try {
-    if(imgEl._triedSecondary){
-      if(svgDataUrl) imgEl.src=svgDataUrl;
-      else imgEl.src='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250"><rect width="100%" height="100%" fill="#e6eef0"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#7d8a8f" font-size="18">Imagem indisponível</text></svg>');
-    } else if(secondaryUrl){
-      imgEl._triedSecondary=true; imgEl.src=secondaryUrl;
-    } else {
-      imgEl._triedSecondary=true; imgEl.src='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250"><rect width="100%" height="100%" fill="#e6eef0"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#7d8a8f" font-size="18">Imagem indisponível</text></svg>');
-    }
-  } catch(e){ console.error('handleImgError', e); }
-}
-
-document.addEventListener('DOMContentLoaded', function(){
-  const hamburger=document.querySelector('.hamburger');
-  const navUl=document.querySelector('nav ul');
-  if(hamburger && navUl){
-    hamburger.addEventListener('click', ()=>{
-      const expanded=hamburger.getAttribute('aria-expanded')==='true';
-      hamburger.setAttribute('aria-expanded',String(!expanded));
-      navUl.classList.toggle('active');
-    });
-  }
-});
-</script>
-
-<script src="js/app.js"></script>
-<script src="js/pageEnhancements.js"></script>
-<script src="js/router.js"></script>
-<script src="js/templates.js"></script>
-<script src="js/formValidation.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
