@@ -68,7 +68,7 @@ nav a:hover{
   background:rgba(255,255,255,0.12);
 }
 
-/* Hamburger */
+/* --- HAMBÚRGUER MOBILE --- */
 .hamburger{
   display:none;
   flex-direction:column;
@@ -81,11 +81,11 @@ nav a:hover{
 .hamburger span{
   width:26px;
   height:3px;
-  background-color: var(--verde); /* COR DO HAMBÚRGUER GLOBAL */
+  background-color: #111; /* COR DO HAMBÚRGUER AJUSTADA */
   border-radius:3px;
 }
 
-/* Hero */
+/* --- Hero --- */
 .hero{
   display:grid;
   grid-template-columns:1fr 480px;
@@ -98,7 +98,7 @@ nav a:hover{
 .hero .cta{display:flex;gap:12px;flex-wrap:wrap;}
 .hero-img{width:100%;height:320px;object-fit:cover;border-radius:12px;box-shadow:var(--shadow-sm);display:block;}
 
-/* Galeria e Cards */
+/* --- Galeria e Cards --- */
 .galeria{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -141,7 +141,7 @@ nav a:hover{
   font-weight:700;
 }
 
-/* Footer */
+/* --- Footer --- */
 .footer{
   background:linear-gradient(90deg,var(--verde),var(--azul));
   color:var(--branco);
@@ -150,7 +150,7 @@ nav a:hover{
   margin-top:28px;
 }
 
-/* Toast */
+/* --- Toast --- */
 .toast{
   position:fixed;
   right:18px;
@@ -181,6 +181,7 @@ nav a:hover{
   nav ul.active{display:flex;}
   .hero{padding:24px 0;}
   .hero-img{height:220px;}
+  nav ul a{color:#111;} /* Links do menu mobile pretos */
 }
 
 @media(max-width:576px){
@@ -188,16 +189,15 @@ nav a:hover{
   .hero-img{height:180px;}
 }
 
-/* Ajuste de foco para links */
+/* --- Ajuste de foco para links --- */
 nav ul a:focus,
 nav ul a:hover{
   outline:none;
   box-shadow:0 0 0 3px rgba(0,119,255,0.12);
   background:rgba(0,0,0,0.03);
-  border-radius:6px;
 }
 
-/* Ajuste de imagens hero e cards */
+/* --- Ajuste de imagens hero e cards --- */
 .hero-img, .card img{
   width:100%;
   height:auto;
@@ -206,14 +206,7 @@ nav ul a:hover{
   display:block;
 }
 
-/* Pequena transição visual para abrir/fechar menu */
+/* --- Pequena transição visual para abrir/fechar menu --- */
 nav ul, nav ul.active{
   transition:opacity .18s ease, transform .18s ease;
-}
-
-/* --- Ajustes extras para logo e hambúrguer --- */
-.logo img{
-  object-fit:contain;
-  max-width:100%;
-  height:auto;
 }
